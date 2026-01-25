@@ -1,7 +1,4 @@
 import type { Metadata } from "next";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import { LocaleProvider } from '@/lib/i18n/LocaleContext';
 import "./globals.css";
 
 
@@ -18,11 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <LocaleProvider>
-          <Header />
-          {children}
-          <Footer />
-        </LocaleProvider>
+        {children}
       </body>
     </html>
   );
