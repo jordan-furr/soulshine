@@ -3,28 +3,45 @@ export type Locale = 'en' | 'de';
 export const translations = {
   en: {
     nav: {
-      home: 'Home',
       about: 'About',
-      blog: 'Blog',
-      products: 'Products',
+      services: 'Services',
+      books: 'Books',
+      poeticImpulses: 'Poetic Impulses',
       contact: 'Contact',
+      // sub items
+      counseling: 'Counseling & Therapy',
+      integration: 'Integration Support',
+      ceremonies: 'Healing Ceremonies',
+      sacredExperiences: 'Sacred Experiences',
+      newMoon: 'New Moon Meditations',
+      womenWild: 'Women Wild And Wise',
     },
     footer: {
       rights: 'All rights reserved',
       privacy: 'Privacy Policy',
-      terms: 'Terms of Service',
+    },
+    common: {
+      bookSession: 'Book a session',
+      learnMore: 'Learn more',
+      getInTouch: 'Get in touch',
+    },
+    contact: {
+      formName: 'Your name',
+      formEmail: 'Your email',
+      formMessage: 'Your message',
+      formSend: 'Send message',
+      phone: 'Phone',
+      email: 'Email',
     },
     products: {
       buy: 'Buy Now',
       price: 'Price',
       download: 'Download',
-      addToCart: 'Add to Cart',
     },
     blog: {
       readMore: 'Read More',
-      backToBlog: 'Back to Blog',
+      back: 'Back',
       publishedOn: 'Published on',
-      author: 'Author',
     },
     checkout: {
       title: 'Checkout',
@@ -37,28 +54,45 @@ export const translations = {
   },
   de: {
     nav: {
-      home: 'Startseite',
-      about: 'Über',
-      blog: 'Blog',
-      products: 'Produkte',
+      about: 'Über mich',
+      services: 'Angebote',
+      books: 'Bücher',
+      poeticImpulses: 'Poetische Impulse',
       contact: 'Kontakt',
+      //sub items
+      counseling: 'Beratung & Therapie',
+      integration: 'Integrationsbegleitung',
+      ceremonies: 'Heilzeremonien',
+      sacredExperiences: 'Heilige Erfahrungen',
+      newMoon: 'Neumond-Meditationen',
+      womenWild: 'Women Wild And Wise',
     },
     footer: {
       rights: 'Alle Rechte vorbehalten',
       privacy: 'Datenschutz',
-      terms: 'AGB',
+    },
+    common: {
+      bookSession: 'Termin buchen',
+      learnMore: 'Mehr erfahren',
+      getInTouch: 'Kontakt aufnehmen',
+    },
+    contact: {
+      formName: 'Dein Name',
+      formEmail: 'Deine E-Mail',
+      formMessage: 'Deine Nachricht',
+      formSend: 'Nachricht senden',
+      phone: 'Telefon',
+      email: 'E-Mail',
     },
     products: {
       buy: 'Jetzt kaufen',
       price: 'Preis',
       download: 'Herunterladen',
-      addToCart: 'In den Warenkorb',
     },
     blog: {
       readMore: 'Mehr lesen',
-      backToBlog: 'Zurück zum Blog',
+      back: 'Zurück',
       publishedOn: 'Veröffentlicht am',
-      author: 'Autor',
     },
     checkout: {
       title: 'Kasse',
