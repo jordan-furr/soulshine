@@ -2,57 +2,53 @@
 
 :root {
   /* Colors */
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F8F5F1;
 
   /* Typography */
   --font-display: 'Cormorant Garamond', serif;
-  /* headings, quotes */
-  --font-body: 'Lora', serif;
-  /* body copy */
+  --font-body: 'Lora', sans-serif;
   --font-accent: 'Dancing Script', cursive;
-  /* taglines, labels */
-
-
-  /* Spacing scale */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 4rem;
-  --space-xl: 8rem;
-
-  /* Radii */
-  --radius-soft: 1.5rem;
-  --radius-pill: 100px;
-
-  /* Shadows */
-  --shadow-warm: 0 8px 40px rgba(122, 97, 82, 0.12);
-  --shadow-glow: 0 0 60px rgba(212, 169, 106, 0.15);
 
   /*Nav */
   --nav-accent: #6B5F54;
-  /* dark linen / grayish brown */
-  --nav-accent-light: #9E8070;
-  /* muted mid-brown for inactive states */
+  --nav-accent-light: #8a6e5e;
   --nav-text: #3D3530;
-  /* near-black warm */
   --nav-muted: #A89890;
-  /* dimmed labels */
-  --nav-bg: #F8F5F1;
-  /* soft linen — just off-white */
+  --nav-bg: #F5F0E8;
   --nav-border: rgba(180, 160, 145, 0.18);
-  --nav-height: 68px;
-  --nav-height-scrolled: 56px;
   --nav-font: var(--font-body, 'Lora', Georgia, serif);
   --nav-font-display: var(--font-display, 'Cormorant Garamond', Georgia, serif);
-  --nav-font-accent: var(--font-accent, 'Dancing Script', cursive);
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Stacked heights */
+  --nav-logo-row: 64px;
+  /* logo row height */
+  --nav-nav-row: 40px;
+  /* nav row height  */
+  --nav-height: 104px;
+  /* total = logo + nav */
+  --nav-height-scrolled: 56px;
+  /* compact single row on scroll */
 }
 
 
 
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  background-color: var(--nav-bg);
+  margin: 0;
+  padding: 0;
+  color: #3D3530;
+}
+
+h1,
+h2,
+h3,
+h4.h5,
+h6 {
+  font-weight: normal;
+  margin: 0;
 }
 
 
@@ -67,60 +63,87 @@ body {
   background: var(--nav-bg);
   border-bottom: 1px solid transparent;
   transition:
-    height 0.33s var(--ease),
     border-color 0.33s var(--ease),
     box-shadow 0.33s var(--ease);
 }
 
 .navbar--scrolled {
-  height: var(--nav-height-scrolled);
   border-bottom-color: var(--nav-border);
   box-shadow: 0 1px 20px rgba(100, 80, 65, 0.07);
 }
 
-.navbar__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  height: 100%;
-  padding: 0 2.33rem;
+.navbar__logo-row {
+  height: var(--nav-logo-row);
   display: flex;
   align-items: center;
-  gap: 2rem;
+  justify-content: center;
+  padding: 0 2.5rem;
 }
 
 /* ── Logo ── */
 .navbar__logo {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  flex-shrink: 0;
-  gap: 2px;
+  transition: transform 0.5s ease;
+  transform-origin: center
 }
 
-.navbar__logo-soul {
+.navbar__logo:hover {
+  transform: scale(1.04);
+}
+
+.navbar__logo-rainbow,
+.navbar__logo-hover {
   font-family: var(--nav-font-display);
-  font-size: 1.33rem;
+  font-size: 2.33rem;
   font-weight: 300;
-  letter-spacing: 0.14em;
-  color: var(--nav-text);
-  transition: color 0.2s;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  transition: opacity 0.25s ease;
 }
 
-.navbar__logo-sarah {
-  font-family: var(--nav-font-accent);
-  font-size: 0.88rem;
-  color: var(--nav-accent);
-  letter-spacing: 0.05em;
+.navbar__logo-rainbow {
+  background: linear-gradient(90deg,
+      #D85A8A, #9848C8, #4888D8,
+      #38B870, #C8C030, #E09030);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 1;
 }
 
-.navbar__logo:hover .navbar__logo-soul {
+/* When PNG logo arrives, replace the two spans with:
+   <Image src="/logo.png" alt="Soulshine" width={180} height={48} />
+   The .navbar__logo transform handles the breathe hover. */
+.navbar__logo-hover {
+  position: absolute;
+  left: 0;
   color: var(--nav-accent);
+  opacity: 0;
+}
+
+.navbar__logo:hover .navbar__logo-rainbow {
+  opacity: 0;
+}
+
+.navbar__logo:hover .navbar__logo-hover {
+  opacity: 1;
+}
+
+/* ── Nav row  ── */
+.navbar__nav-row {
+  height: var(--nav-nav-row);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2.5rem;
+  position: relative;
 }
 
 /* ── Desktop Nav ── */
 .navbar__nav {
-  flex: 1;
   display: flex;
   justify-content: center;
 }
@@ -131,28 +154,24 @@ body {
   padding: 0;
   display: flex;
   align-items: center;
-  gap: 0;
 }
 
 .nav-item {
   position: relative;
 }
 
-/* Nav links — top level */
 .nav-link {
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  padding: 0.45rem 0.8rem;
+  padding: 0.4rem 0.8rem;
   font-family: var(--nav-font);
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.05em;
   color: var(--nav-accent-light);
   text-decoration: none;
-  background: none;
-  border: none;
-  cursor: pointer;
+  white-space: nowrap;
   transition: color 0.18s;
   white-space: nowrap;
 }
@@ -160,8 +179,6 @@ body {
 .nav-link:hover {
   color: var(--nav-text);
 }
-
-/* Parent link with chevron */
 
 .nav-link__chevron {
   display: flex;
@@ -171,17 +188,27 @@ body {
   transition: color 0.18s;
 }
 
-/* ── Dropdown Panel ── */
+/* ── Actions — absolutely right on nav row ────────────────── */
+.navbar__actions {
+  position: absolute;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
+/* ── Dropdown Panel ── */
 .nav-dropdown {
   list-style: none;
   margin: 0;
-  padding: 0.25rem 0;
+  padding: 0.3rem 0;
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 210px;
-  background: #F8F5F1;
+  min-width: 230px;
+  background: var(--nav-bg);
   border-top: 1px solid var(--nav-border);
   /* Hidden by default */
   opacity: 0;
@@ -190,99 +217,115 @@ body {
   transition:
     opacity 0.18s var(--ease),
     transform 0.18s var(--ease);
-
 }
 
-
-/* Show on hover of the parent li — disappears the moment
-   the cursor leaves, no sticky open state */
 .nav-item--has-dropdown:hover .nav-dropdown {
   opacity: 1;
   pointer-events: all;
   transform: translateY(0);
 }
 
+/* Staggered entrance — each item animates in with a delay */
+@keyframes nav-item-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-dropdown__item {
+  opacity: 0;
+}
+
+.nav-item--has-dropdown:hover .nav-dropdown__item {
+  animation: nav-item-in 0.18s ease forwards;
+  animation-delay: calc(var(--stagger) * 55ms + 30ms);
+}
+
+/* Dropdown link — flex row for dot + label */
+
 .nav-dropdown__link {
-  display: block;
-  padding: 0.33rem 1rem 0.66rem 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.33rem 1rem 0.33rem 0.8rem;
   font-family: var(--nav-font);
-  font-size: 0.88rem;
+  font-size: .88rem;
   font-weight: 400;
   letter-spacing: 0.03em;
   color: var(--nav-accent-light);
   text-decoration: none;
-  transition: color 0.15s;
   white-space: nowrap;
-
+  transition: color 0.15s;
 }
 
 .nav-dropdown__link:hover {
   color: var(--nav-text);
 }
 
-
-/* ── Actions ── */
-.navbar__actions {
-  display: flex;
-  align-items: center;
-  gap: 1.33rem;
-  margin-left: auto;
+/* ── Dots ──────────── */
+.nav-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
   flex-shrink: 0;
+  transition: transform 0.2s ease;
 }
+
+.nav-dropdown__link:hover .nav-dot {
+  transform: scale(1.5);
+}
+
+/* Mobile sub-link dots */
+.mobile-sub-link .nav-dot {
+  transition: transform 0.2s ease;
+}
+
+.mobile-sub-link:hover .nav-dot {
+  transform: scale(1.4);
+}
+
 
 /* Language toggle */
-.lang-toggle {
+.lang-globe {
   display: flex;
   align-items: center;
-  gap: 0;
-
-}
-
-.lang-toggle__btn {
+  gap: 0.33rem;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
-  font-family: var(--nav-font);
-  font-size: 0.88rem;
-  letter-spacing: 0.12em;
+  padding: 0.33rem 0.5rem;
+  border-radius: 4px;
   color: var(--nav-muted);
   transition: color 0.18s, background 0.18s;
-  border-radius: 3px;
-  line-height: 1;
-
 }
 
 /* Hover only affects the button you're over */
-.lang-toggle__btn:hover {
+.lang-globe:hover {
   color: var(--nav-accent);
   background: rgba(107, 95, 84, 0.06);
 
 }
 
-/* Active language — darker + underline */
-.lang-toggle__btn--active {
-  color: var(--nav-text);
-  font-weight: 500;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: var(--nav-accent);
-  text-decoration-thickness: 1px;
-
-}
-
-.lang-toggle__btn--active:hover {
-  background: none;
-}
-
-
-.lang-toggle__divider {
-  width: 1px;
-  height: 10px;
-  background: var(--nav-border);
-  margin: 0 0.15rem;
+.lang-globe__icon {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
+
+.lang-globe__label {
+  font-family: var(--nav-font);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+
 
 /* Hamburger */
 .hamburger {
@@ -323,6 +366,10 @@ body {
 
 .hamburger--open .hamburger__bar:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
+}
+
+.navbar-spacer {
+  height: var(--nav-height);
 }
 
 /* ── Mobile Overlay ── */
@@ -410,11 +457,13 @@ body {
 }
 
 .mobile-sub-list--open {
-  max-height: 400px;
+  max-height: 500px;
 }
 
 .mobile-sub-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   padding: 0.55rem 0 0.55rem 1rem;
   font-family: var(--nav-font);
   font-size: 0.85rem;
@@ -432,20 +481,42 @@ body {
 }
 
 .mobile-lang {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
-
-.mobile-lang .lang-toggle__btn {
-  font-size: 0.82rem;
-  padding: 0.3rem 0.6rem;
+.mobile-lang-label {
+  font-family: var(--nav-font);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--nav-muted);
 }
 
-/* ── Navbar spacer ── */
-.navbar-spacer {
-  height: var(--nav-height);
+.mobile-lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--nav-font);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--nav-muted);
+  padding: 0.2rem 0;
+  transition: color 0.18s;
+}
+
+.mobile-lang-btn--active {
+  color: var(--nav-text);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--nav-accent);
+  text-decoration-thickness: 1px;
+}
+
+.mobile-lang-btn:hover {
+  color: var(--nav-accent);
 }
 
 
@@ -462,14 +533,125 @@ body {
   .mobile-overlay {
     display: block;
   }
+
+  .lang-globe {
+    display: flex;
+  }
+
+  .navbar__nav-row {
+    height: 0 !important;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .navbar__logo-row {
+    justify-content: center;
+    position: relative;
+  }
+
+  .navbar__actions {
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .mobile-overlay {
+    top: var(--nav-logo-row);
+  }
+
+  .navbar-spacer {
+    height: var(--nav-logo-row);
+  }
+
 }
 
 @media (max-width: 480px) {
-  .navbar__inner {
+  .navbar__logo-row {
     padding: 0 1.25rem;
   }
 
   .mobile-overlay {
     padding: 1.25rem 1.25rem 3rem;
   }
+}
+
+/* ── Footer ── */
+.footer a {
+  color: var(--nav-accent-light);
+  margin-bottom: .5rem;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--nav-text);
+  text-decoration: underline;
+}
+
+/* basic style control */
+
+.w33 {
+  width: 33%;
+}
+
+.w67 {
+  width: 67%;
+}
+
+.mb5 {
+  margin-bottom: 2rem;
+}
+
+
+/* buttons and style*/
+
+.bg-cream {
+  background-color: var(--background);
+}
+
+h1 {
+  margin-bottom: 2rem;
+}
+
+.button1 {
+  color: white;
+  background-color: var(--nav-text);
+  padding: 14px 33px;
+  font-size: 1rem;
+  border: 2px solid var(--nav-text);
+  border-radius: 33px;
+  transition: 0.15s var(--ease);
+  cursor: pointer;
+  margin-top: .33rem;
+  margin-bottom: 1.33rem;
+  letter-spacing: 0.11em;
+}
+
+.button1:hover {
+  background-color: #F8F5F1;
+  color: var(--nav-text);
+  transform: scale(1.01);
+}
+
+.button2 {
+  color: var(--nav-text);
+  background-color: var(--nav-bg);
+  padding: 14px 33px;
+  font-size: 1rem;
+  border: 2px solid var(--nav-text);
+  border-radius: 33px;
+  transition: 0.15s var(--ease);
+  cursor: pointer;
+  margin-top: .33rem;
+  margin-bottom: 1.33rem;
+  letter-spacing: 0.11em;
+}
+
+.button2:hover {
+  background-color: var(--nav-text);
+  color: var(--nav-bg);
+  transform: scale(101%);
 }

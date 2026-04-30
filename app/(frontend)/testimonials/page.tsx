@@ -3,7 +3,7 @@
 import { useLocale } from '@/lib/i18n/LocaleContext';
 import { philoContent } from '@/lib/content/philo';
 
-export default function PhiloPage() {
+export default function AboutPage() {
   const { locale } = useLocale();
   const t = philoContent[locale];
 

@@ -5,16 +5,19 @@ export const translations = {
     nav: {
       about: 'About',
       services: 'Services',
-      books: 'Books',
-      poeticImpulses: 'Poetic Impulses',
-      contact: 'Contact',
       // sub items
       counseling: 'Counseling & Therapy',
-      integration: 'Integration Support',
-      ceremonies: 'Healing Ceremonies',
-      sacredExperiences: 'Sacred Experiences',
-      newMoon: 'New Moon Meditations',
-      womenWild: 'Women Wild And Wise',
+      guidance: 'Spiritual Guidance',
+      cacao: 'Cacao Meditations',
+      integration: 'Medicine Integration Support',
+      ceremonies: 'Shamanic Healing Ceremonies',
+      matrimony: 'Shamanic Matrimony',
+      international: 'Distance Energy Healing',
+      // ... end services
+      publications: 'Publications',
+      testimonials: 'Testimonials',
+      soulScibe: 'Soulscribe',
+      contact: 'Contact',
     },
     footer: {
       rights: 'All rights reserved',
@@ -51,21 +54,38 @@ export const translations = {
       success: 'Payment Successful!',
       error: 'Payment Failed',
     },
+    home: {
+      tagline: 'sArAh from eArth to heArt:',
+      description: 'Psycho-spiritual guidance & healing',
+      hero: 'Come home to your soul, your truth, your light',
+      book: 'Book a Consultation',
+      life: [
+        'The foundation of life is freedom',
+        'The result of life is expansion',
+        'The purpose of life is joy'
+      ]
+    }
   },
   de: {
     nav: {
-      about: 'Über mich',
+      about: 'Über',
+      team: 'Sarah, Team, & Soulwayo',
+      philosophy: 'Philosophy',
+      testimonials: 'Testimonials',
+      // ... end about
       services: 'Angebote',
-      books: 'Bücher',
-      poeticImpulses: 'Poetische Impulse',
-      contact: 'Kontakt',
       //sub items
       counseling: 'Beratung & Therapie',
-      integration: 'Integrationsbegleitung',
+      guidance: 'Spiritual Guidance',
       ceremonies: 'Heilzeremonien',
-      sacredExperiences: 'Heilige Erfahrungen',
-      newMoon: 'Neumond-Meditationen',
-      womenWild: 'Women Wild And Wise',
+      integration: 'Integrationsbegleitung',
+      cacao: 'Cacao Meditations',
+      international: 'International Energy Work',
+      matrimony: 'Shamanic Matrimony',
+      //
+      publications: 'Bücher',
+      soulScibe: 'Soul Scribe',
+      contact: 'Kontakt',
     },
     footer: {
       rights: 'Alle Rechte vorbehalten',
@@ -102,6 +122,17 @@ export const translations = {
       success: 'Zahlung erfolgreich!',
       error: 'Zahlung fehlgeschlagen',
     },
+    home: {
+      tagline: 'sArAh from eArth to heArt:',
+      description: 'Psycho-spiritual guidance & healing',
+      hero: 'Come home to your soul, your truth, your light',
+      book: 'Book a Consultation',
+      life: [
+        'The foundation of life is freedom',
+        'The result of life is expansion',
+        'The purpose of life is joy'
+      ]
+    }
   },
 };
 

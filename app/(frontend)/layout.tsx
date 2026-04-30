@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "../globals.css";
+import "../styles/pages.css"
+import "../styles/components.css"
+import "../styles/animations.css"
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 

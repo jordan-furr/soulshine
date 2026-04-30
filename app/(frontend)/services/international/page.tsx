@@ -1,19 +1,19 @@
 'use client';
 
 import { useLocale } from '@/lib/i18n/LocaleContext';
-import { getTranslations } from '@/lib/i18n/translations';
+import { InternationalContent } from '@/lib/content/international';
 
-export default function Contact() {
+export default function International() {
   const { locale } = useLocale();
-  const t = getTranslations(locale);
+  const t = InternationalContent[locale];
 
   return (
     <div className="page-container">
       <div className="page-hero">
-        <h2>...</h2>
+        <h1>{t.title}</h1>
       </div>
       <div className='section-container'>
-        <h1>Contact</h1>
+        <h1>{t.description}</h1>
       </div>
     </div>
   );

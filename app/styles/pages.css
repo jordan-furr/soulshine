@@ -1,0 +1,109 @@
+/* general pages,
+    "predev": "npm run typegen",
+    "prebuild": "npm run typegen" "typegen": "sanity schema extract --enforce-required-fields --path=./sanity/extract.json && sanity typegen generate"*/
+:root {
+    --red: #e60000ff;
+    --orange: #e66400ff;
+    --yellow: #e6e200ff;   
+    --green: #28aa0eff;
+    --blue: #0096e6ff;
+    --purple: #7301d0ff;
+
+}
+
+.page-container {
+    margin: 0;
+    padding: 0;
+    min-height: calc(100vh - 68px);
+    cursor: default;
+}
+
+.section-container {
+    padding: 3.3rem 8rem;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.page-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5rem 0;
+    background-color: #F8F5F1;
+}
+
+
+
+/* home */
+.home {
+    text-align: center;
+}
+
+.home-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5rem 0;
+    background-color: #F8F5F1;
+}
+
+.home-hero h3 {
+    font-style: italic;
+}
+
+.home-hero h1 {
+    padding: 3rem 0;
+    font-size: 3.33rem;
+    width: 44%;
+}
+
+.page-hero h1 {
+    font-size: 1.88rem;
+    margin: 0;
+}
+
+.page-hero h2 {
+    font-size: 1.77rem;
+    margin: auto;
+    width: 60%;
+}
+
+.page-hero h3 {
+    width: 66%;
+}
+
+
+/*about*/
+
+.testimonial {
+    font-size: .88rem;
+    width: 50%;
+}
+
+
+/*services*/
+
+.hoverRed:hover {
+    color: var(--red);
+}
+.orangeDetail {
+    text-decoration-color: var(--orange);
+}
+.yellowDetail {
+    text-decoration-color: var(--yellow);
+}
+.greenDetail {
+    text-decoration-color: var(--green);
+}
+.blueDetail {
+    text-decoration-color: var(--blue);
+}
+.purpleDetail {
+    text-decoration-color: var(--purple);
+}

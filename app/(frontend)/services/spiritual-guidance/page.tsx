@@ -1,15 +1,15 @@
 'use client';
 
 import { useLocale } from '@/lib/i18n/LocaleContext';
-import { CounselingContent } from '@/lib/content/counseling';
+import { GuidanceContent } from '@/lib/content/guidance';
 
-export default function Counseling() {
+export default function Guidance() {
   const { locale } = useLocale();
-  const t = CounselingContent[locale];
+  const t = GuidanceContent[locale];
 
   return (
     <div className="page-container">
-      <div className="page-hero">
+     <div className="page-hero">
         <h2>{t.quote}</h2>
       </div>
       <div className='section-container'>
