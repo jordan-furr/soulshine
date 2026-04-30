@@ -10,48 +10,85 @@ export default function Footer() {
 
   return (
     <footer>
-      <div>
-        <div>
-          {/* Column 1: Brand */}
+      <div className='footer'>
+        <div className='flex-row'>
           <div>
-            <h3>Portfolio</h3>
+            <h3 className='soulshine'>Soulshine</h3>
             <p>
               {locale === 'en'
-                ? 'Your digital products and insights'
-                : 'Ihre digitalen Produkte und Einblicke'}
+                ? 'From eArth to heArt is my Art'
+                : 'From eArth to heArt is my Art'}
+            </p>
+            <p>
+              {locale === 'en'
+                ? 'Guiding souls into presence, power, and peace.'
+                : 'Guiding souls into presence, power, and peace.'}
             </p>
           </div>
-
-          {/* Column 2: Links */}
           <div>
             <h3>
-              {locale === 'en' ? 'Quick Links' : 'Schnellzugriff'}
+              {locale === 'en' ? 'Services' : 'Services'}
             </h3>
             <ul>
               <li>
-                <Link href="/">
-                  {t.nav.home}
+                <Link href="/services/counseling">
+                  {t.nav.counseling}
                 </Link>
               </li>
               <li>
                 <Link href="/blog">
-                  {t.nav.blog}
+                  {t.nav.guidance}
                 </Link>
               </li>
               <li>
-                <Link href="/products">
-                  {t.nav.products}
+                <Link href="/blog">
+                  {t.nav.integration}
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog">
+                  {t.nav.ceremonies}
                 </Link>
               </li>
               <li>
                 <Link href="/contact">
-                  {t.nav.contact}
+                  {t.nav.matrimony}
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog">
+                  {t.nav.cacao}
+                </Link>
+              </li>
+              <li>
+                <Link href="/products">
+                  {t.nav.international}
+                </Link>
+              </li>
+              
+              
+            </ul>
+          </div>
+          <div>
+            <h3>Begin</h3>
+            <ul>
+              <li>
+                <Link href="/contact">
+                  {t.common.bookSession}
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact">
+                  {t.common.getInTouch}
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact">
+                  {t.nav.testimonials}
                 </Link>
               </li>
             </ul>
           </div>
-
-          {/* Column 3: Legal */}
           <div>
             <h3>Legal</h3>
             <ul>
@@ -60,16 +97,11 @@ export default function Footer() {
                   {t.footer.privacy}
                 </Link>
               </li>
-              <li>
-                <Link href="/terms">
-                  {t.footer.terms}
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
         <div>
-          <p>© {new Date().getFullYear()} Portfolio. {t.footer.rights}.</p>
+          <p>© {new Date().getFullYear()} Soulshine. {t.footer.rights}.</p>
         </div>
       </div>
     </footer>

@@ -3,28 +3,48 @@ export type Locale = 'en' | 'de';
 export const translations = {
   en: {
     nav: {
-      home: 'Home',
       about: 'About',
-      blog: 'Blog',
-      products: 'Products',
+      services: 'Services',
+      // sub items
+      counseling: 'Counseling & Therapy',
+      guidance: 'Spiritual Guidance',
+      cacao: 'Cacao Meditations',
+      integration: 'Medicine Integration Support',
+      ceremonies: 'Shamanic Healing Ceremonies',
+      matrimony: 'Shamanic Matrimony',
+      international: 'Distance Energy Healing',
+      // ... end services
+      publications: 'Publications',
+      testimonials: 'Testimonials',
+      soulScibe: 'Soulscribe',
       contact: 'Contact',
     },
     footer: {
       rights: 'All rights reserved',
       privacy: 'Privacy Policy',
-      terms: 'Terms of Service',
+    },
+    common: {
+      bookSession: 'Book a session',
+      learnMore: 'Learn more',
+      getInTouch: 'Get in touch',
+    },
+    contact: {
+      formName: 'Your name',
+      formEmail: 'Your email',
+      formMessage: 'Your message',
+      formSend: 'Send message',
+      phone: 'Phone',
+      email: 'Email',
     },
     products: {
       buy: 'Buy Now',
       price: 'Price',
       download: 'Download',
-      addToCart: 'Add to Cart',
     },
     blog: {
       readMore: 'Read More',
-      backToBlog: 'Back to Blog',
+      back: 'Back',
       publishedOn: 'Published on',
-      author: 'Author',
     },
     checkout: {
       title: 'Checkout',
@@ -34,31 +54,65 @@ export const translations = {
       success: 'Payment Successful!',
       error: 'Payment Failed',
     },
+    home: {
+      tagline: 'sArAh from eArth to heArt:',
+      description: 'Psycho-spiritual guidance & healing',
+      hero: 'Come home to your soul, your truth, your light',
+      book: 'Book a Consultation',
+      life: [
+        'The foundation of life is freedom',
+        'The result of life is expansion',
+        'The purpose of life is joy'
+      ]
+    }
   },
   de: {
     nav: {
-      home: 'Startseite',
       about: 'Über',
-      blog: 'Blog',
-      products: 'Produkte',
+      team: 'Sarah, Team, & Soulwayo',
+      philosophy: 'Philosophy',
+      testimonials: 'Testimonials',
+      // ... end about
+      services: 'Angebote',
+      //sub items
+      counseling: 'Beratung & Therapie',
+      guidance: 'Spiritual Guidance',
+      ceremonies: 'Heilzeremonien',
+      integration: 'Integrationsbegleitung',
+      cacao: 'Cacao Meditations',
+      international: 'International Energy Work',
+      matrimony: 'Shamanic Matrimony',
+      //
+      publications: 'Bücher',
+      soulScibe: 'Soul Scribe',
       contact: 'Kontakt',
     },
     footer: {
       rights: 'Alle Rechte vorbehalten',
       privacy: 'Datenschutz',
-      terms: 'AGB',
+    },
+    common: {
+      bookSession: 'Termin buchen',
+      learnMore: 'Mehr erfahren',
+      getInTouch: 'Kontakt aufnehmen',
+    },
+    contact: {
+      formName: 'Dein Name',
+      formEmail: 'Deine E-Mail',
+      formMessage: 'Deine Nachricht',
+      formSend: 'Nachricht senden',
+      phone: 'Telefon',
+      email: 'E-Mail',
     },
     products: {
       buy: 'Jetzt kaufen',
       price: 'Preis',
       download: 'Herunterladen',
-      addToCart: 'In den Warenkorb',
     },
     blog: {
       readMore: 'Mehr lesen',
-      backToBlog: 'Zurück zum Blog',
+      back: 'Zurück',
       publishedOn: 'Veröffentlicht am',
-      author: 'Autor',
     },
     checkout: {
       title: 'Kasse',
@@ -68,6 +122,17 @@ export const translations = {
       success: 'Zahlung erfolgreich!',
       error: 'Zahlung fehlgeschlagen',
     },
+    home: {
+      tagline: 'sArAh from eArth to heArt:',
+      description: 'Psycho-spiritual guidance & healing',
+      hero: 'Come home to your soul, your truth, your light',
+      book: 'Book a Consultation',
+      life: [
+        'The foundation of life is freedom',
+        'The result of life is expansion',
+        'The purpose of life is joy'
+      ]
+    }
   },
 };
 
