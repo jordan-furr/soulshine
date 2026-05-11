@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Dancing+Script:wght@500;600&family=Lato:wght@300;400&family=Cinzel:wght@400;500&display=swap');
+
+:root {
+  /* ── Colors ── */
+  --background: #F8F5F1;
+
+  /* Sand scale */
+  --color-sand:       #F5F0E8;
+  --color-sand-dark:  #EDE8DE;
+  --color-sand-deep:  #E0D8C8;
+
+  /* Text */
+  --color-bark:       #3D3530;
+  --color-bark-light: #8a7a6a;
+  --color-bark-mid:   #5a4a32;
+
+  /* Accents */
+  --color-sage:       #4a7a5a;
+  --color-sage-pale:  #b8d4c0;
+  --color-amber:      #8b6a3a;
+  --color-amber-dark: #6B5F54;
+
+  /* Footer */
+  --color-footer-bg:  #2e2420;
+  --color-stone:      #c8b898;
+
+  /* ── Typography ── */
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body:    'Lora', sans-serif;
+  --font-nav:     'Lato', sans-serif;
+  --font-accent:  'Dancing Script', cursive;
+  --font-cinzel:  'Cinzel', serif;
+
+  /* ── Nav tokens (used by navbar.css) ── */
+  --nav-accent:        #6B5F54;
+  --nav-accent-light:  #8a6e5e;
+  --nav-text:          #3D3530;
+  --nav-muted:         #A89890;
+  --nav-bg:            #F5F0E8;
+  --nav-border:        rgba(180, 160, 145, 0.18);
+  --nav-font:          'Lato', sans-serif;
+  --nav-font-display:  'Cinzel', serif;
+  --ease:              cubic-bezier(0.4, 0, 0.2, 1);
+  --transition:        0.3s ease;
+
+  /* ── Nav heights (used by navbar.css) ── */
+  --nav-logo-row:        80px;
+  --nav-nav-row:         40px;
+  --nav-height:          144px;
+  --nav-height-scrolled: 52px;
+}
+
+/* ── Base ── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-sand);
+  color: #3D3530;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+h1 { margin-bottom: 2rem; }
+
+/* ── Navbar spacer ── */
+
+.navbar-spacer {
+  height: var(--nav-height);
+}
+
+@media (max-width: 900px) {
+  .navbar-spacer {
+    height: var(--nav-logo-row);
+  }
+}
+
+/* ── Buttons ── */
+
+.button1 {
+  color: white;
+  background-color: var(--nav-text);
+  padding: 14px 33px;
+  font-size: 1rem;
+  border: 2px solid var(--nav-text);
+  border-radius: 33px;
+  transition: 0.15s var(--ease);
+  cursor: pointer;
+  margin-top: .33rem;
+  margin-bottom: 1.33rem;
+  letter-spacing: 0.11em;
+}
+
+.button1:hover {
+  background-color: #F8F5F1;
+  color: var(--nav-text);
+  transform: scale(1.01);
+}
+
+.button2 {
+  color: var(--nav-text);
+  background-color: var(--nav-bg);
+  padding: 14px 33px;
+  font-size: 1rem;
+  border: 2px solid var(--nav-text);
+  border-radius: 33px;
+  transition: 0.15s var(--ease);
+  cursor: pointer;
+  margin-top: .33rem;
+  margin-bottom: 1.33rem;
+  letter-spacing: 0.11em;
+}
+
+.button2:hover {
+  background-color: var(--nav-text);
+  color: var(--nav-bg);
+  transform: scale(101%);
+}
+
+/* ── Footer links ── */
+
+.footer a {
+  color: var(--nav-accent-light);
+  margin-bottom: .5rem;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--nav-text);
+  text-decoration: underline;
+}
+
+/* ── Utilities ── */
+
+.bg-cream { background-color: var(--background); }
+.w33      { width: 33%; }
+.w67      { width: 67%; }
+.mb5      { margin-bottom: 2rem; }
