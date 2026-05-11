@@ -107,23 +107,22 @@
   height: var(--nav-nav-row);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* always centered */
   padding: 0 2.5rem;
   position: relative;
   transition: height 0.35s var(--ease);
 }
 
-/* When scrolled: nav row takes full height and shifts left/right */
 .navbar--scrolled .navbar__nav-row {
   height: var(--nav-height-scrolled);
-  justify-content: space-between;
+  /* no justify-content change — nav stays centered */
 }
 
-/* Scrolled logo — appears inline in nav row */
+/* Scrolled inline logo — absolute left, doesn't affect centering */
 .navbar__nav-row::before {
   content: 'SOULSHINE';
   font-family: var(--nav-font-display);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 400;
   letter-spacing: 0.28em;
   color: var(--nav-accent);
@@ -131,6 +130,8 @@
   pointer-events: none;
   transition: opacity 0.25s ease;
   white-space: nowrap;
+  position: absolute;
+  left: 2.5rem;
 }
 
 .navbar--scrolled .navbar__nav-row::before {
@@ -181,7 +182,7 @@
   color: inherit;
 }
 
-/* ── Actions ── */
+/* ── Actions — always absolute right, never in flow ── */
 .navbar__actions {
   position: absolute;
   right: 2.5rem;
@@ -236,9 +237,9 @@
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  padding: 0.38rem 1rem 0.38rem 0.9rem;
+  padding: 0.33rem 1rem 0.33rem 0.9rem;
   font-family: var(--nav-font);
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 300;
   letter-spacing: 0.06em;
   color: var(--nav-accent-light);
@@ -434,13 +435,8 @@
 .mobile-sub-link:last-child { padding-bottom: 1rem; }
 .mobile-sub-link:hover { color: var(--nav-text); }
 
-.mobile-sub-link .nav-dot {
-  transition: transform 0.2s ease;
-}
-
-.mobile-sub-link:hover .nav-dot {
-  transform: scale(1.4);
-}
+.mobile-sub-link .nav-dot { transition: transform 0.2s ease; }
+.mobile-sub-link:hover .nav-dot { transform: scale(1.4); }
 
 .mobile-lang {
   margin-top: 2.5rem;
@@ -493,7 +489,6 @@
     padding: 0;
   }
 
-  /* On mobile, scrolled state shows logo row only */
   .navbar--scrolled .navbar__nav-row {
     height: 0 !important;
   }
