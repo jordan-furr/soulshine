@@ -33,7 +33,7 @@ export default function Footer({
         <div className="footer__brand">
           <Link href="/" className="footer__logo-link">
             <Image
-              src="/images/soulshine-symbol.svg"
+              src="/images/soulshine-three.png"
               alt="Soulshine"
               width={40}
               height={40}

@@ -44,9 +44,9 @@
   --transition:        0.3s ease;
 
   /* ── Nav heights (used by navbar.css) ── */
-  --nav-logo-row:        110px;
-  --nav-nav-row:         40px;
-  --nav-height:          154px;
+  --nav-logo-row:        88px;
+  --nav-nav-row:         33px;
+  --nav-height:          133px;
   --nav-height-scrolled: 52px;
 }
 
