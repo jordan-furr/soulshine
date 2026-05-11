@@ -145,10 +145,10 @@ export default function Navbar() {
             {/* Symbol — hidden when scrolled */}
             <span className="navbar__logo-symbol" aria-hidden="true">
               <Image
-                src="/images/soulshine-symbol.svg"
+                src="/images/soulshine-three.png"
                 alt=""
-                width={36}
-                height={36}
+                width={40}
+                height={40}
                 priority
               />
             </span>

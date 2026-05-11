@@ -2,17 +2,18 @@ import Image from 'next/image'
 
 export default function PrayerSection() {
   return (
-    <section className="prayer-section">
-      <div className="prayer-section__image-wrapper">
+    <>
+      <div className="prayer-strip">
         <Image
-          src="/images/prayer-art.jpg"
-          alt="Spirit painting"
+          src="/images/strip.png"
+          alt=""
           fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="prayer-section__image"
+          sizes="100vw"
+          className="prayer-strip__image"
+          aria-hidden="true"
         />
       </div>
-      <div className="prayer-section__content">
+      <section className="prayer-section">
         <p className="prayer-section__label">A Medicine Woman&apos;s Prayer</p>
         <blockquote className="prayer-section__text">
           <p>I will not rescue you,</p>
@@ -24,7 +25,7 @@ export default function PrayerSection() {
           <p>I will walk with you through the darkness,</p>
           <p>as you remember your light.</p>
         </blockquote>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }

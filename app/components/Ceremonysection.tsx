@@ -12,7 +12,7 @@ export default function CeremonySection({ label, headline, cta }: CeremonySectio
     <section className="ceremony-section">
       <div className="ceremony-section__image-wrapper">
         <Image
-          src="/images/soulwayo-ceremony.jpg"
+          src="/images/ceremony.jpg"
           alt="Sarah and her partner during a shamanic healing ceremony"
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
