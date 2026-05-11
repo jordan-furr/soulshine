@@ -42,7 +42,7 @@
 
 .triptych__eyebrow {
   font-family: var(--font-display);
-  font-size: 0.58rem;
+  font-size: var(--text-eyebrow);
   letter-spacing: 0.2em;
   color: var(--color-sage-pale);
   text-transform: uppercase;
@@ -120,7 +120,7 @@
   font-family: var(--font-serif);
   font-weight: 300;
   font-style: italic;
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: var(--text-h2);
   color: var(--color-bark);
   line-height: 1.45;
 }
@@ -162,72 +162,62 @@
   margin: 0 auto;
 }
 
-/* ─── Prayer Section ────────────────────────────────── */
+/* ─── Prayer Strip ──────────────────────────────────── */
 
-.prayer-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 400px;
-  background-color: var(--color-sand-dark);
-}
-
-.prayer-section__image-wrapper {
+.prayer-strip {
   position: relative;
+  width: 100%;
+  height: 200px;
   overflow: hidden;
-  min-height: 400px;
 }
 
-.prayer-section__image {
+.prayer-strip__image {
   object-fit: cover;
   object-position: center;
-  transition: transform 0.8s ease;
 }
 
-.prayer-section__image-wrapper:hover .prayer-section__image {
-  transform: scale(1.03);
-}
-
-.prayer-section__content {
+/* ─── Prayer Section ────────────────────────────────── */
+.prayer-section {
+  background-color: var(--color-sand-dark);
+  padding: 6rem 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 4rem 3.5rem;
-  gap: 1.75rem;
+  align-items: center;
+  text-align: center;
 }
 
 .prayer-section__label {
   font-family: var(--font-display);
-  font-size: 0.58rem;
+  font-size: var(--text-eyebrow);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-bark-light);
+  margin-bottom: 2.5rem;
 }
 
 .prayer-section__text {
   font-family: var(--font-serif);
   font-weight: 300;
   font-style: italic;
-  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  font-size: var(--text-prayer);
   color: var(--color-bark-mid);
-  line-height: 2.1;
+  line-height: 2.2;
   border: none;
+  max-width: 560px;
 }
 
 .prayer-section__text p {
   margin: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .prayer-section {
-    grid-template-columns: 1fr;
+    padding: 4rem 2rem;
   }
 
-  .prayer-section__image-wrapper {
-    min-height: 280px;
-  }
-
-  .prayer-section__content {
-    padding: 3rem 2rem;
+  .prayer-section__text {
+    font-size: 1.05rem;
+    line-height: 2;
   }
 }
 
@@ -265,7 +255,7 @@
 
 .ceremony-section__label {
   font-family: var(--font-display);
-  font-size: 0.58rem;
+  font-size: var(--text-eyebrow);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-amber);
@@ -275,7 +265,7 @@
   font-family: var(--font-serif);
   font-weight: 300;
   font-style: italic;
-  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  font-size: var(--text-h2);
   color: var(--color-bark);
   line-height: 1.45;
 }
@@ -328,7 +318,7 @@
 
 .services-section__eyebrow {
   font-family: var(--font-display);
-  font-size: 0.58rem;
+  font-size: var(--text-eyebrow);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-bark-light);

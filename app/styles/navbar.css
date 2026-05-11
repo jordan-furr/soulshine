@@ -1,25 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Cinzel:wght@400;500&display=swap');
 
-/* ── Variables ── */
-:root {
-  --nav-bg:             #F5F0E8;
-  --nav-text:           #3D3530;
-  --nav-accent:         #6B5F54;
-  --nav-accent-light:   #8a7a6a;
-  --nav-muted:          #A89890;
-  --nav-border:         rgba(180, 160, 145, 0.18);
-  --nav-font:           'Lato', sans-serif;
-  --nav-font-display:   'Cinzel', serif;
-  --ease:               cubic-bezier(0.4, 0, 0.2, 1);
-
-  /* Heights */
-  --nav-logo-row:       64px;
-  --nav-tagline-row:    24px;
-  --nav-nav-row:        40px;
-  --nav-height:         104px; /* logo + tagline + nav */
-  --nav-height-scrolled: 52px;
-}
-
 /* ── Base ── */
 .navbar {
   position: fixed;
@@ -122,18 +102,6 @@
 .navbar__logo:hover .navbar__logo-rainbow { opacity: 0; }
 .navbar__logo:hover .navbar__logo-hover   { opacity: 1; }
 
-/* ── Tagline ── */
-.navbar__tagline {
-  font-family: var(--nav-font);
-  font-weight: 300;
-  font-style: italic;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  color: var(--nav-muted);
-  margin: 0;
-  transition: opacity 0.2s ease;
-}
-
 /* ── Nav row ── */
 .navbar__nav-row {
   height: var(--nav-nav-row);
@@ -193,7 +161,7 @@
   gap: 0.3rem;
   padding: 0.4rem 0.85rem;
   font-family: var(--nav-font);
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   font-weight: 300;
   letter-spacing: 0.1em;
   color: var(--nav-accent-light);
@@ -270,7 +238,7 @@
   gap: 0.65rem;
   padding: 0.38rem 1rem 0.38rem 0.9rem;
   font-family: var(--nav-font);
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   font-weight: 300;
   letter-spacing: 0.06em;
   color: var(--nav-accent-light);
@@ -324,7 +292,7 @@
 }
 
 .lang-globe__label {
-  font-size: 0.68rem;
+  font-size: 0.8rem;
   font-weight: 300;
   letter-spacing: 0.1em;
   line-height: 1;
