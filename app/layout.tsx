@@ -1,6 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
+import { Cormorant_Garamond } from 'next/font/google';
 import { LocaleProvider } from '@/lib/i18n/LocaleContext';
+import './styles/globals.css';
 
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -26,9 +35,7 @@ export const metadata: Metadata = {
     alternateLocale: 'de_CH',
     siteName: 'Soulshine Sarah',
     title: 'Soulshine Sarah — Psycho-Spiritual Counseling & Healing',
-    description:
-      'Psycho-spiritual counseling and healing with Sarah Preisig.',
-    // Uncomment when you have an OG image:
+    description: 'Psycho-spiritual counseling and healing with Sarah Preisig.',
     // images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: {
@@ -40,11 +47,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cormorant.variable}>
       <body>
         <LocaleProvider>
           {children}

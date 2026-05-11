@@ -1,30 +1,20 @@
-import type { Metadata } from "next";
-import "../globals.css";
-import "../styles/pages.css"
-import "../styles/components.css"
-import "../styles/animations.css"
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-
-
-export const metadata: Metadata = {
-  title: "Soulshine Sarah",
-  description: "Soulshine Sarah",
-};
-
-export default function RootLayout({
+import Navbar from '../components/Navbar';
+import FooterWrapper from '../components/Footerwrapper';
+import '../styles/navbar.css';
+import '../styles/homepage.css';
+ 
+export default function FrontendLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <>
       <Navbar />
-      <div className="navbar-spacer" aria-hidden="true" />
-      <main id="main-content">
-        {children}
-      </main>
-      <Footer />
+      <div className="navbar-spacer" />
+      <main>{children}</main>
+      <FooterWrapper />
     </>
   );
 }
+ 
