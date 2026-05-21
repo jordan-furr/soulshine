@@ -3,6 +3,7 @@ import FooterWrapper from '../components/Footerwrapper';
 import '../styles/navbar.css';
 import '../styles/homepage.css';
 import '../styles/services.css';
+import '../styles/about.css';
  
 export default function FrontendLayout({
   children,
