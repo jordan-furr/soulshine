@@ -32,26 +32,17 @@ const GlobeIcon = () => (
 );
 
 function Dot({ color }: { color: string }) {
-  return (
-    <span
-      className="nav-dot"
-      style={{ background: color }}
-      aria-hidden="true"
-    />
-  );
+  return <span className="nav-dot" style={{ background: color }} aria-hidden="true" />;
 }
 
 function DropdownItem({ item }: { item: NavItem }) {
   if (!item.children) {
     return (
       <li className="nav-item">
-        <Link href={item.href} className="nav-link">
-          {item.label}
-        </Link>
+        <Link href={item.href} className="nav-link">{item.label}</Link>
       </li>
     );
   }
-
   return (
     <li className="nav-item nav-item--has-dropdown">
       <Link href={item.href} className="nav-link">
@@ -77,13 +68,7 @@ function DropdownItem({ item }: { item: NavItem }) {
   );
 }
 
-function LangGlobe({
-  locale,
-  setLocale,
-}: {
-  locale: string;
-  setLocale: (l: 'en' | 'de') => void;
-}) {
+function LangGlobe({ locale, setLocale }: { locale: string; setLocale: (l: 'en' | 'de') => void }) {
   const next = locale === 'en' ? 'de' : 'en';
   return (
     <button
@@ -97,9 +82,62 @@ function LangGlobe({
   );
 }
 
+interface MenuOverlayProps {
+  navItems: NavItem[];
+  onClose: () => void;
+  isClosing: boolean;
+}
+
+function MenuOverlay({ navItems, onClose, isClosing }: MenuOverlayProps) {
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    if (isClosing) {
+      setAnimate(false);
+    } else {
+      requestAnimationFrame(() => setAnimate(true));
+    }
+  }, [isClosing]);
+
+  return (
+    <div className={`mobile-overlay ${animate && !isClosing ? 'mobile-overlay--open' : ''}`}>
+      <nav className="mobile-overlay__nav">
+        {navItems.map((item, i) => (
+          <div key={item.href} className="mobile-overlay__item-wrap">
+            <Link
+              href={item.href}
+              className={`mobile-overlay__link ${animate && !isClosing ? 'mobile-overlay__link--visible' : ''}`}
+              style={{ animationDelay: `${i * 0.08}s` }}
+              onClick={onClose}
+            >
+              {item.label}
+            </Link>
+            {item.children && (
+              <div className="mobile-overlay__subitems">
+                {item.children.map((child, j) => (
+                  <Link
+                    key={child.href}
+                    href={child.href}
+                    className={`mobile-overlay__sublink ${animate && !isClosing ? 'mobile-overlay__link--visible' : ''}`}
+                    style={{ animationDelay: `${(i + j + 1) * 0.05}s` }}
+                    onClick={onClose}
+                  >
+                    {child.dot && <Dot color={child.dot} />}
+                    {child.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </nav>
+    </div>
+  );
+}
+
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [isClosing, setIsClosing] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { locale, setLocale } = useLocale();
   const t = getTranslations(locale);
@@ -110,19 +148,32 @@ export default function Navbar() {
       label: t.nav.services,
       href: '/services',
       children: [
-        { label: t.nav.counseling,   href: '/services/counseling',         dot: '#e60000' },
-        { label: t.nav.guidance,     href: '/services/spiritual-guidance',  dot: '#e66400' },
-        { label: t.nav.ceremonies,   href: '/services/shamanic-healing',    dot: '#e6e200' },
-        { label: t.nav.integration,  href: '/services/integration-support', dot: '#28aa0e' },
-        { label: t.nav.cacao,        href: '/services/cacao-meditations',   dot: '#0096e6' },
-        { label: t.nav.international,href: '/services/distance-energy',     dot: '#1b05ac' },
-        { label: t.nav.matrimony,    href: '/services/matrimony',           dot: '#7301d0' },
+        { label: t.nav.counseling,    href: '/services/counseling',          dot: '#e60000' },
+        { label: t.nav.guidance,      href: '/services/spiritual-guidance',  dot: '#e66400' },
+        { label: t.nav.ceremonies,    href: '/services/shamanic-ceremonies',    dot: '#e6e200' },
+        { label: t.nav.integration,   href: '/services/medicine-integration', dot: '#28aa0e' },
+        { label: t.nav.cacao,         href: '/services/cacao-meditations',   dot: '#0096e6' },
+        { label: t.nav.international, href: '/services/distance-work',     dot: '#1b05ac' },
+        { label: t.nav.matrimony,     href: '/services/shamanic-matrimony',           dot: '#7301d0' },
       ],
     },
     { label: t.nav.publications, href: '/publications' },
     { label: t.nav.testimonials, href: '/testimonials' },
     { label: t.nav.contact,      href: '/contact' },
   ];
+
+  const handleOpen = () => {
+    setIsClosing(false);
+    setMobileOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setMobileOpen(false);
+      setIsClosing(false);
+    }, 200);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -139,28 +190,45 @@ export default function Navbar() {
     <>
       <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
 
-        {/* ── Logo row — always visible ── */}
+        {/* ── Logo row ── */}
         <div className="navbar__logo-row">
-          <Link href="/" className="navbar__logo" onClick={() => setMobileOpen(false)}>
-            {/* Symbol — hidden when scrolled */}
+          {/* Desktop: stacked centered */}
+          <Link href="/" className="navbar__logo navbar__logo--desktop" onClick={() => mobileOpen && handleClose()}>
             <span className="navbar__logo-symbol" aria-hidden="true">
-              <Image
-                src="/images/soulshine-three.png"
-                alt=""
-                width={40}
-                height={40}
-                priority
-              />
+              <Image src="/images/soulshine-three.png" alt="" width={40} height={40} priority />
             </span>
-            {/* Wordmark — rainbow default, solid on hover */}
             <span className="navbar__logo-wordmark">
               <span className="navbar__logo-rainbow" aria-hidden="true">Soulshine</span>
               <span className="navbar__logo-hover">Soulshine</span>
             </span>
-          </Link> 
+          </Link>
+          {/* Mobile: horizontal lockup */}
+          <Link href="/" className="navbar__logo navbar__logo--mobile" onClick={() => mobileOpen && handleClose()}>
+            <span className="navbar__logo-symbol" aria-hidden="true">
+              <Image src="/images/soulshine-three.png" alt="" width={28} height={28} priority />
+            </span>
+            <span className="navbar__logo-wordmark">
+              <span className="navbar__logo-rainbow" aria-hidden="true">Soulshine</span>
+              <span className="navbar__logo-hover">Soulshine</span>
+            </span>
+          </Link>
+          {/* Mobile actions — right side */}
+          <div className="navbar__mobile-actions">
+            <LangGlobe locale={locale} setLocale={setLocale} />
+            <button
+              className={`hamburger${mobileOpen ? ' hamburger--open' : ''}`}
+              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileOpen}
+              onClick={mobileOpen ? handleClose : handleOpen}
+            >
+              <span className="hamburger__bar" />
+              <span className="hamburger__bar" />
+              <span className="hamburger__bar" />
+            </button>
+          </div>
         </div>
 
-        {/* ── Nav row ── */}
+        {/* ── Nav row — desktop only ── */}
         <div className="navbar__nav-row">
           <nav className="navbar__nav" aria-label="Main navigation">
             <ul className="nav-list">
@@ -169,92 +237,22 @@ export default function Navbar() {
               ))}
             </ul>
           </nav>
+          {/* Desktop globe — right */}
           <div className="navbar__actions">
             <LangGlobe locale={locale} setLocale={setLocale} />
-            <button
-              className={`hamburger${mobileOpen ? ' hamburger--open' : ''}`}
-              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={mobileOpen}
-              onClick={() => setMobileOpen((v) => !v)}
-            >
-              <span className="hamburger__bar" />
-              <span className="hamburger__bar" />
-              <span className="hamburger__bar" />
-            </button>
           </div>
         </div>
+
       </header>
 
       {/* ── Mobile overlay ── */}
-      <div
-        className={`mobile-overlay${mobileOpen ? ' mobile-overlay--visible' : ''}`}
-        aria-hidden={!mobileOpen}
-      >
-        <nav aria-label="Mobile navigation">
-          <ul className="mobile-nav-list">
-            {navItems.map((item) => (
-              <li key={item.href} className="mobile-nav-item">
-                {item.children ? (
-                  <>
-                    <div className="mobile-nav-row">
-                      <Link
-                        href={item.href}
-                        className="mobile-nav-link"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                      <button
-                        className={`mobile-nav-toggle${mobileExpanded === item.href ? ' mobile-nav-toggle--open' : ''}`}
-                        onClick={() =>
-                          setMobileExpanded(mobileExpanded === item.href ? null : item.href)
-                        }
-                        aria-label="Expand submenu"
-                      >
-                        <Chevron />
-                      </button>
-                    </div>
-                    <ul className={`mobile-sub-list${mobileExpanded === item.href ? ' mobile-sub-list--open' : ''}`}>
-                      {item.children.map((child) => (
-                        <li key={child.href}>
-                          <Link
-                            href={child.href}
-                            className="mobile-sub-link"
-                            onClick={() => setMobileOpen(false)}
-                          >
-                            {child.dot && <Dot color={child.dot} />}
-                            {child.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="mobile-nav-link"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-          <div className="mobile-lang">
-            <span className="mobile-lang-label">Language</span>
-            {(['en', 'de'] as const).map((l) => (
-              <button
-                key={l}
-                className={`mobile-lang-btn${locale === l ? ' mobile-lang-btn--active' : ''}`}
-                onClick={() => setLocale(l)}
-              >
-                {l === 'en' ? 'EN' : 'DE'}
-              </button>
-            ))}
-          </div>
-        </nav>
-      </div>
+      {(mobileOpen || isClosing) && (
+        <MenuOverlay
+          navItems={navItems}
+          onClose={handleClose}
+          isClosing={isClosing}
+        />
+      )}
     </>
   );
 }

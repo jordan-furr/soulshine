@@ -77,15 +77,15 @@
 
 @media (max-width: 768px) {
   .triptych {
-    grid-template-columns: 1fr;
-    grid-template-rows: 280px auto 200px;
+   grid-template-columns: 1fr;
+    grid-template-rows: auto 520px;
     height: auto;
     max-height: none;
   }
 
-  .triptych__panel-left { grid-row: 1; }
-  .triptych__panel-center { grid-row: 2; padding: 3.5rem 2rem; }
-  .triptych__panel-right { grid-row: 3; }
+  .triptych__panel-left { order: 1; }
+  .triptych__panel-center { order: 0; padding: 3.5rem 2rem;}
+  .triptych__panel-right { display: none; }
 
   .triptych__headline { font-size: 1.7rem; }
 }

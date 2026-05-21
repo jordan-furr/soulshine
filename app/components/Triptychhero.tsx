@@ -16,7 +16,7 @@ export default function TriptychHero({
     <section className="triptych" aria-label="Hero">
       <div className="triptych__panel-left">
         <Image
-          src="/images/drum.jpg"
+          src="/images/drum.JPG"
           alt="Sarah playing the drum"
           fill
           priority

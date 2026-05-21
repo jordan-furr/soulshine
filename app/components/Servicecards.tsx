@@ -29,7 +29,7 @@ export default function ServiceCards({ eyebrow, services }: ServiceCardsProps) {
           >
             <div className="service-card__image-wrapper">
               <Image
-                src={`/images/services/${service.slug}.jpg`}
+                src={`/images/services/${service.slug}.jpeg`}
                 alt={service.label}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

@@ -63,7 +63,6 @@ export default function Footer({
             <li><Link href="/contact" className="footer__col-link">{bookLabel}</Link></li>
             <li><Link href="/testimonials" className="footer__col-link">{testimonialsLabel}</Link></li>
             <li><Link href="/publications" className="footer__col-link">{publicationsLabel}</Link></li>
-            <li><Link href="/soulscribe" className="footer__col-link">{soulscribeLabel}</Link></li>
             <li><Link href="/about" className="footer__col-link">{aboutLabel}</Link></li>
           </ul>
         </div>

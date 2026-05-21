@@ -1,20 +1,9 @@
 'use client';
-
 import { useLocale } from '@/lib/i18n/LocaleContext';
-import { CacaoContent } from '@/lib/content/cacao';
+import { cacaoContent } from '@/lib/content/services';
+import ServiceLayout from '@/app/components/Servicelayout';
 
-export default function Cacao() {
+export default function CacaoMeditationsPage() {
   const { locale } = useLocale();
-  const t = CacaoContent[locale];
-
-  return (
-    <div className="page-container">
-      <div className="page-hero">
-        <h1>{t.title}</h1>
-      </div>
-      <div className='section-container'>
-        <h1>{t.description}</h1>
-      </div>
-    </div>
-  );
+  return <ServiceLayout content={cacaoContent[locale]} image="/images/services/cacao-meditations.jpeg" />;
 }
