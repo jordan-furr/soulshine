@@ -14,8 +14,8 @@ export default function LogoSection({ tagline, headline, cta }: LogoSectionProps
         <Image
           src="/images/soulshine.png"
           alt="Soulshine symbol"
-          width={80}
-          height={80}
+          width={133}
+          height={133}
         />
       </div>
       <p className="logo-section__tagline">{tagline}</p>

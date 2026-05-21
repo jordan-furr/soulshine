@@ -14,7 +14,7 @@
 
 .about-header__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.65rem;
+  font-size: 0.88rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -70,7 +70,7 @@
 /* ── Typography ── */
 .about-section__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.65rem;
+  font-size: 0.88rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -114,7 +114,7 @@
 
 .about-section__link {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.65rem;
+  font-size: 0.88rem;
   font-weight: 300;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -189,7 +189,7 @@
 .about-cta__btn {
   display: inline-block;
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.65rem;
+  font-size: 0.88rem;
   font-weight: 300;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -221,7 +221,7 @@
 
 .publications-header {
   background-color: var(--color-sage);
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -231,7 +231,7 @@
 
 .publications-header__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.65rem;
+  font-size: .88rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -455,7 +455,7 @@
 
 .testimonials-header__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.65rem;
+  font-size: 0.88rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -538,7 +538,7 @@
 .testimonials-cta__btn {
   display: inline-block;
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.65rem;
+  font-size: 0.88rem;
   font-weight: 300;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -579,7 +579,7 @@
 
 .contact-header__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.65rem;
+  font-size: 0.88rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -634,7 +634,7 @@
 
 .contact-info__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.65rem;
+  font-size: 0.88rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
