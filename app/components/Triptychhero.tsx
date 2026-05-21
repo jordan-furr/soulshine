@@ -27,7 +27,7 @@ export default function TriptychHero({
 
       <div className="triptych__panel-center">
         <p className="triptych__eyebrow">{eyebrow}</p>
-        <h1 className="triptych__headline">{headline}</h1>
+        <h1 className="triptych__headline reveal">{headline}</h1>
         <Link href="/contact" className="triptych__cta">
           {cta}
         </Link>

@@ -15,7 +15,7 @@ export default function PublicationsPage() {
       {/* ── Header ── */}
       <section className="publications-header">
         <p className="publications-header__label">{t.pageLabel}</p>
-        <h1 className="publications-header__headline">{t.pageHeadline}</h1>
+        <h1 className="publications-header__headline reveal">{t.pageHeadline}</h1>
         <p className="publications-header__intro">{t.intro}</p>
       </section>
 

@@ -22,7 +22,7 @@ export default function ServiceLayout({ content, image }: ServiceLayoutProps) {
       <section className="service-hero">
         <div className="service-hero__content">
           <p className="service-hero__label">{content.label}</p>
-          <h1 className="service-hero__headline">{content.headline}</h1>
+          <h1 className="service-hero__headline reveal">{content.headline}</h1>
           <Link href="/contact" className="service-hero__cta">
             {t.common.bookSession}
           </Link>

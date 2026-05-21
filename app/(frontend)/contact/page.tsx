@@ -13,7 +13,7 @@ export default function ContactPage() {
       {/* ── Header ── */}
       <section className="contact-header">
         <p className="contact-header__label">{t.nav.contact}</p>
-        <h1 className="contact-header__headline">
+        <h1 className="contact-header__headline reveal">
           {locale === 'de'
             ? 'Beginne das Gespräch.'
             : 'Begin the conversation.'}

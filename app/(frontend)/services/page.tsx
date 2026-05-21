@@ -26,7 +26,7 @@ export default function ServicesPage() {
       {/* ── Hero ── */}
       <section className="services-overview__hero">
         <p className="services-overview__eyebrow">{t.title}</p>
-        <h1 className="services-overview__headline">{t.hero}</h1>
+        <h1 className="services-overview__headline reveal">{t.hero}</h1>
       </section>
 
       {/* ── Intro ── */}

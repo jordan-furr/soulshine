@@ -13,7 +13,7 @@ export default function TestimonialsPage() {
       {/* ── Header ── */}
       <section className="testimonials-header">
         <p className="testimonials-header__label">{t.testimonial}</p>
-        <h1 className="testimonials-header__headline">
+        <h1 className="testimonials-header__headline reveal">
           {locale === 'de'
             ? 'Was Menschen über ihre Arbeit mit Sarah sagen.'
             : 'What people say about their work with Sarah.'}
