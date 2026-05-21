@@ -1,0 +1,215 @@
+/* ═══════════════════════════════════════════════════
+   ABOUT PAGE
+   ═══════════════════════════════════════════════════ */
+
+.about-header {
+  background-color: var(--color-sage);
+  padding: 5rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-header__label {
+  font-family: var(--font-nav, 'Lato', sans-serif);
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-sage-pale);
+}
+
+.about-header__headline {
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  color: #fff;
+  line-height: 1.4;
+}
+
+/* ── Sections ── */
+.about-section {
+  padding: 5rem 2rem;
+  background-color: var(--color-sand);
+}
+
+.about-section--alt {
+  background-color: var(--color-sand-dark);
+}
+
+.about-section__inner {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Image — same width as text column ── */
+.about-section__image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.about-section__image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s ease;
+}
+
+.about-section__image-wrapper:hover .about-section__image {
+  transform: scale(1.02);
+}
+
+/* ── Typography ── */
+.about-section__label {
+  font-family: var(--font-nav, 'Lato', sans-serif);
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-amber);
+}
+
+.about-section__headline {
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  color: var(--color-bark);
+  line-height: 1.4;
+}
+
+.about-section__body {
+  font-family: var(--font-body, 'Lora', serif);
+  font-size: 1rem;
+  color: var(--color-bark-mid);
+  line-height: 1.85;
+}
+
+.about-section__quote {
+  border-left: 2px solid var(--color-sage);
+  padding: 1rem 1.5rem;
+  background-color: var(--color-sand-dark);
+  margin: 0.5rem 0;
+}
+
+.about-section--alt .about-section__quote {
+  background-color: var(--color-sand);
+}
+
+.about-section__quote p {
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--color-bark);
+  line-height: 1.7;
+}
+
+.about-section__link {
+  font-family: var(--font-nav, 'Lato', sans-serif);
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-amber-dark);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.about-section__link:hover {
+  color: var(--color-bark);
+}
+
+/* ── Team ── */
+.about-team {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-team__member {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid var(--color-stone);
+}
+
+.about-team__member:last-child {
+  border-bottom: none;
+}
+
+.about-team__name {
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: var(--color-bark);
+}
+
+/* ── Training ── */
+.about-training {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.about-training__item {
+  font-family: var(--font-body, 'Lora', serif);
+  font-size: 0.95rem;
+  color: var(--color-bark-mid);
+  line-height: 1.7;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.about-training__item::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-amber);
+}
+
+/* ── CTA ── */
+.about-cta {
+  background-color: var(--color-sand-deep);
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.about-cta__btn {
+  display: inline-block;
+  font-family: var(--font-nav, 'Lato', sans-serif);
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-sand);
+  background-color: var(--color-amber-dark);
+  padding: 0.9rem 2.5rem;
+  text-decoration: none;
+  border: 1px solid var(--color-amber-dark);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.about-cta__btn:hover {
+  background-color: transparent;
+  color: var(--color-amber-dark);
+}
+
+.about-section:nth-child(2) .about-section__image-wrapper {
+  aspect-ratio: 3 / 4;
+}
+
+.about-section:nth-child(3) .about-section__image-wrapper {
+  aspect-ratio: 16 / 9;
+}
