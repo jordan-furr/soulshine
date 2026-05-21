@@ -5,54 +5,62 @@
   --background: #F8F5F1;
 
   /* Sand scale */
-  --color-sand:       #F5F0E8;
-  --color-sand-dark:  #EDE8DE;
-  --color-sand-deep:  #E0D8C8;
+  --color-sand: #F5F0E8;
+  --color-sand-dark: #EDE8DE;
+  --color-sand-deep: #E0D8C8;
 
   /* Text */
-  --color-bark:       #3D3530;
+  --color-bark: #3D3530;
   --color-bark-light: #8a7a6a;
-  --color-bark-mid:   #5a4a32;
+  --color-bark-mid: #5a4a32;
 
   /* Accents */
-  --color-sage:       #4a7a5a;
-  --color-sage-pale:  #b8d4c0;
-  --color-amber:      #8b6a3a;
+  --color-sage: #4a7a5a;
+  --color-sage-pale: #b8d4c0;
+  --color-amber: #8b6a3a;
   --color-amber-dark: #6B5F54;
 
   /* Footer */
-  --color-footer-bg:  #2e2420;
-  --color-stone:      #c8b898;
+  --color-footer-bg: #2e2420;
+  --color-stone: #c8b898;
 
   /* ── Typography ── */
   --font-display: 'Cormorant Garamond', serif;
-  --font-body:    'Lora', sans-serif;
-  --font-nav:     'Lato', sans-serif;
-  --font-accent:  'Dancing Script', cursive;
-  --font-cinzel:  'Cinzel', serif;
+  --font-body: 'Lora', sans-serif;
+  --font-nav: 'Lato', sans-serif;
+  --font-accent: 'Dancing Script', cursive;
+  --font-cinzel: 'Cinzel', serif;
 
   /* ── Nav tokens (used by navbar.css) ── */
-  --nav-accent:        #6B5F54;
-  --nav-accent-light:  #8a6e5e;
-  --nav-text:          #3D3530;
-  --nav-muted:         #A89890;
-  --nav-bg:            #F5F0E8;
-  --nav-border:        rgba(180, 160, 145, 0.18);
-  --nav-font:          'Lato', sans-serif;
-  --nav-font-display:  'Cinzel', serif;
-  --ease:              cubic-bezier(0.4, 0, 0.2, 1);
-  --transition:        0.3s ease;
+  --nav-accent: #6B5F54;
+  --nav-accent-light: #8a6e5e;
+  --nav-text: #3D3530;
+  --nav-muted: #A89890;
+  --nav-bg: #F5F0E8;
+  --nav-border: rgba(180, 160, 145, 0.18);
+  --nav-font: 'Lato', sans-serif;
+  --nav-font-display: 'Cinzel', serif;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: 0.3s ease;
 
   /* ── Nav heights (used by navbar.css) ── */
-  --nav-logo-row:        88px;
-  --nav-nav-row:         33px;
-  --nav-height:          133px;
+  --nav-logo-row: 88px;
+  --nav-nav-row: 33px;
+  --nav-height: 133px;
   --nav-height-scrolled: 52px;
+
+
+  --text-eyebrow: 0.88rem;
+  --text-h1: clamp(2rem, 3.5vw, 3rem);
+  --text-h2: clamp(1.8rem, 3vw, 2.6rem);
+  --text-prayer: clamp(1.15rem, 1.8vw, 1.4rem);
 }
 
 /* ── Base ── */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -80,12 +88,19 @@ a {
   color: inherit;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: normal;
   margin: 0;
 }
 
-h1 { margin-bottom: 2rem; }
+h1 {
+  margin-bottom: 2rem;
+}
 
 /* ── Navbar spacer ── */
 
@@ -156,7 +171,18 @@ h1 { margin-bottom: 2rem; }
 
 /* ── Utilities ── */
 
-.bg-cream { background-color: var(--background); }
-.w33      { width: 33%; }
-.w67      { width: 67%; }
-.mb5      { margin-bottom: 2rem; }
+.bg-cream {
+  background-color: var(--background);
+}
+
+.w33 {
+  width: 33%;
+}
+
+.w67 {
+  width: 67%;
+}
+
+.mb5 {
+  margin-bottom: 2rem;
+}

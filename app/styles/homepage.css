@@ -42,7 +42,7 @@
 
 .triptych__eyebrow {
   font-family: var(--font-display);
-  font-size: var(--text-eyebrow);
+  font-size: 1.33rem;
   letter-spacing: 0.2em;
   color: var(--color-sage-pale);
   text-transform: uppercase;
@@ -53,7 +53,7 @@
   font-family: var(--font-serif);
   font-weight: 300;
   font-style: italic;
-  font-size: clamp(1.3rem, 2vw, 1.9rem);
+  font-size: clamp(1.3rem, 1.88vw, 1.9rem);
   color: #fff;
   line-height: 1.45;
 }
@@ -61,7 +61,7 @@
 .triptych__cta {
   display: inline-block;
   font-family: var(--font-display);
-  font-size: 0.58rem;
+  font-size: 0.88rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #fff;
@@ -110,7 +110,7 @@
 
 .logo-section__tagline {
   font-family: var(--font-display);
-  font-size: 0.58rem;
+  font-size: 1rem;
   letter-spacing: 0.22em;
   color: var(--color-bark-light);
   text-transform: uppercase;
@@ -129,7 +129,7 @@
   display: inline-block;
   margin-top: 0.5rem;
   font-family: var(--font-display);
-  font-size: 0.58rem;
+  font-size: 0.88rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-bark-light);
@@ -154,7 +154,7 @@
 
 .intro-section__text {
   font-family: var(--font-serif);
-  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  font-size: clamp(1rem, 1.77vw, 1.15rem);
   font-weight: 300;
   color: var(--color-bark-mid);
   line-height: 1.9;
@@ -188,7 +188,7 @@
 
 .prayer-section__label {
   font-family: var(--font-display);
-  font-size: var(--text-eyebrow);
+  font-size: 1.77rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-bark-light);
@@ -255,7 +255,7 @@
 
 .ceremony-section__label {
   font-family: var(--font-display);
-  font-size: var(--text-eyebrow);
+  font-size: 1rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-amber);
@@ -274,7 +274,7 @@
   display: inline-block;
   align-self: flex-start;
   font-family: var(--font-display);
-  font-size: 0.58rem;
+  font-size: 0.88rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-sand);
@@ -318,7 +318,7 @@
 
 .services-section__eyebrow {
   font-family: var(--font-display);
-  font-size: var(--text-eyebrow);
+  font-size: 1.77rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-bark-light);
@@ -384,7 +384,7 @@
 
 .service-card__name {
   font-family: var(--font-display);
-  font-size: 0.58rem;
+  font-size: 1rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-amber);
@@ -401,7 +401,7 @@
 
 .service-card__cta {
   font-family: var(--font-display);
-  font-size: 0.56rem;
+  font-size: 0.77rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-bark-light);
