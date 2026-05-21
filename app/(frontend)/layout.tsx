@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar';
 import FooterWrapper from '../components/Footerwrapper';
 import '../styles/navbar.css';
 import '../styles/homepage.css';
+import '../styles/services.css';
  
 export default function FrontendLayout({
   children,
