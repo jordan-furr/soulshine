@@ -71,13 +71,13 @@ export default function Footer({
           <p className="footer__col-heading">{contactHeading}</p>
           <ul className="footer__col-list">
             <li>
-              <a href="mailto:soulshinsarah@gmail.com" className="footer__col-link">
-                soulshinsarah@gmail.com
+              <a href="mailto:info@soulshinsarah.com" className="footer__col-link">
+                info@soulshinsarah.com
               </a>
             </li>
             <li>
-              <a href="tel:+4534567755" className="footer__col-link">
-                +45 34 56 77 55
+              <a href="https://wa.me/41763226082" className="footer__col-link">
+                +41 76 322 60 82
               </a>
             </li>
           </ul>

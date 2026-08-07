@@ -10,7 +10,7 @@ type TriptychHeroProps = {
 export default function TriptychHero({
   eyebrow = 'Psycho-Spiritual Guidance and Healing',
   headline = 'Come home to your soul, your truth, your light',
-  cta = 'Book a Consultation',
+  cta = 'Free Consultation',
 }: TriptychHeroProps) {
   return (
     <section className="triptych" aria-label="Hero">

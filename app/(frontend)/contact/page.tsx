@@ -36,18 +36,20 @@ export default function ContactPage() {
             >
               info@soulshinesarah.com
             </a>
+             <br />
+            <p className="contact-info__label">Whatsapp</p>
+            <a
+              href="https://wa.me/41763226082"
+              className="contact-info__value"
+              target='_'
+            >
+              +41 76 322 60 82
+            </a>
           </div>
 
-          <div className="contact-info">
-            <p className="contact-info__label">
-              {locale === 'de' ? 'Formular folgt in Kürze' : 'Form coming soon'}
-            </p>
-            <p className="contact-info__note">
-              {locale === 'de'
-                ? 'Bis dahin erreichen Sie Sarah direkt per E-Mail.'
-                : 'In the meantime, reach Sarah directly by email.'}
-            </p>
-          </div>
+          
+
+         
         </div>
       </section>
 

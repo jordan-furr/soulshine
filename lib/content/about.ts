@@ -29,29 +29,31 @@ export const aboutContent = {
     pageHeadline: 'sArAh from eArth to heArt',
 
     sarahLabel: 'Sarah',
-    sarahHeadline: 'Founder of Soulshine',
+    sarahHeadline: 'Meet Sarah',
     sarahBody: [
-      'Sarah is the founder of Soulshine. She brings fifteen years of psychotherapeutic practice together with more than eight years working with healing plants, spiritual medicine, and Indigenous peoples.',
-      'As a psychotherapist, yoga teacher, author, and shamanic practitioner, she supports children and adults in individual and group settings — accompanying each soul with presence, strength, and peace.',
-      'Her rare gift is the ability to unite the psychological with the spiritual.',
-      'Sessions offered in German and English, in person and remotely.',
+      "I bring fifteen years of psychotherapeutic practice to my work. I'm the founder of Soulshine.",
+      'As a psychotherapist, yoga teacher, author, and shamanic practitioner, I support children and adults in individual and group settings — accompanying each soul with presence, strength, and peace.',
+      'My rare gift is the ability to unite the psychological with the spiritual.',
+      'I listen with the HEART and see with the SOUL.',
     ],
-    sarahQuote: 'I listen with the HEART and see with the SOUL.',
+    sarahQuote: 'Sessions offered in German and English, in person and remotely.',
 
     soulwayoLabel: 'Soulwayo',
-    soulwayoHeadline: 'Sarah & Johannes — soul path.',
+    soulwayoHeadline: 'Walk your soul path.',
     soulwayoBody: [
-      'While Soulshine is Sarah\'s individual practice, Soulwayo is their shared space: trauma therapy, somatic healing, and nervous system regulation, held in the balance of masculine and feminine energy.',
-      'Their work is trauma-informed, body-based, and spiritually grounded.',
+      'Soulwayo is the shared practice of Sarah & Johannes: trauma therapy, somatic healing, and sacred ceremony, held in the balance of masculine and feminine energy. Their work is trauma-informed, body-based, and spiritually grounded.',
     ],
-    soulwayoQuote: 'Soulwayo is not a place to become someone else. It is a space to return — gently, honestly, and in your own timing.',
+    soulwayoQuote: 'Soulwayo is a space to return to yourself — gently, honestly, and in your own timing.',
     soulwayoLink: 'www.soulwayo.com',
 
-    teamLabel: 'The Team',
-    teamHeadline: 'The Soulshine Team',
+    teamLabel: 'Team',
+    teamHeadline: 'Meet the Soulshine Crew',
     teamMembers: [
-      { name: 'Sarah', role: 'Psycho-spiritual counselor, yoga teacher, shamanic practitioner.' },
-      { name: 'Sabina', role: 'Bio and modalities coming soon.' },
+      {
+        name: 'Sabina',
+        image: '/images/sabina.png',
+        role: 'Sabina is an experienced facilitator and support to all operations. She contributed to the Soulshine Journal and guides individuals safely through energetic experiences and retreats.',
+      },
     ],
 
     trainingLabel: 'Training',
@@ -78,6 +80,37 @@ export const aboutContent = {
       'It is the constant return to the Now — the only reality that truly exists.',
     ],
     philosophyQuote: 'Being spiritual is not something you must achieve. It is who you already are.',
+
+    storyLabel: 'My Story',
+    story: [
+      'Soulshine was born from a deep calling to remind people of something they have always carried within themselves: their own inner light.',
+      'My journey did not begin with having all the answers. It began with listening — listening to my heart, my body, and the wisdom that life was continuously offering me through every experience.',
+      'Over the years, my path has taken me through many layers of human experience: healing, motherhood, transformation, challenges, and profound moments of awakening. Each chapter taught me that life is not happening against us, but often guiding us deeper into ourselves.',
+      'Through my own healing journey, I learned that the body holds stories, emotions, and memories that are waiting to be acknowledged. I discovered that true healing happens when we stop fighting against ourselves and begin creating a loving relationship with every part of who we are.',
+      'My work as a psychotherapist, yoga teacher, meditation guide, and practitioner of trauma healing and author has grown from this understanding: that humans do not need to be fixed — they need to be witnessed, supported, and gently guided back to their own wholeness.',
+      'Motherhood has been one of my greatest teachers. Through my children, I learned even deeper levels of love, surrender, vulnerability, and presence. They reminded me that every emotion has a message, every experience carries wisdom, and that healing ourselves is also a gift we offer to future generations.',
+      'Life has also brought me through moments that deeply transformed me. Through these experiences, I learned the importance of compassion, resilience, trust, and surrender. The places where I felt most challenged became the places where my heart opened the most.',
+    ],
+
+    manifestoLabel: 'Soulshine',
+    manifesto: [
+      { type: 'p', lines: ['Through trauma therapy, somatic healing, meditation, yoga, ceremonies, and conscious practices, my intention is to create a safe container where people can reconnect with their inner wisdom and remember the light that has always been within them.'] },
+      { type: 'p', lines: ['I do not walk this path because I have never experienced darkness. I walk this path because I have learned that even in the darkest moments, the light is still there.'] },
+      { type: 'p', lines: ['Soulshine is an invitation:'] },
+      { type: 'verse', lines: [
+        'To soften.',
+        'To heal.',
+        'To awaken.',
+        'To remember.',
+      ] },
+      { type: 'p', lines: ['Because beneath every story, every wound, and every experience, there is a place within us that remains whole.'] },
+      { type: 'closing', lines: [
+        'A place that is love.',
+        'A place that is light.',
+        'A place where we can finally come home to ourselves.',
+      ] },
+    ],
+
   },
 
   de: {
@@ -110,14 +143,14 @@ export const aboutContent = {
     pageHeadline: 'sArAh from eArth to heArt',
 
     sarahLabel: 'Sarah',
-    sarahHeadline: 'Gründerin von Soulshine',
+    sarahHeadline: 'Sarah kennenlernen',
     sarahBody: [
-      'Sarah ist die Gründerin von Soulshine. Sie verbindet fünfzehn Jahre psychotherapeutische Praxis mit mehr als acht Jahren Arbeit mit Heilpflanzen, spiritueller Medizin und indigenen Völkern.',
-      'Als Psychotherapeutin, Yogalehrerin, Autorin und schamanische Praktikerin begleitet sie Kinder und Erwachsene in Einzel- und Gruppenumgebungen — jede Seele mit Präsenz, Stärke und Frieden.',
-      'Ihre seltene Gabe ist die Fähigkeit, das Psychologische mit dem Spirituellen zu vereinen.',
-      'Sitzungen auf Deutsch und Englisch, persönlich und online.',
+      'Ich bringe fünfzehn Jahre psychotherapeutische Praxis in meine Arbeit ein. Ich bin die Gründerin von Soulshine.',
+      'Als Psychotherapeutin, Yogalehrerin, Autorin und schamanische Praktikerin begleite ich Kinder und Erwachsene in Einzel- und Gruppensettings — jede Seele mit Präsenz, Stärke und Frieden.',
+      'Meine seltene Gabe ist die Fähigkeit, das Psychologische mit dem Spirituellen zu vereinen.',
+      'Ich höre mit dem HERZEN und sehe mit der SEELE.',
     ],
-    sarahQuote: 'Ich höre mit dem HERZEN und sehe mit der SEELE.',
+    sarahQuote: 'Sitzungen auf Deutsch und Englisch, persönlich und online.',
 
     soulwayoLabel: 'Soulwayo',
     soulwayoHeadline: 'Sarah & Johannes — Seelenweg.',
@@ -131,8 +164,11 @@ export const aboutContent = {
     teamLabel: 'Das Team',
     teamHeadline: 'Das Soulshine Team',
     teamMembers: [
-      { name: 'Sarah', role: 'Psycho-spirituelle Beraterin, Yogalehrerin, schamanische Praktikerin.' },
-      { name: 'Sabina', role: 'Bio und Modalitäten folgen in Kürze.' },
+      {
+        name: 'Sabina',
+        image: '/images/sabina.png',
+        role: 'Sabina ist eine erfahrene Begleiterin und unterstützt sämtliche Abläufe. Sie hat am Soulshine Journal mitgewirkt und führt Menschen sicher durch energetische Erfahrungen und Retreats.',
+      },
     ],
 
     trainingLabel: 'Ausbildung',
@@ -159,5 +195,35 @@ export const aboutContent = {
       'Es ist die ständige Rückkehr ins Jetzt — die einzige Realität, die wirklich existiert.',
     ],
     philosophyQuote: 'Spirituell zu sein ist nichts, das du erreichen musst. Es ist, wer du bereits bist.',
+
+    storyLabel: 'Meine Geschichte',
+    story: [
+      'Soulshine entstand aus einer tiefen Berufung, Menschen an etwas zu erinnern, das sie schon immer in sich getragen haben: ihr eigenes inneres Licht.',
+      'Mein Weg begann nicht damit, alle Antworten zu haben. Er begann mit dem Zuhören — meinem Herzen, meinem Körper und der Weisheit, die das Leben mir durch jede Erfahrung immer wieder geschenkt hat.',
+      'Über die Jahre hat mich mein Weg durch viele Schichten menschlicher Erfahrung geführt: Heilung, Mutterschaft, Wandel, Herausforderungen und tiefe Momente des Erwachens. Jedes Kapitel lehrte mich, dass das Leben nicht gegen uns geschieht, sondern uns oft tiefer in uns selbst hineinführt.',
+      'Durch meinen eigenen Heilungsweg habe ich gelernt, dass der Körper Geschichten, Gefühle und Erinnerungen bewahrt, die darauf warten, gesehen zu werden. Ich habe entdeckt, dass wahre Heilung dann geschieht, wenn wir aufhören, gegen uns selbst zu kämpfen, und beginnen, eine liebevolle Beziehung zu jedem Teil von uns aufzubauen.',
+      'Meine Arbeit als Psychotherapeutin, Yogalehrerin, Meditationsleiterin, Traumatherapeutin und Autorin ist aus diesem Verständnis gewachsen: Menschen müssen nicht repariert werden — sie brauchen es, gesehen und begleitet und sanft zu ihrer eigenen Ganzheit zurückgeführt zu werden.',
+      'Die Mutterschaft war eine meiner grössten Lehrerinnen. Durch meine Kinder habe ich noch tiefere Ebenen von Liebe, Hingabe, Verletzlichkeit und Präsenz kennengelernt. Sie haben mich daran erinnert, dass jedes Gefühl eine Botschaft trägt, jede Erfahrung Weisheit birgt — und dass die Heilung von uns selbst auch ein Geschenk an kommende Generationen ist.',
+      'Das Leben hat mich auch durch Momente geführt, die mich zutiefst verwandelt haben. Durch diese Erfahrungen habe ich die Bedeutung von Mitgefühl, Widerstandskraft, Vertrauen und Hingabe gelernt. Dort, wo ich mich am meisten herausgefordert fühlte, öffnete sich mein Herz am weitesten.',
+    ],
+
+    manifestoLabel: 'Soulshine',
+    manifesto: [
+      { type: 'p', lines: ['Durch Traumatherapie, somatische Heilung, Meditation, Yoga, Zeremonien und bewusste Praxis ist es meine Absicht, einen sicheren Raum zu schaffen, in dem Menschen sich wieder mit ihrer inneren Weisheit verbinden und sich an das Licht erinnern können, das immer schon in ihnen war.'] },
+      { type: 'p', lines: ['Ich gehe diesen Weg nicht, weil ich nie Dunkelheit erlebt hätte. Ich gehe ihn, weil ich gelernt habe, dass selbst in den dunkelsten Momenten das Licht noch da ist.'] },
+      { type: 'p', lines: ['Soulshine ist eine Einladung:'] },
+      { type: 'verse', lines: [
+        'Weich zu werden.',
+        'Zu heilen.',
+        'Zu erwachen.',
+        'Sich zu erinnern.',
+      ] },
+      { type: 'p', lines: ['Denn unter jeder Geschichte, jeder Wunde und jeder Erfahrung gibt es einen Ort in uns, der ganz bleibt.'] },
+      { type: 'closing', lines: [
+        'Ein Ort, der Liebe ist.',
+        'Ein Ort, der Licht ist.',
+        'Ein Ort, an dem wir endlich bei uns selbst ankommen können.',
+      ] },
+    ],
   },
 };
