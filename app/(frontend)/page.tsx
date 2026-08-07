@@ -29,6 +29,7 @@ export default function Home() {
       <CeremonySection
         label={t.home.ceremonyLabel}
         headline={t.home.ceremonyHeadline}
+        body={t.home.ceremonyBody}
         cta={t.home.ceremonyCta}
       />
       <ManifestoSection
