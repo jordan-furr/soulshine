@@ -22,7 +22,7 @@ export default function CeremonySection({ label, headline, cta }: CeremonySectio
       <div className="ceremony-section__content">
         <p className="ceremony-section__label">{label}</p>
         <h2 className="ceremony-section__headline">{headline}</h2>
-        <Link href="/services/shamanic-healing" className="ceremony-section__cta">
+        <Link href="/services/shamanic-ceremonies" className="ceremony-section__cta">
           {cta}
         </Link>
       </div>

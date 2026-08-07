@@ -64,12 +64,22 @@ export const translations = {
       tagline: 'sArAh from eArth to heArt',
       description: 'Psycho-Spiritual Guidance and Healing',
       hero: 'Come home to your soul, your truth, your light',
-      book: 'Book a Consultation',
+      book: 'Free Consultation',
       sacredGuidance: 'Sacred guidance to help you remember your light',
-      intro: 'Sarah is a psychologist, shamanic practitioner, and medicine woman. Through Soulshine, she and the Soulwayo duo offer a sacred space to dissolve old patterns, reconnect with your essence, and walk your path with love.',
+      intro: 'Sarah is a psychologist, shamanic practitioner, and medicine woman. She offers a sacred space to dissolve old patterns, reconnect with your essence, and walk your path with love.',
       ceremonyLabel: 'Shamanic Healing Ceremonies',
       ceremonyHeadline: 'Reconnect with yourself, your spirit, your purpose',
       ceremonyCta: 'Learn about ceremonies',
+      manifestoLabel: 'Soulshine',
+      manifestoCta: 'Read our story',
+      manifesto: [
+        { type: 'lead', lines: ['Soulshine was created as a sacred space for people who feel the longing to come home to themselves.'] },
+        { type: 'verse', lines: [
+          'A space where healing meets spirituality.',
+          'Where science meets ancient wisdom.',
+          'Where the body, mind, heart, and soul are seen as one.',
+        ] },
+      ],
       offeringsEyebrow: 'Offerings',
       life: [
         'The foundation of life is freedom',
@@ -191,6 +201,16 @@ export const translations = {
       ceremonyLabel: 'Schamanische Heilzeremonien',
       ceremonyHeadline: 'Verbinde dich wieder mit dir selbst, deinem Geist, deinem Zweck',
       ceremonyCta: 'Mehr über Zeremonien',
+      manifestoLabel: 'Soulshine',
+      manifestoCta: 'Unsere Geschichte lesen',
+      manifesto: [
+        { type: 'lead', lines: ['Soulshine wurde als heiliger Raum für Menschen geschaffen, die die Sehnsucht spüren, bei sich selbst anzukommen.'] },
+        { type: 'verse', lines: [
+          'Ein Raum, in dem Heilung auf Spiritualität trifft.',
+          'In dem Wissenschaft auf altes Wissen trifft.',
+          'In dem Körper, Geist, Herz und Seele als eins gesehen werden.',
+        ] },
+      ],
       offeringsEyebrow: 'Angebote',
       life: [
         'Die Grundlage des Lebens ist Freiheit',

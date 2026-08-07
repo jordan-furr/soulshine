@@ -4,8 +4,8 @@ import { useLocale } from '@/lib/i18n/LocaleContext';
 import { getTranslations } from '@/lib/i18n/translations';
 import TriptychHero from '../components/Triptychhero';
 import LogoSection from '../components/Logosection';
-import IntroSection from '../components/Introsection';
 import CeremonySection from '../components/Ceremonysection';
+import ManifestoSection from '../components/Manifestosection';
 import PrayerSection from '../components/Prayersection';
 import ServiceCards from '../components/Servicecards';
 
@@ -23,19 +23,25 @@ export default function Home() {
       <LogoSection
         tagline={t.home.tagline}
         headline={t.home.sacredGuidance}
+        text={t.home.intro}
         cta={t.common.learnMore}
       />
-      <IntroSection text={t.home.intro} />
       <CeremonySection
         label={t.home.ceremonyLabel}
         headline={t.home.ceremonyHeadline}
         cta={t.home.ceremonyCta}
       />
-      <PrayerSection />
+      <ManifestoSection
+        label={t.home.manifestoLabel}
+        blocks={t.home.manifesto}
+        cta={{ label: t.home.manifestoCta, href: '/about' }}
+      />
       <ServiceCards
         eyebrow={t.home.offeringsEyebrow}
         services={t.home.services}
       />
+      <PrayerSection />
+      
     </>
   );
 }

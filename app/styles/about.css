@@ -67,6 +67,50 @@
   transform: scale(1.02);
 }
 
+/* ── Split — image beside text ── */
+.about-section--split {
+  padding: 4rem 2rem;
+}
+
+.about-split {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 420px) 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-split__image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.about-split__image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s ease;
+}
+
+.about-split__image-wrapper:hover .about-split__image {
+  transform: scale(1.02);
+}
+
+.about-split__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .about-split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
 /* ── Typography ── */
 .about-section__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
@@ -135,15 +179,50 @@
 }
 
 .about-team__member {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.75rem;
+  align-items: start;
   padding-bottom: 1.5rem;
   border-bottom: 0.5px solid var(--color-stone);
 }
 
 .about-team__member:last-child {
   border-bottom: none;
+}
+
+.about-team__image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.about-team__image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s ease;
+}
+
+.about-team__image-wrapper:hover .about-team__image {
+  transform: scale(1.02);
+}
+
+.about-team__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .about-team__member {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .about-team__image-wrapper {
+    max-width: 220px;
+  }
 }
 
 .about-team__name {
@@ -180,8 +259,8 @@
 
 /* ── CTA ── */
 .about-cta {
-  background-color: var(--color-sand-deep);
-  padding: 4rem 2rem;
+  background-color: var(--color-sand);
+  padding: 0rem 2rem 4rem 2rem;
   display: flex;
   justify-content: center;
 }
@@ -204,14 +283,6 @@
 .about-cta__btn:hover {
   background-color: transparent;
   color: var(--color-amber-dark);
-}
-
-.about-section:nth-child(2) .about-section__image-wrapper {
-  aspect-ratio: 3 / 4;
-}
-
-.about-section:nth-child(3) .about-section__image-wrapper {
-  aspect-ratio: 16 / 9;
 }
 
 
