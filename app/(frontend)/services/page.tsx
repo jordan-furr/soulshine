@@ -58,21 +58,6 @@ export default function ServicesPage() {
         ))}
       </section>
 
-      {/* ── Pricing ── */}
-      <section className="services-overview__pricing">
-        <p className="services-overview__pricing-label">{t.pricing}</p>
-        <div className="services-overview__pricing-table">
-          {t.priceTable.map((row, i) => (
-            <div key={i} className="services-overview__pricing-row">
-              <span>{row.service}</span>
-              <span>{row.cost}</span>
-            </div>
-          ))}
-        </div>
-        <p className="services-overview__pricing-note">{t.pricingNote}</p>
-        <p className="services-overview__pricing-note">{t.confidentiality}</p>
-      </section>
-
       {/* ── Bottom CTA ── */}
       <section className="services-overview__cta">
         <p className="services-overview__cta-label">{t.unsure}</p>

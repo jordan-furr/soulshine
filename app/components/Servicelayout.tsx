@@ -78,24 +78,6 @@ export default function ServiceLayout({ content, image }: ServiceLayoutProps) {
             </div>
           ))}
 
-          {/* Pricing */}
-          {content.pricing && content.pricing.length > 0 && (
-            <div className="service-prose__pricing">
-              <p className="service-prose__pricing-label">
-                {locale === 'de' ? 'Preise' : 'Pricing'}
-              </p>
-              {content.pricing.map((row, i) => (
-                <div key={i} className="service-prose__pricing-row">
-                  <span>{row.label}</span>
-                  <span>{row.cost}</span>
-                </div>
-              ))}
-              {content.pricingNote && (
-                <p className="service-prose__pricing-note">{content.pricingNote}</p>
-              )}
-            </div>
-          )}
-
         </div>
       </section>
 

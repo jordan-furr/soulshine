@@ -4,10 +4,11 @@ import Link from 'next/link'
 type CeremonySectionProps = {
   label: string
   headline: string
+  body: string
   cta: string
 }
 
-export default function CeremonySection({ label, headline, cta }: CeremonySectionProps) {
+export default function CeremonySection({ label, headline, body, cta }: CeremonySectionProps) {
   return (
     <section className="ceremony-section">
       <div className="ceremony-section__image-wrapper">
@@ -22,6 +23,7 @@ export default function CeremonySection({ label, headline, cta }: CeremonySectio
       <div className="ceremony-section__content">
         <p className="ceremony-section__label">{label}</p>
         <h2 className="ceremony-section__headline">{headline}</h2>
+        <p className="ceremony-section__body">{body}</p>
         <Link href="/services/shamanic-ceremonies" className="ceremony-section__cta">
           {cta}
         </Link>

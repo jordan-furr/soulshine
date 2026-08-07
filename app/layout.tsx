@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond } from 'next/font/google';
+import { Cormorant_Garamond, Lato, Cinzel } from 'next/font/google';
 import { LocaleProvider } from '@/lib/i18n/LocaleContext';
 import './styles/globals.css';
 
@@ -8,6 +8,19 @@ const cormorant = Cormorant_Garamond({
   weight: ['300', '400', '500'],
   style: ['normal', 'italic'],
   variable: '--font-cormorant',
+  display: 'swap',
+});
+
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['300', '400'],
+  variable: '--font-lato',
+  display: 'swap',
+});
+
+const cinzel = Cinzel({
+  subsets: ['latin'],
+  variable: '--font-cinzel-face',
   display: 'swap',
 });
 
@@ -49,7 +62,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={cormorant.variable}>
+    <html
+      lang="en"
+      className={`${cormorant.variable} ${lato.variable} ${cinzel.variable}`}
+    >
       <body>
         <LocaleProvider>
           {children}

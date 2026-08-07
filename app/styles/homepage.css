@@ -20,7 +20,7 @@
 
 .triptych__image {
   object-fit: cover;
-  object-position: center top;
+  object-position: center 14%;
   transition: transform 0.8s ease;
 }
 
@@ -47,21 +47,23 @@
   color: var(--color-sage-pale);
   text-transform: uppercase;
   line-height: 1.6;
+  margin-bottom: .5rem;
 }
 
 .triptych__headline {
-  font-family: var(--font-serif);
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
   font-weight: 300;
   font-style: italic;
-  font-size: clamp(1.3rem, 1.88vw, 1.9rem);
+  font-size: clamp(1.4rem, 2.8vw, 3rem);
   color: #fff;
-  line-height: 1.45;
+  line-height: 1.2;
 }
 
 .triptych__cta {
+  font-weight: 300;
   display: inline-block;
-  font-family: var(--font-display);
-  font-size: 1rem;
+  font-family: var(--font-nav, 'Lato', sans-serif);
+  font-size: 0.88rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #fff;
@@ -78,7 +80,8 @@
 @media (max-width: 768px) {
   .triptych {
    grid-template-columns: 1fr;
-    grid-template-rows: auto 520px;
+    /* image row: 520px → 350px (~33% shorter) */
+    grid-template-rows: auto 350px;
     height: auto;
     max-height: none;
   }
@@ -108,6 +111,14 @@
   margin-bottom: 0.25rem;
 }
 
+/* 20% smaller on mobile (133px → 106px) */
+@media (max-width: 768px) {
+  .logo-section__symbol img {
+    width: 106px;
+    height: 106px;
+  }
+}
+
 .logo-section__tagline {
   font-family: var(--font-display);
   font-size: 1rem;
@@ -117,7 +128,7 @@
 }
 
 .logo-section__headline {
-  font-family: var(--font-serif);
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
   font-weight: 300;
   font-style: italic;
   font-size: var(--text-h2);
@@ -126,7 +137,7 @@
 }
 
 .logo-section__text {
-  font-family: var(--font-serif);
+  font-family: var(--font-body);
   font-size: clamp(1rem, 1.77vw, 1.15rem);
   font-weight: 300;
   color: var(--color-bark-mid);
@@ -136,9 +147,10 @@
 }
 
 .logo-section__cta {
+  font-weight: 300;
   display: inline-block;
   margin-top: 0.5rem;
-  font-family: var(--font-display);
+  font-family: var(--font-nav, 'Lato', sans-serif);
   font-size: 0.88rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -189,7 +201,7 @@
 }
 
 .prayer-section__text {
-  font-family: var(--font-serif);
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
   font-weight: 300;
   font-style: italic;
   font-size: var(--text-prayer);
@@ -242,20 +254,20 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4rem 3.5rem;
+  padding: 6rem 3.5rem;
   gap: 1.5rem;
 }
 
 .ceremony-section__label {
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: 1.55rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-amber);
 }
 
 .ceremony-section__headline {
-  font-family: var(--font-serif);
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
   font-weight: 300;
   font-style: italic;
   font-size: var(--text-h2);
@@ -263,10 +275,21 @@
   line-height: 1.45;
 }
 
+/* Matches .logo-section__text, minus the centering (this column is left-aligned) */
+.ceremony-section__body {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.77vw, 1.15rem);
+  font-weight: 300;
+  color: var(--color-bark-mid);
+  line-height: 1.9;
+  max-width: 560px;
+}
+
 .ceremony-section__cta {
+  font-weight: 300;
   display: inline-block;
   align-self: flex-start;
-  font-family: var(--font-display);
+  font-family: var(--font-nav, 'Lato', sans-serif);
   font-size: 0.88rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -384,7 +407,7 @@
 }
 
 .service-card__desc {
-  font-family: var(--font-serif);
+  font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 300;
   color: var(--color-bark-mid);
@@ -393,9 +416,10 @@
 }
 
 .service-card__cta {
-  font-family: var(--font-display);
-  font-size: 0.77rem;
-  letter-spacing: 0.14em;
+  font-weight: 300;
+  font-family: var(--font-nav, 'Lato', sans-serif);
+  font-size: 0.88rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-bark-light);
   margin-top: 0.5rem;
@@ -475,7 +499,7 @@
 }
 
 .footer__tagline {
-  font-family: var(--font-serif);
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
   font-style: italic;
   font-size: 0.9rem;
   color: var(--color-bark-light);
@@ -503,7 +527,7 @@
 }
 
 .footer__col-link {
-  font-family: var(--font-serif);
+  font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--color-bark-light);
   transition: color var(--transition);

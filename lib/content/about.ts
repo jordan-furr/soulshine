@@ -116,10 +116,10 @@ export const aboutContent = {
   de: {
     // ── Existing content ──
     title: 'Sarah & Soulshine Praktikum',
-    meaning: '"Soulshine" represents a positive and invigorating energy that describes your spirit – a healing force that you can share with others',
-    soulshine: 'For many years, we have accompanied people on their spiritual and physical path with heart, wisdom and medicine.',
-    sarah: 'Sarah, founder of Soulshine, brings more than eight years of experience in working with healing plants and spiritual medicine, including collaboration with Indigenous peoples, supported by fifteen years of psychotherapeutic practice. As a psychotherapist, yoga teacher, author and through various shamanic and psychological trainings, I support children and adults in individual or group settings and lead cacao ceremonies, retreats and meditation',
-    soulwayo: 'We bring our knowledge together with the harmonious balance of masculine and feminine energy to create space for holistic transformation',
+    meaning: 'Soulshine: eine positive, belebende Energie, die deinen Geist beschreibt – eine heilende Kraft, die du mit anderen teilen kannst',
+    soulshine: 'Seit vielen Jahren begleiten wir Menschen auf ihrem spirituellen und körperlichen Weg — mit Herz, Weisheit und Medizin.',
+    sarah: 'Sarah, Gründerin von Soulshine, bringt mehr als acht Jahre Erfahrung in der Arbeit mit Heilpflanzen und spiritueller Medizin mit, einschliesslich der Zusammenarbeit mit indigenen Völkern, getragen von fünfzehn Jahren psychotherapeutischer Praxis. Als Psychotherapeutin, Yogalehrerin, Autorin und durch verschiedene schamanische und psychologische Ausbildungen begleite ich Kinder und Erwachsene in Einzel- und Gruppensettings und leite Cacao-Zeremonien, Retreats und Meditationen',
+    soulwayo: 'Wir verbinden unser Wissen mit dem harmonischen Gleichgewicht von männlicher und weiblicher Energie, um Raum für ganzheitliche Transformation zu schaffen',
     cta: 'Termin buchen',
     sabina: 'Sabina',
     ctaButton: 'Kontakt aufnehmen',
@@ -153,12 +153,11 @@ export const aboutContent = {
     sarahQuote: 'Sitzungen auf Deutsch und Englisch, persönlich und online.',
 
     soulwayoLabel: 'Soulwayo',
-    soulwayoHeadline: 'Sarah & Johannes — Seelenweg.',
+    soulwayoHeadline: 'Geh deinen Seelenweg.',
     soulwayoBody: [
-      'Während Soulshine Sarahs individuelle Praxis ist, ist Soulwayo ihr gemeinsamer Raum: Traumatherapie, somatische Heilung und Nervensystemregulation, gehalten im Gleichgewicht von männlicher und weiblicher Energie.',
-      'Ihre Arbeit ist traumainformiert, körperbasiert und spirituell verankert.',
+      'Soulwayo ist die gemeinsame Praxis von Sarah & Johannes: Traumatherapie, somatische Heilung und heilige Zeremonie, gehalten im Gleichgewicht von männlicher und weiblicher Energie. Ihre Arbeit ist traumainformiert, körperbasiert und spirituell verankert.',
     ],
-    soulwayoQuote: 'Soulwayo ist kein Ort, um jemand anderes zu werden. Es ist ein Raum zur Rückkehr — sanft, ehrlich und in deinem eigenen Tempo.',
+    soulwayoQuote: 'Soulwayo ist ein Raum, um zu dir selbst zurückzukehren — sanft, ehrlich und in deinem eigenen Tempo.',
     soulwayoLink: 'www.soulwayo.com',
 
     teamLabel: 'Das Team',

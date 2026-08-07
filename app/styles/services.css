@@ -41,7 +41,7 @@
   display: inline-block;
   align-self: flex-start;
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.65rem;
+  font-size: 0.88rem;
   font-weight: 300;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -92,7 +92,7 @@
 }
 
 .service-prose p {
-  font-family: var(--font-body, 'Lora', serif);
+  font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 400;
   color: var(--color-bark-mid);
@@ -126,7 +126,7 @@
 }
 
 .service-prose ul li {
-  font-family: var(--font-body, 'Lora', serif);
+  font-family: var(--font-body);
   font-size: 1rem;
   color: var(--color-bark-mid);
   line-height: 1.7;
@@ -154,43 +154,6 @@
   font-size: 1.15rem !important;
   color: var(--color-bark) !important;
   line-height: 1.7 !important;
-}
-
-/* ── Pricing block ── */
-.service-prose__pricing {
-  background-color: var(--color-sand-dark);
-  padding: 1.75rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
-}
-
-.service-prose__pricing-label {
-  font-family: var(--font-nav, 'Lato', sans-serif) !important;
-  font-size: 0.88rem !important;
-  font-weight: 300 !important;
-  letter-spacing: 0.22em !important;
-  text-transform: uppercase !important;
-  color: var(--color-amber) !important;
-  margin-bottom: 0.25rem;
-}
-
-.service-prose__pricing-row {
-  display: flex;
-  justify-content: space-between;
-  font-family: var(--font-body, 'Lora', serif);
-  font-size: 0.9rem;
-  color: var(--color-bark-mid);
-  line-height: 1.6;
-  border-bottom: 0.5px solid var(--color-stone);
-  padding-bottom: 0.5rem;
-}
-
-.service-prose__pricing-note {
-  font-size: 0.82rem !important;
-  color: var(--color-bark-light) !important;
-  font-style: italic;
 }
 
 /* ── Bottom CTA section ── */
@@ -300,7 +263,7 @@
 }
 
 .services-overview__intro p {
-  font-family: var(--font-body, 'Lora', serif);
+  font-family: var(--font-body);
   font-size: 1rem;
   color: var(--color-bark-mid);
   line-height: 1.85;
@@ -374,7 +337,7 @@
 }
 
 .services-overview__item-desc {
-  font-family: var(--font-body, 'Lora', serif);
+  font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--color-bark-mid);
   line-height: 1.8;
@@ -396,53 +359,6 @@
 
 .services-overview__item-cta:hover {
   color: var(--color-bark);
-}
-
-/* ── Pricing ── */
-.services-overview__pricing {
-  background-color: var(--color-sand-deep);
-  padding: 4rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.services-overview__pricing-label {
-  font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.88rem;
-  font-weight: 300;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--color-amber);
-  margin-bottom: 0.5rem;
-}
-
-.services-overview__pricing-table {
-  width: 100%;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.services-overview__pricing-row {
-  display: flex;
-  justify-content: space-between;
-  font-family: var(--font-body, 'Lora', serif);
-  font-size: 0.9rem;
-  color: var(--color-bark-mid);
-  padding: 0.88rem 0;
-  border-bottom: 0.5px solid var(--color-stone);
-}
-
-.services-overview__pricing-note {
-  font-family: var(--font-body, 'Lora', serif);
-  font-size: 0.82rem;
-  color: var(--color-bark-light);
-  font-style: italic;
-  text-align: center;
-  max-width: 500px;
 }
 
 /* ── Bottom CTA ── */
