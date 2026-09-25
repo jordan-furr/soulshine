@@ -18,14 +18,14 @@ export default function ServiceCards({ eyebrow, services }: ServiceCardsProps) {
   return (
     <section className="services-section">
       <div className="services-section__header">
-        <p className="services-section__eyebrow">{eyebrow}</p>
+        <p className="services-section__eyebrow reveal">{eyebrow}</p>
       </div>
-      <div className="services-section__grid">
+      <div className="services-section__grid reveal-group">
         {services.map((service) => (
           <Link
             key={service.slug}
             href={`/services/${service.slug}`}
-            className="service-card"
+            className="service-card reveal"
           >
             <div className="service-card__image-wrapper">
               <Image
@@ -34,11 +34,6 @@ export default function ServiceCards({ eyebrow, services }: ServiceCardsProps) {
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="service-card__image"
-              />
-              <span
-                className="service-card__dot"
-                style={{ backgroundColor: service.dot }}
-                aria-hidden="true"
               />
             </div>
             <div className="service-card__body">

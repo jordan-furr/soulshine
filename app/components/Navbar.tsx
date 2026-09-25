@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale } from '@/lib/i18n/LocaleContext';
@@ -68,7 +68,7 @@ function DropdownItem({ item }: { item: NavItem }) {
   );
 }
 
-function LangGlobe({ locale, setLocale }: { locale: string; setLocale: (l: 'en' | 'de') => void }) {
+function LangPill({ locale, setLocale }: { locale: string; setLocale: (l: 'en' | 'de') => void }) {
   const next = locale === 'en' ? 'de' : 'en';
   return (
     <button
@@ -82,63 +82,9 @@ function LangGlobe({ locale, setLocale }: { locale: string; setLocale: (l: 'en' 
   );
 }
 
-interface MenuOverlayProps {
-  navItems: NavItem[];
-  onClose: () => void;
-  isClosing: boolean;
-}
-
-function MenuOverlay({ navItems, onClose, isClosing }: MenuOverlayProps) {
-  const [animate, setAnimate] = useState(false);
-
-  useEffect(() => {
-    if (isClosing) {
-      setAnimate(false);
-    } else {
-      requestAnimationFrame(() => setAnimate(true));
-    }
-  }, [isClosing]);
-
-  return (
-    <div className={`mobile-overlay ${animate && !isClosing ? 'mobile-overlay--open' : ''}`}>
-      <nav className="mobile-overlay__nav">
-        {navItems.map((item, i) => (
-          <div key={item.href} className="mobile-overlay__item-wrap">
-            <Link
-              href={item.href}
-              className={`mobile-overlay__link ${animate && !isClosing ? 'mobile-overlay__link--visible' : ''}`}
-              style={{ animationDelay: `${i * 0.08}s` }}
-              onClick={onClose}
-            >
-              {item.label}
-            </Link>
-            {item.children && (
-              <div className="mobile-overlay__subitems">
-                {item.children.map((child, j) => (
-                  <Link
-                    key={child.href}
-                    href={child.href}
-                    className={`mobile-overlay__sublink ${animate && !isClosing ? 'mobile-overlay__link--visible' : ''}`}
-                    style={{ animationDelay: `${(i + j + 1) * 0.05}s` }}
-                    onClick={onClose}
-                  >
-                    {child.dot && <Dot color={child.dot} />}
-                    {child.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
-      </nav>
-    </div>
-  );
-}
-
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [stuck, setStuck] = useState(false);
   const { locale, setLocale } = useLocale();
   const t = getTranslations(locale);
 
@@ -150,11 +96,11 @@ export default function Navbar() {
       children: [
         { label: t.nav.counseling,    href: '/services/counseling',          dot: '#e60000' },
         { label: t.nav.guidance,      href: '/services/spiritual-guidance',  dot: '#e66400' },
-        { label: t.nav.ceremonies,    href: '/services/shamanic-ceremonies',    dot: '#e6e200' },
+        { label: t.nav.retreats,       href: '/services/retreats',            dot: '#e6e200' },
         { label: t.nav.integration,   href: '/services/medicine-integration', dot: '#28aa0e' },
         { label: t.nav.cacao,         href: '/services/cacao-meditations',   dot: '#0096e6' },
-        { label: t.nav.international, href: '/services/distance-work',     dot: '#1b05ac' },
-        { label: t.nav.matrimony,     href: '/services/shamanic-matrimony',           dot: '#7301d0' },
+        { label: t.nav.international, href: '/services/distance-work',       dot: '#1b05ac' },
+        { label: t.nav.matrimony,     href: '/services/shamanic-matrimony',  dot: '#7301d0' },
       ],
     },
     { label: t.nav.publications, href: '/publications' },
@@ -162,97 +108,89 @@ export default function Navbar() {
     { label: t.nav.contact,      href: '/contact' },
   ];
 
-  const handleOpen = () => {
-    setIsClosing(false);
-    setMobileOpen(true);
-  };
-
-  const handleClose = () => {
-    setIsClosing(true);
-    setTimeout(() => {
-      setMobileOpen(false);
-      setIsClosing(false);
-    }, 200);
-  };
+  const leftNav = navItems.slice(0, 3);
+  const rightNav = navItems.slice(3);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setStuck(window.scrollY > 40);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const closeDrawer = useCallback(() => setDrawerOpen(false), []);
+
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [mobileOpen]);
+    if (!drawerOpen) return;
+    const onResize = () => { if (window.innerWidth > 900) setDrawerOpen(false); };
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, [drawerOpen]);
 
   return (
-    <>
-      <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
+    <header className={`navbar${stuck ? ' navbar--stuck' : ''}${drawerOpen ? ' navbar--drawer-open' : ''}`}>
+      <div className="navbar__grid">
+        {/* Left nav */}
+        <nav className="navbar__nav navbar__nav--left" aria-label="Main navigation">
+          <ul className="nav-list">
+            {leftNav.map((item) => (
+              <DropdownItem key={item.href} item={item} />
+            ))}
+          </ul>
+        </nav>
 
-        {/* ── Logo row ── */}
-        <div className="navbar__logo-row">
-          {/* Desktop: stacked centered */}
-          <Link href="/" className="navbar__logo navbar__logo--desktop" onClick={() => mobileOpen && handleClose()}>
-            <span className="navbar__logo-symbol" aria-hidden="true">
-              <Image src="/images/soulshine-three.png" alt="" width={40} height={40} priority />
+        {/* Hamburger (mobile) */}
+        <button
+          className={`hamburger${drawerOpen ? ' hamburger--open' : ''}`}
+          aria-label={drawerOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={drawerOpen}
+          onClick={() => setDrawerOpen(!drawerOpen)}
+        >
+          <span className="hamburger__bar" />
+          <span className="hamburger__bar" />
+          <span className="hamburger__bar" />
+        </button>
+
+        {/* Center lockup */}
+        <Link href="/" className="navbar__lockup">
+          <Image
+            className="navbar__symbol"
+            src="/images/soulshine.png"
+            alt="Soulshine"
+            width={56}
+            height={56}
+            priority
+          />
+          <div className="navbar__wordmark-wrap">
+            <span className="navbar__wordmark">
+              <span className="navbar__wordmark-rainbow" aria-hidden="true">Soulshine</span>
+              <span className="navbar__wordmark-hover">Soulshine</span>
             </span>
-            <span className="navbar__logo-wordmark">
-              <span className="navbar__logo-rainbow" aria-hidden="true">Soulshine</span>
-              <span className="navbar__logo-hover">Soulshine</span>
-            </span>
-          </Link>
-          {/* Mobile: horizontal lockup */}
-          <Link href="/" className="navbar__logo navbar__logo--mobile" onClick={() => mobileOpen && handleClose()}>
-            <span className="navbar__logo-symbol" aria-hidden="true">
-              <Image src="/images/soulshine-three.png" alt="" width={28} height={28} priority />
-            </span>
-            <span className="navbar__logo-wordmark">
-              <span className="navbar__logo-rainbow" aria-hidden="true">Soulshine</span>
-              <span className="navbar__logo-hover">Soulshine</span>
-            </span>
-          </Link>
-          {/* Mobile actions — right side */}
-          <div className="navbar__mobile-actions">
-            <LangGlobe locale={locale} setLocale={setLocale} />
-            <button
-              className={`hamburger${mobileOpen ? ' hamburger--open' : ''}`}
-              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={mobileOpen}
-              onClick={mobileOpen ? handleClose : handleOpen}
-            >
-              <span className="hamburger__bar" />
-              <span className="hamburger__bar" />
-              <span className="hamburger__bar" />
-            </button>
           </div>
-        </div>
+        </Link>
 
-        {/* ── Nav row — desktop only ── */}
-        <div className="navbar__nav-row">
-          <nav className="navbar__nav" aria-label="Main navigation">
+        {/* Right nav */}
+        <div className="navbar__right">
+          <nav className="navbar__nav navbar__nav--right" aria-label="Secondary navigation">
             <ul className="nav-list">
-              {navItems.map((item) => (
+              {rightNav.map((item) => (
                 <DropdownItem key={item.href} item={item} />
               ))}
             </ul>
           </nav>
-          {/* Desktop globe — right */}
-          <div className="navbar__actions">
-            <LangGlobe locale={locale} setLocale={setLocale} />
-          </div>
+          <LangPill locale={locale} setLocale={setLocale} />
         </div>
+      </div>
 
-      </header>
-
-      {/* ── Mobile overlay ── */}
-      {(mobileOpen || isClosing) && (
-        <MenuOverlay
-          navItems={navItems}
-          onClose={handleClose}
-          isClosing={isClosing}
-        />
+      {/* Mobile drawer */}
+      {drawerOpen && (
+        <div className="navbar__drawer">
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href} className="navbar__drawer-link" onClick={closeDrawer}>
+              {item.label}
+            </Link>
+          ))}
+        </div>
       )}
-    </>
+    </header>
   );
 }

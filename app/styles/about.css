@@ -3,7 +3,7 @@
    ═══════════════════════════════════════════════════ */
 
 .about-header {
-  background-color: var(--color-sage);
+  background-color: var(--color-bark);
   padding: 3rem 2rem;
   text-align: center;
   display: flex;
@@ -14,11 +14,11 @@
 
 .about-header__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.88rem;
+  font-size: 1.1rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-sage-pale);
+  color: #fff;
 }
 
 .about-header__headline {
@@ -114,7 +114,7 @@
 /* ── Typography ── */
 .about-section__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.88rem;
+  font-size: 1.1rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -291,7 +291,7 @@
    ═══════════════════════════════════════════════════ */
 
 .publications-header {
-  background-color: var(--color-sage);
+  background-color: var(--color-bark);
   padding: 3rem 2rem;
   text-align: center;
   display: flex;
@@ -302,11 +302,11 @@
 
 .publications-header__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: .88rem;
+  font-size: 1.1rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-sage-pale);
+  color: #fff;
 }
 
 .publications-header__headline {
@@ -322,7 +322,7 @@
 .publications-header__intro {
   font-family: var(--font-body);
   font-size: 1rem;
-  color: var(--color-sage-pale);
+  color: #fff;
   line-height: 1.8;
   max-width: 540px;
   font-style: italic;
@@ -515,7 +515,7 @@
    ═══════════════════════════════════════════════════ */
 
 .testimonials-header {
-  background-color: var(--color-sage);
+  background-color: var(--color-bark);
   padding: 3rem 2rem;
   text-align: center;
   display: flex;
@@ -526,11 +526,11 @@
 
 .testimonials-header__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.88rem;
+  font-size: 1.1rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-sage-pale);
+  color: #fff;
 }
 
 .testimonials-header__headline {
@@ -565,6 +565,14 @@
   flex-direction: column;
   gap: 1rem;
   position: relative;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.testimonial-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .testimonial-card__quote-mark {
@@ -639,7 +647,7 @@
    ═══════════════════════════════════════════════════ */
 
 .contact-header {
-  background-color: var(--color-sage);
+  background-color: var(--color-bark);
   padding: 3rem 2rem;
   text-align: center;
   display: flex;
@@ -650,11 +658,11 @@
 
 .contact-header__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.88rem;
+  font-size: 1.1rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-sage-pale);
+  color: #fff;
 }
 
 .contact-header__headline {
@@ -670,7 +678,7 @@
   font-family: var(--font-body);
   font-size: 1rem;
   font-style: italic;
-  color: var(--color-sage-pale);
+  color: #fff;
   line-height: 1.7;
 }
 
@@ -690,45 +698,133 @@
   gap: 3rem;
 }
 
-.contact-info {
+/* ── Contact form ── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-form__field {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding-bottom: 3rem;
-  border-bottom: 0.5px solid var(--color-stone);
 }
 
-.contact-info:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.contact-info__label {
+.contact-form__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-amber);
 }
 
-.contact-info__value {
-  font-family: var(--font-display, 'Cormorant Garamond', serif);
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: var(--color-bark);
-  text-decoration: none;
-  transition: color var(--transition);
-}
-
-.contact-info__value:hover {
-  color: var(--color-amber-dark);
-}
-
-.contact-info__note {
+.contact-form__input {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1rem;
+  color: var(--color-bark);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-stone);
+  padding: 0.75rem 0;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.contact-form__input:focus {
+  border-color: var(--color-amber);
+}
+
+.contact-form__textarea {
+  border: 1px solid var(--color-stone);
+  border-radius: 4px;
+  padding: 0.75rem;
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form__textarea:focus {
+  border-color: var(--color-amber);
+}
+
+.contact-form__services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.contact-form__chip {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-stone);
+  background: transparent;
+  color: var(--color-bark);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.contact-form__chip:hover {
+  border-color: var(--color-amber);
+}
+
+.contact-form__chip--active {
+  background: var(--color-bark);
+  border-color: var(--color-bark);
+  color: #fff;
+}
+
+.contact-form__submit {
+  font-family: var(--font-nav, 'Lato', sans-serif);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  background: var(--color-bark);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity var(--transition);
+  align-self: flex-start;
+}
+
+.contact-form__submit:hover {
+  opacity: 0.85;
+}
+
+.contact-form__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.contact-form__error {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: #c44;
+}
+
+/* ── Success state ── */
+.contact-success {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.contact-success__headline {
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-weight: 300;
   font-style: italic;
+  font-size: 2rem;
+  color: var(--color-bark);
+  margin-bottom: 1rem;
+}
+
+.contact-success__sub {
+  font-family: var(--font-body);
+  font-size: 1rem;
   color: var(--color-bark-light);
-  line-height: 1.7;
 }

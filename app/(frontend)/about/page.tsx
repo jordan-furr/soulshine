@@ -16,7 +16,7 @@ export default function AboutPage() {
       {/* ── Page header ── */}
       <section className="about-header">
         <p className="about-header__label">{t.pageLabel}</p>
-        <h1 className="about-header__headline">{t.pageHeadline}</h1>
+        <h1 className="about-header__headline reveal">{t.pageHeadline}</h1>
       </section>
 
       {/* ── Sarah ── */}
@@ -24,22 +24,34 @@ export default function AboutPage() {
         <div className="about-split">
           <div className="about-split__image-wrapper">
             <Image
-              src="/images/sarah-sun.jpg"
+              src="/images/sarah-about.jpeg"
               alt="Sarah"
               fill
               sizes="(max-width: 900px) 100vw, 420px"
               className="about-split__image"
             />
           </div>
-          <div className="about-split__content">
-            <h2 className="about-section__headline">{t.sarahHeadline}</h2>
+          <div className="about-split__content reveal-group">
+            <h2 className="about-section__headline reveal">{t.sarahHeadline}</h2>
             {t.sarahBody.map((para, i) => (
-              <p key={i} className="about-section__body">{para}</p>
+              <p key={i} className="about-section__body reveal">{para}</p>
             ))}
-            <div className="about-section__quote">
+            <div className="about-section__quote reveal">
               <p>{t.sarahQuote}</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Training ── */}
+      <section className="about-section about-section--alt">
+        <div className="about-section__inner">
+          <p className="about-section__label">{t.trainingLabel}</p>
+          <ul className="about-training">
+            {t.trainingItems.map((item, i) => (
+              <li key={i} className="about-training__item">{item}</li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -59,17 +71,7 @@ export default function AboutPage() {
        {/* ── Philosophy ── */}
       <section className="about-section">
         <div className="about-section__inner">
-           <p className="about-section__label">{t.philosophyLabel}</p>
-          <div className="about-section__image-wrapper">
-            <Image
-              src="/images/feather.JPG"
-              alt="Philosophy"
-              fill
-              sizes="(max-width: 768px) 100vw, 680px"
-              className="about-section__image"
-            />
-          </div>
-         
+           <p className="about-section__label">{t.philosophyLabel}</p>     
           <h2 className="about-section__headline">{t.philosophyHeadline}</h2>
           {t.philosophyBody.map((para, i) => (
             <p key={i} className="about-section__body">{para}</p>
@@ -115,25 +117,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-       {/* ── Training ── */}
-      <section className="about-section about-section--alt">
-        <div className="about-section__inner">
-          <p className="about-section__label">{t.trainingLabel}</p>
-          <ul className="about-training">
-            {t.trainingItems.map((item, i) => (
-              <li key={i} className="about-training__item">{item}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       {/* ── Soulwayo ── */}
       <section className="about-section ">
         <div className="about-section__inner">
           <p className="about-section__label">{t.soulwayoLabel}</p>
           <div className="about-section__image-wrapper">
             <Image
-              src="/images/soulwayo-sit.JPG"
+              src="/images/soulwayo.jpeg"
               alt="Sarah and Johannes — Soulwayo"
               fill
               sizes="(max-width: 768px) 100vw, 680px"

@@ -21,7 +21,7 @@
 
 .service-hero__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -49,6 +49,7 @@
   background-color: var(--color-amber-dark);
   padding: 0.8rem 1.75rem;
   border: 1px solid var(--color-amber-dark);
+  border-radius: var(--btn-radius);
   text-decoration: none;
   transition: background-color var(--transition), color var(--transition);
 }
@@ -109,12 +110,12 @@
 
 .service-prose h2 {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.88rem;
+  font-size: 1.1rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-amber);
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
 }
 
 .service-prose ul {
@@ -154,6 +155,82 @@
   font-size: 1.15rem !important;
   color: var(--color-bark) !important;
   line-height: 1.7 !important;
+}
+
+/* ── Muted closing note ── */
+.service-prose__muted {
+  font-size: 0.88rem !important;
+  color: var(--color-bark-light) !important;
+  line-height: 1.7 !important;
+  margin-top: 0.5rem;
+}
+
+.service-prose__muted a {
+  color: var(--color-amber-dark);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.service-prose__muted a:hover {
+  color: var(--color-bark);
+}
+
+/* ── Highlight card (retreat card etc.) ── */
+.service-prose__highlight {
+  background-color: var(--color-sand-dark);
+  border-left: 3px solid var(--color-amber);
+  padding: 2rem 2.25rem;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.service-prose__highlight h2 {
+  margin-top: 0;
+}
+
+.service-prose__highlight .service-hero__cta {
+  margin-top: 0.5rem;
+}
+
+/* ── Pillar / card grid ── */
+.service-prose__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.service-prose__grid-item {
+  background-color: var(--color-sand-dark);
+  padding: 1.5rem 1.75rem;
+}
+
+.service-prose__grid-item h3 {
+  font-family: var(--font-nav, 'Lato', sans-serif);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-amber);
+  margin-bottom: 0.5rem;
+}
+
+.service-prose__grid-item p {
+  font-size: 0.95rem !important;
+  line-height: 1.75 !important;
+}
+
+@media (max-width: 768px) {
+  .service-prose__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .service-prose__highlight {
+    padding: 1.5rem;
+  }
 }
 
 /* ── Bottom CTA section ── */
@@ -228,7 +305,7 @@
    ═══════════════════════════════════════════════════ */
 
 .services-overview__hero {
-  background-color: var(--color-sage);
+  background-color: var(--color-bark);
   padding: 3rem 2rem;
   text-align: center;
   display: flex;
@@ -239,11 +316,11 @@
 
 .services-overview__eyebrow {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.88rem;
-  font-weight: 300;
+  font-size: 1.1rem;
+  font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-sage-pale);
+  color: #fff;
 }
 
 .services-overview__headline {

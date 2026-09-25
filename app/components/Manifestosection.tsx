@@ -14,17 +14,17 @@ type ManifestoSectionProps = {
 export default function ManifestoSection({ label, blocks, cta }: ManifestoSectionProps) {
   return (
     <section className="manifesto">
-      <div className="manifesto__inner">
-        <p className="manifesto__label">{label}</p>
+      <div className="manifesto__inner reveal-group">
+        <p className="manifesto__label reveal">{label}</p>
         {blocks.map((block, i) => (
-          <div key={i} className={`manifesto__block manifesto__block--${block.type}`}>
+          <div key={i} className={`manifesto__block manifesto__block--${block.type} reveal`}>
             {block.lines.map((line, j) => (
               <p key={j}>{line}</p>
             ))}
           </div>
         ))}
         {cta && (
-          <Link href={cta.href} className="manifesto__cta">{cta.label}</Link>
+          <Link href={cta.href} className="manifesto__cta reveal">{cta.label}</Link>
         )}
       </div>
     </section>

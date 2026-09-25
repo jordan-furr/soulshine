@@ -1,9 +1,5 @@
-'use client';
-import { useLocale } from '@/lib/i18n/LocaleContext';
-import { shamanicHealingContent } from '@/lib/content/services';
-import ServiceLayout from '@/app/components/Servicelayout';
+import { redirect } from 'next/navigation';
 
-export default function ShamanicCeremoniesPage() {
-  const { locale } = useLocale();
-  return <ServiceLayout content={shamanicHealingContent[locale]} image="/images/services/shamanic-ceremonies.jpeg" />;
+export default function ShamanicCeremoniesRedirect() {
+  redirect('/services/retreats');
 }

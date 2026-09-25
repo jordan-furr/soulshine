@@ -23,14 +23,6 @@ export const publicationsContent = {
     moreLabel: 'More to come.',
     publications: [
       {
-        id: 'liah-zoe-chocolate',
-        title: 'Liah & Zoe Make Chocolate',
-        description: 'An educational short story about making chocolate from bean to bar — dedicated to Sarah\'s two children and all the sweet-toothed seekers who want to know where their chocolate truly comes from. Sarah is originally from Trinidad & Tobago, one of the birthplaces of fine cacao. Her journey into small-batch chocolate making in Switzerland grew from that same connection to the plant.',
-        type: 'book',
-        image: '/images/publications/chocolate.png',
-        price: 'Contact for details',
-      },
-      {
         id: 'self-discovery-journal',
         title: 'Soulshine Self-Discovery Journal',
         subtitle: 'Your digital companion for 6 months of mindfulness, self-love, and inner transformation.',
@@ -38,6 +30,14 @@ export const publicationsContent = {
         type: 'pdf',
         image: '/images/publications/journal-en.png',
         imageDe: '/images/publications/journal-de.png',
+        price: 'Contact for details',
+      },
+      {
+        id: 'liah-zoe-chocolate',
+        title: 'Liah & Zoe Make Chocolate',
+        description: 'An educational short story about making chocolate from bean to bar — dedicated to Sarah\'s two children and all the sweet-toothed seekers who want to know where their chocolate truly comes from. Sarah is originally from Trinidad & Tobago, one of the birthplaces of fine cacao. Her journey into small-batch chocolate making in Switzerland grew from that same connection to the plant.',
+        type: 'book',
+        image: '/images/publications/chocolate.png',
         price: 'Contact for details',
       },
     ] as Publication[],
@@ -52,14 +52,6 @@ export const publicationsContent = {
     moreLabel: 'Mehr folgt.',
     publications: [
       {
-        id: 'liah-zoe-chocolate',
-        title: 'Liah & Zoe Make Chocolate',
-        description: 'Eine pädagogische Kurzgeschichte über die Herstellung von Schokolade von der Bohne bis zur Tafel — gewidmet Sarahs zwei Kindern und allen Naschkatzen, die wissen möchten, woher ihre Schokolade wirklich kommt. Sarah stammt ursprünglich aus Trinidad & Tobago, einem der Ursprungsländer des feinen Kakaos.',
-        type: 'book',
-        image: '/images/publications/chocolate.png',
-        price: 'Kontakt für Details',
-      },
-      {
         id: 'self-discovery-journal',
         title: 'Soulshine Selbstentdeckungs-Journal',
         subtitle: 'Dein digitaler Begleiter für 6 Monate Achtsamkeit, Selbstliebe und innere Transformation.',
@@ -67,6 +59,14 @@ export const publicationsContent = {
         type: 'pdf',
         image: '/images/publications/journal-en.png',
         imageDe: '/images/publications/journal-de.png',
+        price: 'Kontakt für Details',
+      },
+      {
+        id: 'liah-zoe-chocolate',
+        title: 'Liah & Zoe Make Chocolate',
+        description: 'Eine pädagogische Kurzgeschichte über die Herstellung von Schokolade von der Bohne bis zur Tafel — gewidmet Sarahs zwei Kindern und allen Naschkatzen, die wissen möchten, woher ihre Schokolade wirklich kommt. Sarah stammt ursprünglich aus Trinidad & Tobago, einem der Ursprungsländer des feinen Kakaos.',
+        type: 'book',
+        image: '/images/publications/chocolate.png',
         price: 'Kontakt für Details',
       },
     ] as Publication[],
