@@ -23,7 +23,7 @@ export default function PublicationsPage() {
       <section className="publications-grid-section">
         <div className="publications-grid">
           {t.publications.map((pub) => (
-            <div key={pub.id} className="pub-card">
+            <div key={pub.id} className="pub-card reveal">
               <div className="pub-card__image-wrapper">
                 <Image
                   src={pub.imageDe && locale === 'de' ? pub.imageDe : pub.image}

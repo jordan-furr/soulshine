@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     'cacao ceremony',
     'spiritual counseling Zurich',
     'Medicine Woman',
-    'chakra therapy',
+    'retreats',
     'Sarah Preisig',
     'Soulshine',
   ],

@@ -50,6 +50,26 @@
 .reveal-group .reveal:nth-child(6) { animation-delay: 0.5s; }
 .reveal-group .reveal:nth-child(7) { animation-delay: 0.6s; }
 
+/* ── Subtle float for ceremony image ── */
+@keyframes subtleDrift {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.ceremony-section__image {
+  animation: subtleDrift 12s ease-in-out infinite;
+}
+
+/* ── Hover lift for service overview items ── */
+.services-overview__item {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.services-overview__item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
 /* ── Respect reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
   .triptych__image,
@@ -64,6 +84,14 @@
   .reveal.is-visible {
     animation: none;
     opacity: 1;
+    transform: none;
+  }
+
+  .ceremony-section__image {
+    animation: none;
+  }
+
+  .services-overview__item:hover {
     transform: none;
   }
 }

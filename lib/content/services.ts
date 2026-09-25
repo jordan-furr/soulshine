@@ -7,13 +7,39 @@ export type ServiceContent = {
   supports?: string[]
   quote?: string
   subSections?: { heading: string; text: string }[]
+  closingNote?: string
+  closingNoteLink?: { text: string; href: string }
   pricing: { label: string; cost: string }[]
   pricingNote?: string
+  ctaOverride?: { label: string; href: string; external?: boolean }
 }
 
 type ServiceContentMap = {
   en: ServiceContent
   de: ServiceContent
+}
+
+export const retreatData = {
+  en: {
+    name: 'Return to Soul: A Winter Retreat',
+    dates: '3–6 December 2026',
+    location: 'Schwarzenberg, Austria',
+    description: 'Four days to slow down, reconnect with your body, let go of old patterns, and step into what’s next with clarity and presence.',
+    futureDates: ['24–27 March 2027', '24–27 June 2027', '24–27 September 2027'],
+    bookingUrl: 'https://www.soulwayo.com/retreats',
+    bookingLabel: 'Details & booking',
+    futureLabel: 'Future dates',
+  },
+  de: {
+    name: 'Return to Soul: Ein Winter-Retreat',
+    dates: '3.–6. Dezember 2026',
+    location: 'Schwarzenberg, Österreich',
+    description: 'Vier Tage zum Innehalten, zur Rückverbindung mit dem Körper, zum Loslassen alter Muster und zum klaren, präsenten Schritt in das, was kommt.',
+    futureDates: ['24.–27. März 2027', '24.–27. Juni 2027', '24.–27. September 2027'],
+    bookingUrl: 'https://www.soulwayo.com/retreats',
+    bookingLabel: 'Details & Buchung',
+    futureLabel: 'Weitere Termine',
+  },
 }
 
 export const counselingContent: ServiceContentMap = {
@@ -34,7 +60,8 @@ export const counselingContent: ServiceContentMap = {
       'Building self-trust and healthy relationships',
       'Living with presence and purpose',
     ],
-    quote: 'When we go through life with an open heart, the darkness shines in the light, the illusions dissipate, and we see the true reality.',
+    quote: 'When we go through life with an open heart, the light shines in the darkness, illusions dissolve, and we see what is truly real.',
+    closingNote: 'Sessions complement, but do not replace, medical or psychiatric care. If you are in crisis, please contact your doctor or local emergency services.',
     pricing: [
       { label: 'Individual session — adults (60 min)', cost: '300 CHF' },
       { label: 'Individual session — under 18 (60 min)', cost: '250 CHF' },
@@ -59,7 +86,8 @@ export const counselingContent: ServiceContentMap = {
       'Selbstvertrauen und gesunde Beziehungen aufbauen',
       'Mit Präsenz und Sinn leben',
     ],
-    quote: 'Wenn wir mit offenem Herzen durchs Leben gehen, leuchtet die Dunkelheit im Licht, die Illusionen lösen sich auf und wir sehen die wahre Wirklichkeit.',
+    quote: 'Wenn wir mit offenem Herzen durchs Leben gehen, scheint das Licht in die Dunkelheit, Illusionen lösen sich auf und wir sehen, was wirklich wahr ist.',
+    closingNote: 'Sitzungen ergänzen, ersetzen aber nicht medizinische oder psychiatrische Betreuung. In einer Krise wenden Sie sich bitte an Ihren Arzt oder den örtlichen Notdienst.',
     pricing: [
       { label: 'Einzelsitzung — Erwachsene (60 Min)', cost: '300 CHF' },
       { label: 'Einzelsitzung — unter 18 (60 Min)', cost: '250 CHF' },
@@ -122,6 +150,12 @@ export const integrationContent: ServiceContentMap = {
       'Releasing patterns the journey brought to light',
       'Building practices that anchor the healing over time',
     ],
+    subSections: [
+      {
+        heading: 'From experience to everyday life',
+        text: 'A powerful experience is not yet transformation. An insight becomes meaningful when it starts to shape how we live. Integration asks simple, honest questions: What does my body need? What boundary am I ready to honour? What am I ready to stop carrying? What small choice can carry this insight into my life?\n\nFeeling → Healing → Integration\n\nNot a formula, but an orientation: feel what is here, meet it consciously, and bring what matters back into your life.',
+      },
+    ],
     pricing: [
       { label: 'Individual session — adults (60 min)', cost: '300 CHF' },
       { label: 'Phone / Zoom / Skype (60 min)', cost: '300 CHF' },
@@ -143,6 +177,12 @@ export const integrationContent: ServiceContentMap = {
       'Muster lösen, die die Reise ans Licht gebracht hat',
       'Praktiken aufbauen, die die Heilung festigen',
     ],
+    subSections: [
+      {
+        heading: 'Von der Erfahrung zum Alltag',
+        text: 'Eine kraftvolle Erfahrung ist noch keine Transformation. Eine Erkenntnis wird bedeutsam, wenn sie beginnt, unser Leben zu formen. Integration stellt einfache, ehrliche Fragen: Was braucht mein Körper? Welche Grenze bin ich bereit zu achten? Was bin ich bereit, nicht mehr zu tragen? Welche kleine Entscheidung kann diese Erkenntnis in mein Leben bringen?\n\nFühlen → Heilen → Integration\n\nKeine Formel, sondern eine Orientierung: fühlen, was da ist, dem bewusst begegnen und das Wesentliche zurück ins Leben tragen.',
+      },
+    ],
     pricing: [
       { label: 'Einzelsitzung — Erwachsene (60 Min)', cost: '300 CHF' },
       { label: 'Telefon / Zoom / Skype (60 Min)', cost: '300 CHF' },
@@ -151,84 +191,54 @@ export const integrationContent: ServiceContentMap = {
   },
 }
 
-export const shamanicHealingContent: ServiceContentMap = {
+export const retreatsContent: ServiceContentMap = {
   en: {
-    label: 'Shamanic Healing Ceremonies',
-    headline: 'A sacred space for healing, liberation, and return to your true essence.',
-    imageAlt: 'Shamanic healing ceremony with Sarah and Johannes',
-    intro: 'We are not just physical beings — we are energetic beings. When life force becomes blocked through trauma, grief, or old wounds, it can show up as emotional pain, physical illness, or a deep sense of disconnection.',
-    body: [
-      'Shamanic healing works at the root of these imbalances, addressing the energetic body and the soul — what ordinary approaches often cannot reach. Each ceremony is created specifically for you. Nothing is templated. Sarah accompanies you with loving presence and deep knowledge across all levels of your being.',
-    ],
-    supports: [
-      'Release of long-held emotional burdens',
-      'Clarity and a renewed sense of direction',
-      'Freedom from limiting beliefs and repeating patterns',
-      'Deeper connection to your soul\'s purpose',
-      'A feeling of coming home to yourself',
-    ],
+    label: 'Retreats with Sarah & Johannes',
+    headline: 'A space to return to yourself.',
+    imageAlt: 'Retreat in nature with Sarah and Johannes',
+    intro: 'Sarah’s retreats are held together with Johannes through Soulwayo, their shared practice. Over several days in nature, we slow down, come back into the body, and make room for what wants to be felt, released, and remembered — through ceremony, cacao, breathwork, movement, meditation, and time in silence.\n\nYou are not asked to perform, fix, or achieve anything. You are simply invited to arrive, as you are.',
+    body: [],
     subSections: [
       {
-        heading: 'Smudging, Essential Oils & Healing Stones',
-        text: 'Ancient tools for energetic cleansing and alignment. Smudging clears stagnant energy from your environment and your field. Essential oils work on the subtle body, supporting emotional balance and inner clarity. Healing stones carry their own vibrations — each chosen for what your energy system needs.',
-      },
-      {
-        heading: 'Frequency Medicine',
-        text: 'Everything is energy and vibration. When these fall out of balance, the effects are felt on every level. Through crystal tuning forks, healing frequencies, and sound, the body\'s own frequencies are stabilized and healing is supported — physically, emotionally, mentally, and spiritually.',
-      },
-      {
-        heading: 'Soul Readings',
-        text: 'An energetic reading of your soul field — exploring blockages, unresolved themes, and untapped potential. Delivered in writing, with space for follow-up questions. Many people describe a Soul Reading as a turning point.',
-      },
-      {
-        heading: 'Spiritual Detachments',
-        text: 'Energetic attachments — influences from past experiences, trauma, or difficult encounters — can settle into the energy body and quietly affect daily life. A detachment is a loving, careful process of recognizing and releasing what no longer belongs.',
+        heading: 'What the days hold',
+        text: '',
       },
     ],
+    closingNote: 'Retreats support self-exploration, embodiment, and reflection. They are not a substitute for medical, psychological, or psychiatric care. You are always free to go at your own pace, to pause, or to say no.',
     pricing: [
       { label: 'Shamanic work', cost: 'Contact for custom offer' },
       { label: 'Earth Pulsing — Individual (full day)', cost: '1,000 CHF' },
       { label: 'Earth Pulsing — Group / Retreat', cost: 'Upon request' },
     ],
+    ctaOverride: {
+      label: 'See retreat details on Soulwayo',
+      href: 'https://www.soulwayo.com/retreats',
+      external: true,
+    },
   },
   de: {
-    label: 'Schamanische Heilzeremonien',
-    headline: 'Ein heiliger Raum für Heilung, Befreiung und Rückkehr zu Ihrem wahren Wesen.',
-    imageAlt: 'Schamanische Heilzeremonie mit Sarah und Johannes',
-    intro: 'Wir sind nicht nur physische Wesen — wir sind energetische Wesen. Wenn die Lebensenergie durch Trauma, Trauer oder alte Wunden blockiert wird, kann sie sich als emotionaler Schmerz, körperliche Krankheit oder tiefes Gefühl der Trennung zeigen.',
-    body: [
-      'Schamanische Heilung arbeitet an der Wurzel dieser Ungleichgewichte und spricht den energetischen Körper und die Seele an. Jede Zeremonie wird speziell für Sie gestaltet. Nichts ist vorgefertigt. Sarah begleitet Sie mit liebevoller Präsenz und tiefem Wissen auf allen Ebenen Ihres Seins.',
-    ],
-    supports: [
-      'Befreiung von lang gehaltenen emotionalen Lasten',
-      'Klarheit und ein erneuertes Gefühl der Richtung',
-      'Freiheit von einschränkenden Überzeugungen und sich wiederholenden Mustern',
-      'Tiefere Verbindung mit dem Zweck Ihrer Seele',
-      'Das Gefühl, zu sich selbst nach Hause zu kommen',
-    ],
+    label: 'Retreats mit Sarah & Johannes',
+    headline: 'Ein Raum, um zu dir selbst zurückzukehren.',
+    imageAlt: 'Retreat in der Natur mit Sarah und Johannes',
+    intro: 'Sarahs Retreats werden gemeinsam mit Johannes durch Soulwayo, ihre geteilte Praxis, gehalten. Über mehrere Tage in der Natur verlangsamen wir, kommen zurück in den Körper und machen Raum für das, was gefühlt, losgelassen und erinnert werden will — durch Zeremonie, Cacao, Atemarbeit, Bewegung, Meditation und Stille.\n\nDu wirst nicht gebeten, etwas zu leisten, zu reparieren oder zu erreichen. Du bist einfach eingeladen, anzukommen — so wie du bist.',
+    body: [],
     subSections: [
       {
-        heading: 'Räuchern, Ätherische Öle & Heilsteine',
-        text: 'Alte Werkzeuge zur energetischen Reinigung und Ausrichtung. Räuchern klärt stagnierende Energie aus Ihrer Umgebung und Ihrem Feld. Ätherische Öle wirken auf den subtilen Körper und unterstützen emotionales Gleichgewicht und innere Klarheit.',
-      },
-      {
-        heading: 'Frequenzmedizin',
-        text: 'Alles ist Energie und Schwingung. Durch Kristallstimmgabeln, Heilfrequenzen und Klang werden die körpereigenen Frequenzen stabilisiert und die Heilung auf allen Ebenen unterstützt.',
-      },
-      {
-        heading: 'Seelenlesungen',
-        text: 'Eine energetische Lesung Ihres Seelenfeldes — Blockaden, ungelöste Themen und ungenutztes Potenzial. Schriftlich geliefert, mit Raum für Folgefragen.',
-      },
-      {
-        heading: 'Spirituelle Ablösungen',
-        text: 'Energetische Anhaftungen können sich in den Energiekörper setzen und das tägliche Leben still beeinflussen. Eine Ablösung ist ein liebevoller Prozess des Erkennens und Loslassens dessen, was nicht mehr dazugehört.',
+        heading: 'Was die Tage bereithalten',
+        text: '',
       },
     ],
+    closingNote: 'Retreats unterstützen Selbsterforschung, Verkörperung und Reflexion. Sie sind kein Ersatz für medizinische, psychologische oder psychiatrische Betreuung. Es steht dir jederzeit frei, in deinem eigenen Tempo zu gehen, eine Pause zu machen oder Nein zu sagen.',
     pricing: [
       { label: 'Schamanische Arbeit', cost: 'Kontakt für individuelles Angebot' },
       { label: 'Earth Pulsing — Einzeln (ganzer Tag)', cost: '1.000 CHF' },
       { label: 'Earth Pulsing — Gruppe / Retreat', cost: 'Auf Anfrage' },
     ],
+    ctaOverride: {
+      label: 'Retreat-Details auf Soulwayo ansehen',
+      href: 'https://www.soulwayo.com/retreats',
+      external: true,
+    },
   },
 }
 
@@ -268,7 +278,7 @@ export const cacaoContent: ServiceContentMap = {
     label: 'Cacao Meditation',
     headline: 'An ancient teacher, offered by the earth.',
     imageAlt: 'Cacao meditation ceremony',
-    intro: 'Ritual cacao has been used ceremonially by indigenous peoples of Central and South America for centuries. It is heart-opening — gently releasing emotional blockages, deepening self-knowledge, and restoring the connection to one\'s own truth.',
+    intro: 'Ritual cacao has been used ceremonially by indigenous peoples of Central and South America for centuries. In ceremony, it is often described as heart-opening — not as a promise, but as an invitation to slow down, feel more deeply, and reconnect with your own truth.',
     body: [
       'People often describe feeling a warmth in the chest, a softening of the inner critic, and a quiet clarity about what truly matters. Cacao strengthens access to intuition, creativity, and presence.',
     ],
@@ -278,10 +288,19 @@ export const cacaoContent: ServiceContentMap = {
         text: 'For many indigenous peoples, a feminine power resides in Cacao. As a teacher plant, it carries knowledge it wishes to share. Before each ceremony, the Cacao Spirit is invited to guide the space. It speaks through the heart. It invites connection — with yourself, with others, with nature.',
       },
       {
+        heading: 'What happens in a ceremony',
+        text: 'Every ceremony is different, shaped by the group and the moment. We begin by arriving: slowing down and connecting with the body and breath. The cacao is introduced along with the intention of the ceremony, then shared with awareness and gratitude. From there, the journey may include guided meditation, breathwork, gentle movement, music and sound, silence, journaling, and sharing. There is no particular experience you are expected to have. Some people feel deeply emotional, some find clarity, some simply become still. Your experience is allowed to be your own.',
+      },
+      {
         heading: 'MoonTime — New Moon Cacao Meditation',
         text: 'A monthly gathering to slow down, feel deeply, and remember. We work with new moon energy, healing mantras, the body, the breath, and the spirit of Cacao.',
       },
     ],
+    closingNote: 'Cacao ceremonies support self-reflection and connection. They are not a substitute for medical or psychological care.',
+    closingNoteLink: {
+      text: 'Read the cacao guidance',
+      href: 'https://www.soulwayo.com/cacao',
+    },
     pricing: [
       { label: 'New Moon Meditation', cost: '88 CHF' },
       { label: 'Venue', cost: 'In der Au 1, 8604 Volketswil' },
@@ -293,7 +312,7 @@ export const cacaoContent: ServiceContentMap = {
     label: 'Cacao Meditation',
     headline: 'Ein alter Lehrer, von der Erde geschenkt.',
     imageAlt: 'Cacao Meditationszeremonie',
-    intro: 'Rituelles Cacao wurde seit Jahrhunderten von indigenen Völkern Mittel- und Südamerikas zeremoniell genutzt. Es öffnet das Herz — löst sanft emotionale Blockaden, vertieft Selbsterkenntnis und stellt die Verbindung zur eigenen Wahrheit wieder her.',
+    intro: 'Rituelles Cacao wurde seit Jahrhunderten von indigenen Völkern Mittel- und Südamerikas zeremoniell genutzt. In der Zeremonie wird es oft als herzöffnend beschrieben — nicht als Versprechen, sondern als Einladung, langsamer zu werden, tiefer zu fühlen und sich mit der eigenen Wahrheit zu verbinden.',
     body: [
       'Menschen beschreiben oft eine Wärme in der Brust, eine Sanftheit des inneren Kritikers und eine stille Klarheit über das, was wirklich zählt. Cacao stärkt den Zugang zu Intuition, Kreativität und Präsenz.',
     ],
@@ -303,10 +322,19 @@ export const cacaoContent: ServiceContentMap = {
         text: 'Für viele indigene Völker wohnt eine feminine Kraft im Cacao. Als Lehrerpflanze trägt er Wissen, das er teilen möchte. Vor jeder Zeremonie wird der Cacao-Geist eingeladen, den Raum zu führen.',
       },
       {
+        heading: 'Was in einer Zeremonie geschieht',
+        text: 'Jede Zeremonie ist anders, geformt durch die Gruppe und den Moment. Wir beginnen mit dem Ankommen: langsamer werden und sich mit dem Körper und dem Atem verbinden. Der Cacao wird zusammen mit der Intention der Zeremonie vorgestellt und dann mit Achtsamkeit und Dankbarkeit geteilt. Von dort kann die Reise geführte Meditation, Atemarbeit, sanfte Bewegung, Musik und Klang, Stille, Journaling und Austausch umfassen. Es gibt keine bestimmte Erfahrung, die von dir erwartet wird. Manche Menschen fühlen sich tief bewegt, manche finden Klarheit, manche werden einfach still. Deine Erfahrung darf deine eigene sein.',
+      },
+      {
         heading: 'MoonTime — Neumond Cacao Meditation',
         text: 'Ein monatliches Treffen, um innezuhalten, tief zu fühlen und sich zu erinnern. Wir arbeiten mit Neumond-Energie, Heilmantras, dem Körper, dem Atem und dem Geist des Cacao.',
       },
     ],
+    closingNote: 'Cacao-Zeremonien unterstützen Selbstreflexion und Verbindung. Sie sind kein Ersatz für medizinische oder psychologische Betreuung.',
+    closingNoteLink: {
+      text: 'Cacao-Hinweise lesen',
+      href: 'https://www.soulwayo.com/cacao',
+    },
     pricing: [
       { label: 'Neumond Meditation', cost: '88 CHF' },
       { label: 'Ort', cost: 'In der Au 1, 8604 Volketswil' },
@@ -321,43 +349,67 @@ export const distanceEnergyContent: ServiceContentMap = {
     label: 'Distance Energy Healing',
     headline: 'Healing has no boundaries.',
     imageAlt: 'Distance energy healing',
-    intro: 'Energy, intention, and spirit move freely beyond physical location. Distance sessions draw on the same tools and care as in-person work — and many people find that working remotely opens something equally, or differently, powerful.',
+    intro: 'Energy, intention, and spirit move freely beyond physical location. Sessions draw on the same tools and care as in-person work — and many people find that working remotely opens something equally, or differently, powerful. Sessions are offered both in person and remotely.',
     body: [
       'Before each session, Sarah will invite you to share what you are carrying. From there, a customized approach is shaped around your needs.',
     ],
-    supports: [
-      'Soul Readings — written energetic reading of your soul field, with space for follow-up questions',
-      'Frequency Medicine — transmission of healing frequencies to harmonize and restore your energetic body',
-      'Spiritual Detachments — remote clearing of energetic attachments and old patterns',
-      'Energetic Clearing — cleansing of your personal field and environment',
+    subSections: [
+      {
+        heading: 'Smudging, Essential Oils & Healing Stones',
+        text: 'Ancient tools for energetic cleansing and alignment. Smudging clears stagnant energy from your environment and your field. Essential oils work on the subtle body, supporting emotional balance and inner clarity. Healing stones carry their own vibrations — each chosen for what your energy system needs.',
+      },
+      {
+        heading: 'Frequency Medicine',
+        text: 'Everything is energy and vibration. When these fall out of balance, the effects are felt on every level. Through crystal tuning forks, healing frequencies, and sound, the body\'s own frequencies are stabilized and healing is supported — physically, emotionally, mentally, and spiritually.',
+      },
+      {
+        heading: 'Soul Readings',
+        text: 'An energetic reading of your soul field — exploring blockages, unresolved themes, and untapped potential. Delivered in writing, with space for follow-up questions. Many people describe a Soul Reading as a turning point.',
+      },
+      {
+        heading: 'Spiritual Detachments',
+        text: 'Energetic attachments — influences from past experiences, trauma, or difficult encounters — can settle into the energy body and quietly affect daily life. A detachment is a loving, careful process of recognizing and releasing what no longer belongs.',
+      },
     ],
     quote: 'After a session, rest. Drink water. Give yourself time. Healing continues to unfold long after the work ends.',
     pricing: [
       { label: 'Distance session (60 min)', cost: '300 CHF' },
       { label: 'Soul Reading (written)', cost: 'Contact for details' },
     ],
-    pricingNote: 'Contact Sarah to arrange a distance session.',
+    pricingNote: 'Contact Sarah to arrange a session.',
   },
   de: {
-    label: 'Energiearbeit auf Distanz',
+    label: 'Energieheilung auf Distanz',
     headline: 'Heilung kennt keine Grenzen.',
-    imageAlt: 'Energiearbeit auf Distanz',
-    intro: 'Energie, Absicht und Geist bewegen sich frei jenseits des physischen Standorts. Fernsitzungen schöpfen aus denselben Werkzeugen und der gleichen Fürsorge wie persönliche Arbeit.',
+    imageAlt: 'Energieheilung auf Distanz',
+    intro: 'Energie, Absicht und Geist bewegen sich frei jenseits des physischen Standorts. Sitzungen schöpfen aus denselben Werkzeugen und der gleichen Fürsorge wie persönliche Arbeit — und viele Menschen erleben, dass die Fernarbeit etwas gleichermassen oder auf andere Weise Kraftvolles öffnet. Sitzungen werden sowohl persönlich als auch aus der Ferne angeboten.',
     body: [
       'Vor jeder Sitzung lädt Sarah Sie ein, zu teilen, was Sie bewegt. Davon ausgehend wird ein individueller Ansatz um Ihre Bedürfnisse herum gestaltet.',
     ],
-    supports: [
-      'Seelenlesungen — schriftliche energetische Lesung Ihres Seelenfeldes',
-      'Frequenzmedizin — Übertragung von Heilfrequenzen zur Harmonisierung',
-      'Spirituelle Ablösungen — Fernreinigung energetischer Anhaftungen',
-      'Energetische Reinigung — Reinigung Ihres persönlichen Feldes',
+    subSections: [
+      {
+        heading: 'Räuchern, Ätherische Öle & Heilsteine',
+        text: 'Alte Werkzeuge zur energetischen Reinigung und Ausrichtung. Räuchern klärt stagnierende Energie aus Ihrer Umgebung und Ihrem Feld. Ätherische Öle wirken auf den subtilen Körper und unterstützen emotionales Gleichgewicht und innere Klarheit. Heilsteine tragen ihre eigenen Schwingungen — jeder wird nach dem ausgewählt, was Ihr Energiesystem braucht.',
+      },
+      {
+        heading: 'Frequenzmedizin',
+        text: 'Alles ist Energie und Schwingung. Wenn diese aus dem Gleichgewicht geraten, sind die Auswirkungen auf jeder Ebene spürbar. Durch Kristallstimmgabeln, Heilfrequenzen und Klang werden die körpereigenen Frequenzen stabilisiert und die Heilung auf allen Ebenen unterstützt — körperlich, emotional, mental und spirituell.',
+      },
+      {
+        heading: 'Seelenlesungen',
+        text: 'Eine energetische Lesung Ihres Seelenfeldes — Blockaden, ungelöste Themen und ungenutztes Potenzial. Schriftlich geliefert, mit Raum für Folgefragen. Viele Menschen beschreiben eine Seelenlesung als Wendepunkt.',
+      },
+      {
+        heading: 'Spirituelle Ablösungen',
+        text: 'Energetische Anhaftungen — Einflüsse aus vergangenen Erfahrungen, Traumata oder schwierigen Begegnungen — können sich im Energiekörper festsetzen und das tägliche Leben still beeinflussen. Eine Ablösung ist ein liebevoller, sorgfältiger Prozess des Erkennens und Loslassens dessen, was nicht mehr dazugehört.',
+      },
     ],
     quote: 'Nach einer Sitzung ausruhen. Wasser trinken. Sich Zeit geben. Die Heilung entfaltet sich noch lange nach der Arbeit.',
     pricing: [
       { label: 'Fernsitzung (60 Min)', cost: '300 CHF' },
       { label: 'Seelenlesung (schriftlich)', cost: 'Kontakt für Details' },
     ],
-    pricingNote: 'Kontaktieren Sie Sarah, um eine Fernsitzung zu vereinbaren.',
+    pricingNote: 'Kontaktieren Sie Sarah, um eine Sitzung zu vereinbaren.',
   },
 }
 
@@ -365,7 +417,7 @@ export const serviceContent = {
   en: {
     hero: 'Healing at the energetic, soul, and human level — in thinking, feeling, and being.',
     title: 'Services',
-    description: 'Soulshine offers healing at the energetic, soul, and human level. Every session is shaped entirely around you.',
+    description: 'Every session is shaped entirely around you.',
     unsure: 'Not sure where to begin?',
     book: 'Book a Consultation',
     explore: 'Explore more',
@@ -378,9 +430,9 @@ export const serviceContent = {
     guidance: 'Spiritual Guidance',
     guidanceDescription: 'For those who feel the call to go deeper — whether at a crossroads, seeking more meaning, or ready to live more fully aligned with who they truly are.',
     guidanceSlug: 'spiritual-guidance',
-    ceremonies: 'Shamanic Healing Ceremonies',
-    ceremoniesDescription: 'A sacred space for healing, liberation, and return to your true essence. Each ceremony is created specifically for you.',
-    ceremoniesSlug: 'shamanic-ceremonies',
+    retreats: 'Retreats',
+    retreatsDescription: 'Multi-day ceremonial retreats in nature with Sarah & Johannes.',
+    retreatsSlug: 'retreats',
     integration: 'Medicine Integration Support',
     integrationDescription: 'Integration is where the real transformation begins. Support for making sense of what surfaced and grounding it into daily life.',
     integrationSlug: 'medicine-integration',
@@ -406,7 +458,7 @@ export const serviceContent = {
   de: {
     hero: 'Heilung auf energetischer, seelischer und menschlicher Ebene — im Denken, Fühlen und Sein.',
     title: 'Angebote',
-    description: 'Soulshine bietet Heilung auf energetischer, seelischer und menschlicher Ebene. Jede Sitzung wird vollständig um Sie herum gestaltet.',
+    description: 'Jede Sitzung wird vollständig um Sie herum gestaltet.',
     unsure: 'Nicht sicher, wo Sie anfangen sollen?',
     book: 'Beratung buchen',
     explore: 'Mehr erfahren',
@@ -419,16 +471,16 @@ export const serviceContent = {
     guidance: 'Spirituelle Begleitung',
     guidanceDescription: 'Für Menschen, die den Ruf verspüren, tiefer zu gehen — ob an einem Scheideweg, auf der Suche nach mehr Bedeutung oder bereit, vollständiger im Einklang mit sich selbst zu leben.',
     guidanceSlug: 'spiritual-guidance',
-    ceremonies: 'Schamanische Heilzeremonien',
-    ceremoniesDescription: 'Ein heiliger Raum für Heilung, Befreiung und Rückkehr zu Ihrem wahren Wesen. Jede Zeremonie wird speziell für Sie gestaltet.',
-    ceremoniesSlug: 'shamanic-ceremonies',
+    retreats: 'Retreats',
+    retreatsDescription: 'Mehrtägige zeremonielle Retreats in der Natur mit Sarah & Johannes.',
+    retreatsSlug: 'retreats',
     integration: 'Integrationsbegleitung',
     integrationDescription: 'Integration ist der Ort, wo die echte Transformation beginnt. Unterstützung beim Verstehen dessen, was aufgetaucht ist.',
     integrationSlug: 'medicine-integration',
     cacao: 'Cacao Meditation',
     cacaoDescription: 'Rituelles Cacao öffnet das Herz — löst sanft emotionale Blockaden und stellt die Verbindung zur eigenen Wahrheit wieder her.',
     cacaoSlug: 'cacao-meditations',
-    energy: 'Energiearbeit auf Distanz',
+    energy: 'Energieheilung auf Distanz',
     energyDescription: 'Energie, Absicht und Geist bewegen sich frei jenseits des physischen Standorts. Seelenlesungen, Frequenzmedizin — weltweit.',
     energySlug: 'distance-work',
     matrimony: 'Schamanische Trauung',
@@ -444,4 +496,4 @@ export const serviceContent = {
       { service: 'Schamanische Arbeit', cost: 'Kontakt für individuelles Angebot' },
     ],
   },
-};
+}

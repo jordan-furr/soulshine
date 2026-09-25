@@ -18,7 +18,6 @@ export default function FrontendLayout({
     <ScrollReveal />
       <ScrollToTop />
       <Navbar />
-      <div className="navbar-spacer" />
       <main>{children}</main>
       <FooterWrapper />
     </>

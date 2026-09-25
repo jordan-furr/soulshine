@@ -23,9 +23,20 @@ export default function ServiceLayout({ content, image }: ServiceLayoutProps) {
         <div className="service-hero__content">
           <p className="service-hero__label">{content.label}</p>
           <h1 className="service-hero__headline reveal">{content.headline}</h1>
-          <Link href="/contact" className="service-hero__cta">
-            {t.common.bookSession}
-          </Link>
+          {content.ctaOverride ? (
+            <a
+              href={content.ctaOverride.href}
+              target={content.ctaOverride.external ? '_blank' : undefined}
+              rel={content.ctaOverride.external ? 'noopener noreferrer' : undefined}
+              className="service-hero__cta"
+            >
+              {content.ctaOverride.label}
+            </a>
+          ) : (
+            <Link href="/contact" className="service-hero__cta">
+              {t.common.bookSession}
+            </Link>
+          )}
         </div>
         <div className="service-hero__image-wrapper">
           <Image
@@ -74,9 +85,26 @@ export default function ServiceLayout({ content, image }: ServiceLayoutProps) {
           {content.subSections && content.subSections.map((section, i) => (
             <div key={i}>
               <h2>{section.heading}</h2>
-              <p>{section.text}</p>
+              {section.text.split('\n\n').map((para, j) => (
+                <p key={j}>{para}</p>
+              ))}
             </div>
           ))}
+
+          {/* Closing note */}
+          {content.closingNote && (
+            <p className="service-prose__muted">
+              {content.closingNote}
+              {content.closingNoteLink && (
+                <>
+                  {' '}
+                  <a href={content.closingNoteLink.href} target="_blank" rel="noopener noreferrer">
+                    {content.closingNoteLink.text} →
+                  </a>
+                </>
+              )}
+            </p>
+          )}
 
         </div>
       </section>
@@ -86,9 +114,20 @@ export default function ServiceLayout({ content, image }: ServiceLayoutProps) {
         <p className="service-cta-section__label">
           {locale === 'de' ? 'Bereit anzufangen?' : 'Ready to begin?'}
         </p>
-        <Link href="/contact" className="service-cta-section__btn">
-          {t.common.bookSession}
-        </Link>
+        {content.ctaOverride ? (
+          <a
+            href={content.ctaOverride.href}
+            target={content.ctaOverride.external ? '_blank' : undefined}
+            rel={content.ctaOverride.external ? 'noopener noreferrer' : undefined}
+            className="service-cta-section__btn"
+          >
+            {content.ctaOverride.label}
+          </a>
+        ) : (
+          <Link href="/contact" className="service-cta-section__btn">
+            {t.common.bookSession}
+          </Link>
+        )}
       </section>
 
     </div>

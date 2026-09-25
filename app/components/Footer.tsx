@@ -35,8 +35,8 @@ export default function Footer({
             <Image
               src="/images/soulshine-three.png"
               alt="Soulshine"
-              width={40}
-              height={40}
+              width={64}
+              height={64}
               className="footer__logo-image"
             />
             <span className="footer__logo-text">SOULSHINE</span>
@@ -71,9 +71,9 @@ export default function Footer({
           <p className="footer__col-heading">{contactHeading}</p>
           <ul className="footer__col-list">
             <li>
-              <a href="mailto:info@soulshinsarah.com" className="footer__col-link">
-                info@soulshinsarah.com
-              </a>
+              <Link href="/contact" className="footer__col-link">
+                Contact Us
+              </Link>
             </li>
             <li>
               <a href="https://wa.me/41763226082" className="footer__col-link">

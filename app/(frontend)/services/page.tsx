@@ -8,7 +8,7 @@ import { serviceContent } from '@/lib/content/services';
 const services = (t: typeof serviceContent.en) => [
   { label: t.counseling, description: t.counselingDescription, slug: t.counselingSlug },
   { label: t.guidance, description: t.guidanceDescription, slug: t.guidanceSlug },
-  { label: t.ceremonies, description: t.ceremoniesDescription, slug: t.ceremoniesSlug },
+  { label: t.retreats, description: t.retreatsDescription, slug: t.retreatsSlug },
   { label: t.integration, description: t.integrationDescription, slug: t.integrationSlug },
   { label: t.cacao, description: t.cacaoDescription, slug: t.cacaoSlug },
   { label: t.energy, description: t.energyDescription, slug: t.energySlug },
@@ -28,16 +28,10 @@ export default function ServicesPage() {
         <p className="services-overview__eyebrow">{t.title}</p>
         <h1 className="services-overview__headline reveal">{t.hero}</h1>
       </section>
-
-      {/* ── Intro ── */}
-      <section className="services-overview__intro">
-        <p>{t.description}</p>
-      </section>
-
       {/* ── Service list ── */}
       <section className="services-overview__list">
         {list.map((service) => (
-          <div key={service.slug} className="services-overview__item">
+          <div key={service.slug} className="services-overview__item reveal">
             <div className="services-overview__item-image">
               <Image
                 src={`/images/services/${service.slug}.jpeg`}

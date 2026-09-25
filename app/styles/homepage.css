@@ -30,7 +30,7 @@
 }
 
 .triptych__panel-center {
-  background-color: var(--color-sage);
+  background-color: var(--color-footer-bg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,7 +44,7 @@
   font-family: var(--font-display);
   font-size: 1.55rem;
   letter-spacing: 0.2em;
-  color: var(--color-sage-pale);
+  color: var(--color-stone);
   text-transform: uppercase;
   line-height: 1.6;
   margin-bottom: .5rem;
@@ -52,10 +52,10 @@
 
 .triptych__headline {
   font-family: var(--font-display, 'Cormorant Garamond', serif);
-  font-weight: 300;
+  font-weight: 500;
   font-style: italic;
   font-size: clamp(1.4rem, 2.8vw, 3rem);
-  color: #fff;
+  color: var(--color-sand);
   line-height: 1.2;
 }
 
@@ -66,15 +66,16 @@
   font-size: 0.88rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: var(--color-sand);
+  border: 1px solid var(--color-stone);
+  border-radius: 0;
   padding: 0.75rem 1.5rem;
   transition: background-color var(--transition), color var(--transition);
 }
 
 .triptych__cta:hover {
-  background-color: #fff;
-  color: var(--color-sage);
+  background-color: var(--color-sand);
+  color: var(--color-footer-bg);
 }
 
 @media (max-width: 768px) {
@@ -337,7 +338,7 @@
   font-size: 1.77rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-bark-light);
+  color: #fff;
 }
 
 .services-section__grid {
@@ -381,22 +382,15 @@
   transform: scale(1.05);
 }
 
-.service-card__dot {
-  position: absolute;
-  bottom: 12px;
-  left: 14px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-
 .service-card__body {
   padding: 1.25rem 1.25rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   flex: 1;
+  position: relative;
 }
+
 
 .service-card__name {
   font-family: var(--font-display);
@@ -477,13 +471,15 @@
 .footer__brand {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.75rem;
 }
 
 .footer__logo-link {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .footer__logo-image {
@@ -496,12 +492,13 @@
   font-size: 1.22rem;
   letter-spacing: 0.2em;
   color: #f5f0e8;
+  font-size: 1.5rem;
 }
 
 .footer__tagline {
   font-family: var(--font-display, 'Cormorant Garamond', serif);
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: 1.35rem;
   color: var(--color-bark-light);
 }
 
@@ -513,7 +510,7 @@
 
 .footer__col-heading {
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: 1.2rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #f5f0e8;
@@ -528,7 +525,7 @@
 
 .footer__col-link {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   color: var(--color-bark-light);
   transition: color var(--transition);
 }
