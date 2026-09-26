@@ -49,12 +49,13 @@ export const metadata: Metadata = {
     siteName: 'Soulshine Sarah',
     title: 'Soulshine Sarah — Psycho-Spiritual Counseling & Healing',
     description: 'Psycho-spiritual counseling and healing with Sarah Preisig.',
-    // images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: '/images/og-image.png', width: 707, height: 365 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Soulshine Sarah',
     description: 'Psycho-spiritual counseling & healing with Sarah Preisig.',
+    images: ['/images/og-image.png'],
   },
 };
 

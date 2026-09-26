@@ -70,10 +70,13 @@
   color: var(--nav-accent-light);
   text-decoration: none;
   white-space: nowrap;
-  transition: color 0.18s;
+  transition: color 0.18s, transform 0.18s;
 }
 
-.nav-link:hover { color: var(--color-amber); }
+.nav-link:hover {
+  color: var(--color-amber);
+  transform: translateY(-2px);
+}
 
 .nav-link__chevron {
   display: flex;
@@ -226,11 +229,11 @@
   align-items: center;
   gap: 0.4rem;
   background: transparent;
-  border: 1px solid var(--nav-accent);
+  border: 1px solid var(--color-bark-light);
   cursor: pointer;
   padding: 0.4rem 0.85rem;
   border-radius: 0;
-  color: var(--nav-accent);
+  color: var(--color-bark-light);
   font-family: var(--nav-font);
   letter-spacing: 0.11em;
   transition: background 0.18s, color 0.18s, border-color 0.18s;
@@ -273,7 +276,7 @@
   display: block;
   width: 22px;
   height: 1px;
-  background: var(--nav-accent);
+  background: var(--color-bark-light);
   border-radius: 1px;
   transform-origin: center;
   transition:
@@ -286,8 +289,8 @@
 .hamburger--open .hamburger__bar:nth-child(2) { opacity: 0; width: 0; }
 .hamburger--open .hamburger__bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-/* ── Mobile drawer ── */
-.navbar__drawer {
+/* ── Mobile: hidden on desktop ── */
+.navbar__mobile-left {
   display: none;
 }
 
@@ -298,48 +301,170 @@
     display: none;
   }
 
+  .navbar {
+    padding: 20px clamp(16px, 4vw, 56px);
+  }
+
+  .navbar--stuck {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
   .navbar__grid {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    z-index: 2;
+  }
+
+  .navbar__mobile-left {
+    display: flex;
+    align-items: center;
   }
 
   .hamburger {
     display: flex;
-    order: -1;
+    order: 3;
   }
 
   .navbar__lockup {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    pointer-events: auto;
+  }
+
+  .navbar__lockup:hover {
+    transform: translateX(-50%);
+  }
+
+  .navbar__wordmark-wrap {
+    display: none;
+  }
+
+  .navbar__symbol {
+    width: 44px;
   }
 
   .navbar__right {
-    margin-left: auto;
+    display: none;
   }
 
-  .navbar__drawer {
+  /* When drawer is open, make navbar fixed so overlay can fill below */
+  .navbar--drawer-open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1002;
+  }
+
+  /* ── Full-screen overlay ── */
+  .navbar__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    padding-top: 100px;
+    background: var(--color-sand);
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 22vh;
+    animation: overlayIn 0.25s ease forwards;
+  }
+
+  @keyframes overlayIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .navbar__overlay-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 22px;
-    padding: 22px 0;
-    border-top: 1px solid #E4DDD2;
+    gap: 1.75rem;
   }
 
   .navbar__drawer-link {
     font-family: var(--nav-font);
-    font-size: 1.15rem;
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    color: var(--nav-accent-light);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: var(--color-bark);
     text-decoration: none;
     white-space: nowrap;
     transition: color 0.18s;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
   }
 
   .navbar__drawer-link:hover {
     color: var(--color-amber);
+  }
+
+  /* ── Services submenu ── */
+  .navbar__drawer-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar__drawer-chevron {
+    display: flex;
+    align-items: center;
+    transition: transform 0.25s ease;
+  }
+
+  .navbar__drawer-toggle--open .navbar__drawer-chevron {
+    transform: rotate(180deg);
+  }
+
+  .navbar__drawer-sub {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .navbar__drawer-sub--open {
+    max-height: 400px;
+    opacity: 1;
+    padding-top: 0.75rem;
+  }
+
+  .navbar__drawer-sublink {
+    font-family: var(--nav-font);
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--color-bark-mid);
+    text-decoration: none;
+    transition: color 0.18s;
+  }
+
+  .navbar__drawer-sublink:hover {
+    color: var(--color-amber);
+  }
+
+  /* Overlay sits above header — raise hamburger */
+  .navbar--drawer-open {
+    z-index: 1002;
+  }
+
+  /* No hover lift on desktop nav links that don't exist here */
+  .nav-link:hover {
+    transform: none;
   }
 }

@@ -32,7 +32,7 @@
     text-align: center;
     box-sizing: border-box;
     padding: 5rem 0;
-    background-color: #F8F5F1;
+    background-color: var(--color-sand);
 }
 
 
@@ -50,7 +50,7 @@
     text-align: center;
     box-sizing: border-box;
     padding: 5rem 0;
-    background-color: #F8F5F1;
+    background-color: var(--color-sand);
 }
 
 .home-hero h3 {
