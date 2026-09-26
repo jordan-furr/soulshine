@@ -51,7 +51,7 @@ export const aboutContent = {
     teamMembers: [
       {
         name: 'Sabina',
-        image: '/images/sabina.png',
+        image: '/images/sabina.jpeg',
         role: 'Sabina is an experienced facilitator and support to all operations. She contributed to the Soulshine Journal and guides individuals safely through energetic experiences and retreats.',
       },
     ],
@@ -165,7 +165,7 @@ export const aboutContent = {
     teamMembers: [
       {
         name: 'Sabina',
-        image: '/images/sabina.png',
+        image: '/images/sabina.jpeg',
         role: 'Sabina ist eine erfahrene Begleiterin und unterstützt sämtliche Abläufe. Sie hat am Soulshine Journal mitgewirkt und führt Menschen sicher durch energetische Erfahrungen und Retreats.',
       },
     ],

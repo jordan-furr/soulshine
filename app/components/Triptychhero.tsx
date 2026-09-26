@@ -35,7 +35,7 @@ export default function TriptychHero({
 
       <div className="triptych__panel-right">
         <Image
-          src="/images/wolf.png"
+          src="/images/wolf.jpeg"
           alt="Spirit art"
           fill
           priority
