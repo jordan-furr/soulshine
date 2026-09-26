@@ -82,6 +82,41 @@ function LangPill({ locale, setLocale }: { locale: string; setLocale: (l: 'en' |
   );
 }
 
+function MobileDrawerItem({ item, onClose }: { item: NavItem; onClose: () => void }) {
+  const [open, setOpen] = useState(false);
+
+  if (!item.children) {
+    return (
+      <Link href={item.href} className="navbar__drawer-link" onClick={onClose}>
+        {item.label}
+      </Link>
+    );
+  }
+
+  return (
+    <div className="navbar__drawer-group">
+      <button
+        className={`navbar__drawer-link navbar__drawer-toggle${open ? ' navbar__drawer-toggle--open' : ''}`}
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
+      >
+        {item.label}
+        <span className="navbar__drawer-chevron"><Chevron /></span>
+      </button>
+      <div className={`navbar__drawer-sub${open ? ' navbar__drawer-sub--open' : ''}`}>
+        <Link href={item.href} className="navbar__drawer-sublink" onClick={onClose}>
+          All {item.label}
+        </Link>
+        {item.children.map((child) => (
+          <Link key={child.href} href={child.href} className="navbar__drawer-sublink" onClick={onClose}>
+            {child.label}
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [stuck, setStuck] = useState(false);
@@ -121,15 +156,19 @@ export default function Navbar() {
 
   useEffect(() => {
     if (!drawerOpen) return;
+    document.body.style.overflow = 'hidden';
     const onResize = () => { if (window.innerWidth > 900) setDrawerOpen(false); };
     window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('resize', onResize);
+    };
   }, [drawerOpen]);
 
   return (
     <header className={`navbar${stuck ? ' navbar--stuck' : ''}${drawerOpen ? ' navbar--drawer-open' : ''}`}>
       <div className="navbar__grid">
-        {/* Left nav */}
+        {/* Left nav (desktop) */}
         <nav className="navbar__nav navbar__nav--left" aria-label="Main navigation">
           <ul className="nav-list">
             {leftNav.map((item) => (
@@ -138,17 +177,10 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        {/* Hamburger (mobile) */}
-        <button
-          className={`hamburger${drawerOpen ? ' hamburger--open' : ''}`}
-          aria-label={drawerOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={drawerOpen}
-          onClick={() => setDrawerOpen(!drawerOpen)}
-        >
-          <span className="hamburger__bar" />
-          <span className="hamburger__bar" />
-          <span className="hamburger__bar" />
-        </button>
+        {/* Mobile: lang toggle (left side) */}
+        <div className="navbar__mobile-left">
+          <LangPill locale={locale} setLocale={setLocale} />
+        </div>
 
         {/* Center lockup */}
         <Link href="/" className="navbar__lockup">
@@ -168,7 +200,7 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Right nav */}
+        {/* Right nav (desktop) + lang pill (desktop) */}
         <div className="navbar__right">
           <nav className="navbar__nav navbar__nav--right" aria-label="Secondary navigation">
             <ul className="nav-list">
@@ -179,16 +211,28 @@ export default function Navbar() {
           </nav>
           <LangPill locale={locale} setLocale={setLocale} />
         </div>
+
+        {/* Hamburger (mobile, right side) */}
+        <button
+          className={`hamburger${drawerOpen ? ' hamburger--open' : ''}`}
+          aria-label={drawerOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={drawerOpen}
+          onClick={() => setDrawerOpen(!drawerOpen)}
+        >
+          <span className="hamburger__bar" />
+          <span className="hamburger__bar" />
+          <span className="hamburger__bar" />
+        </button>
       </div>
 
-      {/* Mobile drawer */}
+      {/* Mobile overlay */}
       {drawerOpen && (
-        <div className="navbar__drawer">
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="navbar__drawer-link" onClick={closeDrawer}>
-              {item.label}
-            </Link>
-          ))}
+        <div className="navbar__overlay">
+          <nav className="navbar__overlay-nav">
+            {navItems.map((item) => (
+              <MobileDrawerItem key={item.href} item={item} onClose={closeDrawer} />
+            ))}
+          </nav>
         </div>
       )}
     </header>

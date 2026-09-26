@@ -68,7 +68,7 @@
   text-transform: uppercase;
   color: var(--color-sand);
   border: 1px solid var(--color-stone);
-  border-radius: 0;
+  border-radius: var(--btn-radius);
   padding: 0.75rem 1.5rem;
   transition: background-color var(--transition), color var(--transition);
 }
@@ -155,16 +155,16 @@
   font-size: 0.88rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-bark-light);
-  border: 1px solid var(--color-bark-light);
+  color: var(--color-bark);
+  border: 1px solid var(--color-bark-mid);
+  border-radius: 0;
   padding: 0.75rem 1.75rem;
-  transition: background-color var(--transition), color var(--transition);
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
 }
 
 .logo-section__cta:hover {
-  background-color: var(--color-footer-bg);
-  color: var(--color-sand);
-  border-color: var(--color-bark);
+  border-color: var(--color-amber);
+  color: var(--color-amber-dark);
 }
 
 /* ─── Prayer Strip ──────────────────────────────────── */
@@ -295,15 +295,16 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-sand);
-  background-color: var(--color-amber-dark);
+  background-color: var(--color-footer-bg);
   padding: 0.8rem 1.75rem;
-  border: 1px solid var(--color-amber-dark);
+  border: 1px solid var(--color-footer-bg);
+  border-radius: 0;
   transition: background-color var(--transition), color var(--transition);
 }
 
 .ceremony-section__cta:hover {
-  background-color: transparent;
-  color: var(--color-amber-dark);
+  background-color: #3D3530;
+  border-color: #3D3530;
 }
 
 @media (max-width: 768px) {
@@ -338,7 +339,7 @@
   font-size: 1.77rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--color-bark-light);
 }
 
 .services-section__grid {
@@ -415,13 +416,13 @@
   font-size: 0.88rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-bark-light);
+  color: var(--color-bark-mid);
   margin-top: 0.5rem;
   transition: color var(--transition);
 }
 
 .service-card:hover .service-card__cta {
-  color: var(--color-bark);
+  color: var(--color-amber);
 }
 
 @media (max-width: 1024px) {
@@ -499,7 +500,7 @@
   font-family: var(--font-display, 'Cormorant Garamond', serif);
   font-style: italic;
   font-size: 1.35rem;
-  color: var(--color-bark-light);
+  color: var(--color-stone);
 }
 
 .footer__col {
@@ -513,7 +514,7 @@
   font-size: 1.2rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #f5f0e8;
+  color: var(--color-amber-light);
 }
 
 .footer__col-list {
@@ -526,16 +527,16 @@
 .footer__col-link {
   font-family: var(--font-body);
   font-size: 1.05rem;
-  color: var(--color-bark-light);
+  color: var(--color-footer-link);
   transition: color var(--transition);
 }
 
 .footer__col-link:hover {
-  color: var(--color-stone);
+  color: var(--color-sand);
 }
 
 .footer__bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(200, 184, 152, 0.16);
   padding: 1.5rem 3rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -546,7 +547,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-bark-light);
+  color: var(--color-footer-meta);
 }
 
 @media (max-width: 900px) {

@@ -3,7 +3,7 @@
    ═══════════════════════════════════════════════════ */
 
 .about-header {
-  background-color: var(--color-bark);
+  background-color: var(--color-footer-bg);
   padding: 3rem 2rem;
   text-align: center;
   display: flex;
@@ -18,7 +18,7 @@
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--color-stone);
 }
 
 .about-header__headline {
@@ -26,7 +26,7 @@
   font-weight: 300;
   font-style: italic;
   font-size: clamp(1.8rem, 3vw, 2.8rem);
-  color: #fff;
+  color: var(--color-sand);
   line-height: 1.4;
 }
 
@@ -162,13 +162,15 @@
   font-weight: 300;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-amber-dark);
-  text-decoration: none;
+  color: var(--color-amber);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
   transition: color var(--transition);
 }
 
 .about-section__link:hover {
-  color: var(--color-bark);
+  color: var(--color-amber-dark);
 }
 
 /* ── Team ── */
@@ -273,16 +275,17 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-sand);
-  background-color: var(--color-amber-dark);
+  background-color: var(--color-footer-bg);
   padding: 0.9rem 2.5rem;
   text-decoration: none;
-  border: 1px solid var(--color-amber-dark);
+  border: 1px solid var(--color-footer-bg);
+  border-radius: 0;
   transition: background-color var(--transition), color var(--transition);
 }
 
 .about-cta__btn:hover {
-  background-color: transparent;
-  color: var(--color-amber-dark);
+  background-color: #3D3530;
+  border-color: #3D3530;
 }
 
 
@@ -291,7 +294,7 @@
    ═══════════════════════════════════════════════════ */
 
 .publications-header {
-  background-color: var(--color-bark);
+  background-color: var(--color-footer-bg);
   padding: 3rem 2rem;
   text-align: center;
   display: flex;
@@ -306,7 +309,7 @@
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--color-stone);
 }
 
 .publications-header__headline {
@@ -314,7 +317,7 @@
   font-weight: 300;
   font-style: italic;
   font-size: clamp(1.8rem, 3vw, 2.8rem);
-  color: #fff;
+  color: var(--color-sand);
   line-height: 1.4;
   max-width: 600px;
 }
@@ -322,7 +325,7 @@
 .publications-header__intro {
   font-family: var(--font-body);
   font-size: 1rem;
-  color: #fff;
+  color: var(--color-sand);
   line-height: 1.8;
   max-width: 540px;
   font-style: italic;
@@ -376,7 +379,7 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: #fff;
-  background-color: var(--color-amber-dark);
+  background-color: var(--color-footer-bg);
   padding: 0.3rem 0.6rem;
 }
 
@@ -443,26 +446,28 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-sand);
-  background-color: var(--color-amber-dark);
+  background-color: var(--color-footer-bg);
   padding: 0.6rem 1.2rem;
   text-decoration: none;
-  border: 1px solid var(--color-amber-dark);
+  border: 1px solid var(--color-footer-bg);
+  border-radius: 0;
   transition: background-color var(--transition), color var(--transition);
 }
 
 .pub-card__btn:hover {
-  background-color: transparent;
-  color: var(--color-amber-dark);
+  background-color: #3D3530;
+  border-color: #3D3530;
 }
 
 .pub-card__btn--outline {
   background-color: transparent;
-  color: var(--color-amber-dark);
+  color: var(--color-bark-mid);
+  border-color: var(--color-bark-mid);
 }
 
 .pub-card__btn--outline:hover {
-  background-color: var(--color-amber-dark);
-  color: var(--color-sand);
+  border-color: var(--color-amber);
+  color: var(--color-amber-dark);
 }
 
 .pub-card__coming-soon {
@@ -515,7 +520,7 @@
    ═══════════════════════════════════════════════════ */
 
 .testimonials-header {
-  background-color: var(--color-bark);
+  background-color: var(--color-footer-bg);
   padding: 3rem 2rem;
   text-align: center;
   display: flex;
@@ -530,7 +535,7 @@
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--color-stone);
 }
 
 .testimonials-header__headline {
@@ -538,9 +543,31 @@
   font-weight: 300;
   font-style: italic;
   font-size: clamp(1.8rem, 3vw, 2.8rem);
-  color: #fff;
+  color: var(--color-sand);
   line-height: 1.4;
   max-width: 600px;
+}
+
+/* ── Pull-quote card (interspersed in grid) ── */
+.testimonials-pullquote-card {
+  grid-column: 1 / -1;
+  background-color: var(--color-dusk);
+  padding: 3rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonials-pullquote-card__text {
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  color: #fff;
+  line-height: 1.6;
+  max-width: 600px;
+  text-align: center;
+  margin: 0;
 }
 
 /* ── Grid ── */
@@ -622,16 +649,17 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-sand);
-  background-color: var(--color-amber-dark);
+  background-color: var(--color-footer-bg);
   padding: 0.9rem 2.5rem;
   text-decoration: none;
-  border: 1px solid var(--color-amber-dark);
+  border: 1px solid var(--color-footer-bg);
+  border-radius: 0;
   transition: background-color var(--transition), color var(--transition);
 }
 
 .testimonials-cta__btn:hover {
-  background-color: transparent;
-  color: var(--color-amber-dark);
+  background-color: #3D3530;
+  border-color: #3D3530;
 }
 
 /* ── Mobile ── */
@@ -643,12 +671,16 @@
 
 
 /* ═══════════════════════════════════════════════════
-   CONTACT PAGE
+   CONTACT PAGE  —  full espresso dark background
    ═══════════════════════════════════════════════════ */
 
+.contact-page {
+  background-color: var(--color-footer-bg);
+}
+
 .contact-header {
-  background-color: var(--color-bark);
-  padding: 3rem 2rem;
+  background-color: var(--color-footer-bg);
+  padding: 3rem 2rem 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -662,7 +694,7 @@
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--color-stone);
 }
 
 .contact-header__headline {
@@ -670,7 +702,7 @@
   font-weight: 300;
   font-style: italic;
   font-size: clamp(2rem, 4vw, 3.2rem);
-  color: #fff;
+  color: var(--color-sand);
   line-height: 1.3;
 }
 
@@ -678,14 +710,14 @@
   font-family: var(--font-body);
   font-size: 1rem;
   font-style: italic;
-  color: #fff;
+  color: var(--color-stone);
   line-height: 1.7;
 }
 
 /* ── Body ── */
 .contact-body {
-  background-color: var(--color-sand);
-  padding: 6rem 2rem;
+  background-color: var(--color-footer-bg);
+  padding: 3rem 2rem 6rem;
   display: flex;
   justify-content: center;
 }
@@ -695,14 +727,14 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 /* ── Contact form ── */
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.75rem;
 }
 
 .contact-form__field {
@@ -717,19 +749,23 @@
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-amber);
+  color: var(--color-amber-light);
 }
 
 .contact-form__input {
   font-family: var(--font-body);
   font-size: 1rem;
-  color: var(--color-bark);
+  color: var(--color-sand);
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--color-stone);
-  padding: 0.75rem 0;
+  border-bottom: 1.5px solid rgba(245, 240, 232, 0.4);
+  padding: 2px 0 0.75rem;
   outline: none;
   transition: border-color var(--transition);
+}
+
+.contact-form__input::placeholder {
+  color: rgba(245, 240, 232, 0.35);
 }
 
 .contact-form__input:focus {
@@ -737,11 +773,12 @@
 }
 
 .contact-form__textarea {
-  border: 1px solid var(--color-stone);
-  border-radius: 4px;
+  border: 1.5px solid rgba(245, 240, 232, 0.4);
+  border-radius: 0;
   padding: 0.75rem;
   resize: vertical;
   min-height: 120px;
+  color: var(--color-sand);
 }
 
 .contact-form__textarea:focus {
@@ -759,10 +796,10 @@
   font-family: var(--font-body);
   font-size: 0.85rem;
   padding: 0.5rem 1rem;
-  border-radius: 999px;
-  border: 1px solid var(--color-stone);
+  border-radius: 0;
+  border: 1px solid rgba(245, 240, 232, 0.35);
   background: transparent;
-  color: var(--color-bark);
+  color: var(--color-sand);
   cursor: pointer;
   transition: all var(--transition);
 }
@@ -772,9 +809,9 @@
 }
 
 .contact-form__chip--active {
-  background: var(--color-bark);
-  border-color: var(--color-bark);
-  color: #fff;
+  background: var(--color-sand);
+  border-color: var(--color-sand);
+  color: var(--color-footer-bg);
 }
 
 .contact-form__submit {
@@ -784,10 +821,10 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 1rem 2.5rem;
-  background: var(--color-bark);
-  color: #fff;
+  background: var(--color-sand);
+  color: var(--color-footer-bg);
   border: none;
-  border-radius: 4px;
+  border-radius: 0;
   cursor: pointer;
   transition: opacity var(--transition);
   align-self: flex-start;
@@ -805,7 +842,7 @@
 .contact-form__error {
   font-family: var(--font-body);
   font-size: 0.9rem;
-  color: #c44;
+  color: #E8A090;
 }
 
 /* ── Success state ── */
@@ -819,12 +856,12 @@
   font-weight: 300;
   font-style: italic;
   font-size: 2rem;
-  color: var(--color-bark);
+  color: var(--color-sand);
   margin-bottom: 1rem;
 }
 
 .contact-success__sub {
   font-family: var(--font-body);
   font-size: 1rem;
-  color: var(--color-bark-light);
+  color: var(--color-stone);
 }

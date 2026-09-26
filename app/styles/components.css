@@ -30,7 +30,7 @@
     margin-bottom: 1.33rem;
     padding-top: 1rem;
     font-size: 1.5rem;
-    color: #5a2813;
+    color: var(--color-amber-light);
 }
 
 .footer p {
