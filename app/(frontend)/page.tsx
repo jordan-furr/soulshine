@@ -8,6 +8,8 @@ import CeremonySection from '../components/Ceremonysection';
 import ManifestoSection from '../components/Manifestosection';
 import PrayerSection from '../components/Prayersection';
 import ServiceCards from '../components/Servicecards';
+import QuoteSection from '../components/Quotesection';
+import ClosingQuote from '../components/Closingquote';
 
 export default function Home() {
   const { locale } = useLocale();
@@ -41,7 +43,9 @@ export default function Home() {
         eyebrow={t.home.offeringsEyebrow}
         services={t.home.services}
       />
+      <QuoteSection quote={t.home.homeQuote} linkLabel={t.home.homeQuoteLink} />
       <PrayerSection />
+      <ClosingQuote quote={t.home.introQuote} sign={t.home.introSign} cta={t.common.bookSession} />
       
     </>
   );

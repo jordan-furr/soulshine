@@ -21,7 +21,9 @@ export default function LogoSection({ tagline, headline, text, cta }: LogoSectio
       </div>
       <p className="logo-section__tagline reveal">{tagline}</p>
       <h2 className="logo-section__headline reveal">{headline}</h2>
-      <p className="logo-section__text reveal">{text}</p>
+      {text.split('\n\n').map((para, i) => (
+        <p key={i} className="logo-section__text reveal">{para}</p>
+      ))}
       <Link href="/services" className="logo-section__cta reveal">{cta}</Link>
     </section>
   )

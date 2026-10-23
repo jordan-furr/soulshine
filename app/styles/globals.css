@@ -60,7 +60,10 @@
   --text-eyebrow: 1.2rem;
   --text-h1: clamp(2rem, 3.5vw, 3rem);
   --text-h2: clamp(1.8rem, 3vw, 2.6rem);
-  --text-prayer: clamp(1.15rem, 1.6vw, 1.4rem);
+  --text-prayer: 22px;
+  --type-label: 1.6rem;
+  --type-headline: clamp(1.8rem, 3vw, 2.65rem);
+  --type-body: 1.2rem;
 }
 
 /* ── Base ── */
@@ -181,9 +184,9 @@ h1 {
 }
 
 .manifesto__label {
-  font-family: var(--font-cinzel, 'Cinzel', serif);
-  font-size: 1.55rem;
-  font-weight: 300;
+  font-family: var(--font-display);
+  font-size: var(--type-label);
+  font-weight: 400;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-stone);
@@ -199,10 +202,12 @@ h1 {
 .manifesto__block--lead p {
   font-family: var(--font-display, 'Cormorant Garamond', serif);
   font-style: italic;
-  font-weight: 300;
-  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  font-weight: 400;
+  font-size: var(--type-headline);
   color: #fff;
-  line-height: 1.5;
+  line-height: 1.4;
+  max-width: 38ch;
+  margin: 0 auto;
 }
 
 /* Verse — parallel lines held together as one stanza */

@@ -761,7 +761,7 @@
   color: var(--color-sand);
   background: transparent;
   border: none;
-  border-bottom: 1.5px solid rgba(245, 240, 232, 0.4);
+  border-bottom: 1px solid rgba(245, 240, 232, 0.3);
   padding: 2px 0 0.75rem;
   outline: none;
   transition: border-color var(--transition);
@@ -776,8 +776,10 @@
 }
 
 .contact-form__textarea {
-  border: 1.5px solid rgba(245, 240, 232, 0.4);
-  border-radius: 0;
+  border: 1px solid rgba(245, 240, 232, 0.3);
+  border-radius: 14px;
+  background: rgba(245, 240, 232, 0.04);
+  padding: 1rem 1.1rem;
   padding: 0.75rem;
   resize: vertical;
   min-height: 120px;
@@ -799,8 +801,8 @@
   font-family: var(--font-body);
   font-size: 0.98rem;
   padding: 0.5rem 1rem;
-  border-radius: 0;
-  border: 1px solid rgba(245, 240, 232, 0.35);
+  border-radius: 999px;
+  border: 1px solid rgba(245, 240, 232, 0.28);
   background: transparent;
   color: var(--color-sand);
   cursor: pointer;
@@ -827,7 +829,7 @@
   background: var(--color-sand);
   color: var(--color-footer-bg);
   border: none;
-  border-radius: 0;
+  border-radius: 999px;
   cursor: pointer;
   transition: opacity var(--transition);
   align-self: flex-start;

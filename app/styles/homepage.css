@@ -42,19 +42,20 @@
 
 .triptych__eyebrow {
   font-family: var(--font-display);
-  font-size: 1.55rem;
-  letter-spacing: 0.2em;
+  font-size: var(--type-label);
+  letter-spacing: 0.22em;
   color: var(--color-stone);
   text-transform: uppercase;
   line-height: 1.6;
   margin-bottom: .5rem;
+  font-weight: 400;
 }
 
 .triptych__headline {
   font-family: var(--font-display, 'Cormorant Garamond', serif);
-  font-weight: 500;
+  font-weight: 400;
   font-style: italic;
-  font-size: clamp(1.4rem, 2.8vw, 3rem);
+  font-size: var(--type-headline);
   color: var(--color-sand);
   line-height: 1.2;
 }
@@ -81,14 +82,15 @@
 @media (max-width: 768px) {
   .triptych {
    grid-template-columns: 1fr;
-    /* image row: 520px → 350px (~33% shorter) */
-    grid-template-rows: auto 350px;
+    /* image row: near-full portrait on phones */
+    grid-template-rows: min(107vw, 460px) auto;
     height: auto;
     max-height: none;
   }
 
-  .triptych__panel-left { order: 1; }
-  .triptych__panel-center { order: 0; padding: 3.5rem 2rem;}
+  .triptych__panel-left { order: 0; }
+  .triptych__panel-left .triptych__image { object-position: center top; }
+  .triptych__panel-center { order: 1; padding: 3.5rem 2rem;}
   .triptych__panel-right { display: none; }
 
   .triptych__headline { font-size: 1.7rem; }
@@ -122,27 +124,27 @@
 
 .logo-section__tagline {
   font-family: var(--font-display);
-  font-size: 1.12rem;
-  letter-spacing: 0.22em;
-  color: var(--color-bark-light);
-  text-transform: uppercase;
+  font-size: clamp(1.45rem, 2.1vw, 1.85rem);
+  letter-spacing: 0.08em;
+  font-style: italic;
+  color: var(--color-amber);
 }
 
 .logo-section__headline {
   font-family: var(--font-display, 'Cormorant Garamond', serif);
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
-  font-size: var(--text-h2);
+  font-size: var(--type-headline);
   color: var(--color-bark);
   line-height: 1.45;
 }
 
 .logo-section__text {
   font-family: var(--font-body);
-  font-size: clamp(1.12rem, 1.9vw, 1.25rem);
+  font-size: var(--type-body);
   font-weight: 300;
   color: var(--color-bark-mid);
-  line-height: 1.9;
+  line-height: 1.6;
   max-width: 560px;
   margin: 0 auto;
 }
@@ -193,23 +195,24 @@
 
 .prayer-section__label {
   font-family: var(--font-display);
-  font-size: 1.77rem;
+  font-size: var(--type-label);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-bark-light);
   margin-bottom: 2rem;
   padding-top: 1rem;
+  font-weight: 400;
 }
 
 .prayer-section__text {
   font-family: var(--font-display, 'Cormorant Garamond', serif);
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   font-size: var(--text-prayer);
   color: var(--color-bark-mid);
-  line-height: 2;
+  line-height: 1.85;
   border: none;
-  max-width: 560px;
+  max-width: 680px;
 }
 
 .prayer-section__text p {
@@ -221,10 +224,94 @@
     padding: 4rem 2rem;
   }
 
-  .prayer-section__text {
-    font-size: 1.15rem;
-    line-height: 2;
-  }
+
+}
+
+.closing-quote {
+  background-color: var(--color-sand-dark);
+  padding: 0 2rem 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.closing-quote__quote {
+  margin: 0;
+  max-width: 560px;
+}
+
+.closing-quote__quote p {
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-style: italic;
+  font-size: 1.6rem;
+  line-height: 1.45;
+  color: var(--color-bark);
+  margin: 0;
+}
+
+.closing-quote__sign {
+  margin-top: 0.5rem;
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-size: 1.25rem;
+  color: var(--color-amber);
+}
+
+.closing-quote__cta {
+  font-family: var(--font-nav, 'Lato', sans-serif);
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-sand);
+  background-color: var(--color-footer-bg);
+  border: 1px solid var(--color-footer-bg);
+  padding: 0.9rem 2.5rem;
+  text-decoration: none;
+  transition: background-color var(--transition);
+}
+
+.closing-quote__cta:hover {
+  background-color: var(--color-footer-bg-hover);
+}
+
+/* ─── Quote Section ─────────────────────────────────── */
+
+.quote-section {
+  background-color: var(--color-brown-secondary);
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.quote-section__text {
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--type-headline);
+  color: #FBEFDD;
+  line-height: 1.45;
+  max-width: 760px;
+  margin: 0;
+}
+
+.quote-section__link {
+  font-family: var(--font-nav, 'Lato', sans-serif);
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-stone);
+  text-decoration: none;
+  transition: color var(--transition);
+  font-weight: 300;
+}
+
+.quote-section__link:hover {
+  color: #FBEFDD;
 }
 
 /* ─── Ceremony Section ──────────────────────────────── */
@@ -261,17 +348,18 @@
 
 .ceremony-section__label {
   font-family: var(--font-display);
-  font-size: 1.55rem;
+  font-size: var(--type-label);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-amber);
+  font-weight: 400;
 }
 
 .ceremony-section__headline {
   font-family: var(--font-display, 'Cormorant Garamond', serif);
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
-  font-size: var(--text-h2);
+  font-size: var(--type-headline);
   color: var(--color-bark);
   line-height: 1.45;
 }
@@ -279,7 +367,7 @@
 /* Matches .logo-section__text, minus the centering (this column is left-aligned) */
 .ceremony-section__body {
   font-family: var(--font-body);
-  font-size: clamp(1.12rem, 1.9vw, 1.25rem);
+  font-size: var(--type-body);
   font-weight: 300;
   color: var(--color-bark-mid);
   line-height: 1.9;
@@ -336,10 +424,11 @@
 
 .services-section__eyebrow {
   font-family: var(--font-display);
-  font-size: 1.77rem;
+  font-size: var(--type-label);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-bark-light);
+  font-weight: 400;
 }
 
 .services-section__grid {
@@ -426,7 +515,7 @@
 
 .service-card__desc {
   font-family: var(--font-body);
-  font-size: 1.08rem;
+  font-size: var(--type-body);
   font-weight: 300;
   color: var(--color-bark-mid);
   line-height: 1.55;

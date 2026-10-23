@@ -28,6 +28,7 @@ export const retreatData = {
     futureDates: ['24–27 March 2027', '24–27 June 2027', '24–27 September 2027'],
     bookingUrl: 'https://www.soulwayo.com/retreats',
     bookingLabel: 'Details & booking',
+    heroCta: 'View next retreat',
     futureLabel: 'Future dates',
   },
   de: {
@@ -38,6 +39,7 @@ export const retreatData = {
     futureDates: ['24.–27. März 2027', '24.–27. Juni 2027', '24.–27. September 2027'],
     bookingUrl: 'https://www.soulwayo.com/retreats',
     bookingLabel: 'Details & Buchung',
+    heroCta: 'Nächstes Retreat ansehen',
     futureLabel: 'Weitere Termine',
   },
 }
@@ -346,9 +348,9 @@ export const cacaoContent: ServiceContentMap = {
 
 export const distanceEnergyContent: ServiceContentMap = {
   en: {
-    label: 'Distance Energy Healing',
+    label: 'Healing Across Distance',
     headline: 'Healing has no boundaries.',
-    imageAlt: 'Distance energy healing',
+    imageAlt: 'Healing across distance',
     intro: 'Energy, intention, and spirit move freely beyond physical location. Sessions draw on the same tools and care as in-person work — and many people find that working remotely opens something equally, or differently, powerful. Sessions are offered both in person and remotely.',
     body: [
       'Before each session, Sarah will invite you to share what you are carrying. From there, a customized approach is shaped around your needs.',
@@ -379,9 +381,9 @@ export const distanceEnergyContent: ServiceContentMap = {
     pricingNote: 'Contact Sarah to arrange a session.',
   },
   de: {
-    label: 'Energieheilung auf Distanz',
+    label: 'Heilung über Distanz',
     headline: 'Heilung kennt keine Grenzen.',
-    imageAlt: 'Energieheilung auf Distanz',
+    imageAlt: 'Heilung über Distanz',
     intro: 'Energie, Absicht und Geist bewegen sich frei jenseits des physischen Standorts. Sitzungen schöpfen aus denselben Werkzeugen und der gleichen Fürsorge wie persönliche Arbeit — und viele Menschen erleben, dass die Fernarbeit etwas gleichermassen oder auf andere Weise Kraftvolles öffnet. Sitzungen werden sowohl persönlich als auch aus der Ferne angeboten.',
     body: [
       'Vor jeder Sitzung lädt Sarah Sie ein, zu teilen, was Sie bewegt. Davon ausgehend wird ein individueller Ansatz um Ihre Bedürfnisse herum gestaltet.',
@@ -439,7 +441,7 @@ export const serviceContent = {
     cacao: 'Cacao Meditation',
     cacaoDescription: 'Ritual cacao is heart-opening — gently releasing emotional blockages, deepening self-knowledge, and restoring connection to your own truth.',
     cacaoSlug: 'cacao-meditations',
-    energy: 'Distance Energy Healing',
+    energy: 'Healing Across Distance',
     energyDescription: 'Energy, intention, and spirit move freely beyond physical location. Soul readings, frequency medicine, and energetic clearing — offered globally.',
     energySlug: 'distance-work',
     matrimony: 'Shamanic Matrimony',
@@ -480,7 +482,7 @@ export const serviceContent = {
     cacao: 'Cacao Meditation',
     cacaoDescription: 'Rituelles Cacao öffnet das Herz — löst sanft emotionale Blockaden und stellt die Verbindung zur eigenen Wahrheit wieder her.',
     cacaoSlug: 'cacao-meditations',
-    energy: 'Energieheilung auf Distanz',
+    energy: 'Heilung über Distanz',
     energyDescription: 'Energie, Absicht und Geist bewegen sich frei jenseits des physischen Standorts. Seelenlesungen, Frequenzmedizin — weltweit.',
     energySlug: 'distance-work',
     matrimony: 'Schamanische Trauung',

@@ -16,8 +16,8 @@ export default function TriptychHero({
     <section className="triptych" aria-label="Hero">
       <div className="triptych__panel-left reveal">
         <Image
-          src="/images/drum.JPG"
-          alt="Sarah playing the drum"
+          src="/images/sarah-drum.jpeg"
+          alt="Painted portrait of Sarah with her drum, an eagle and a wolf"
           fill
           priority
           sizes="33vw"
@@ -35,8 +35,8 @@ export default function TriptychHero({
 
       <div className="triptych__panel-right reveal">
         <Image
-          src="/images/sarah-drum.jpeg"
-          alt="Spirit art"
+          src="/images/drum.JPG"
+          alt="Sarah playing the drum"
           fill
           priority
           sizes="33vw"

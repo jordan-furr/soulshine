@@ -114,10 +114,11 @@
 
 .service-prose__intro {
   font-family: var(--font-display, 'Cormorant Garamond', serif) !important;
-  font-size: 1.25rem !important;
+  font-size: clamp(1.45rem, 2vw, 1.7rem) !important;
   font-style: italic;
-  color: var(--color-bark) !important;
-  line-height: 1.7 !important;
+  font-weight: 500;
+  color: var(--color-footer-bg) !important;
+  line-height: 1.55 !important;
 }
 
 .service-prose h2 {
