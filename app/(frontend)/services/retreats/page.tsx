@@ -1,9 +1,7 @@
 'use client';
-import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale } from '@/lib/i18n/LocaleContext';
 import { retreatsContent, retreatData } from '@/lib/content/services';
-import { getTranslations } from '@/lib/i18n/translations';
 
 const pillars = {
   en: [
@@ -24,7 +22,6 @@ export default function RetreatsPage() {
   const { locale } = useLocale();
   const content = retreatsContent[locale];
   const retreat = retreatData[locale];
-  const t = getTranslations(locale);
 
   return (
     <div className="service-page">
@@ -34,14 +31,22 @@ export default function RetreatsPage() {
         <div className="service-hero__content">
           <p className="service-hero__label">{content.label}</p>
           <h1 className="service-hero__headline reveal">{content.headline}</h1>
+          <a
+            href={retreat.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="service-hero__cta"
+          >
+            {retreat.heroCta}
+          </a>
         </div>
-        <div className="service-hero__image-wrapper">
+        <div className="service-hero__image-wrapper reveal">
           <Image
-            src="/images/services/shamanic-ceremonies.png"
+            src="/images/services/retreats.jpeg"
             alt={content.imageAlt}
             fill
             priority
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 100vw, 34vw"
             className="service-hero__image"
           />
         </div>

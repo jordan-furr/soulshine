@@ -11,7 +11,7 @@ type CeremonySectionProps = {
 export default function CeremonySection({ label, headline, body, cta }: CeremonySectionProps) {
   return (
     <section className="ceremony-section">
-      <div className="ceremony-section__image-wrapper">
+      <div className="ceremony-section__image-wrapper reveal">
         <Image
           src="/images/soulwayo.jpeg"
           alt="Sarah and her partner during a shamanic healing ceremony"

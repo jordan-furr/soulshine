@@ -6,14 +6,24 @@ import { getTranslations } from '@/lib/i18n/translations';
 
 const SERVICES_EN = [
   'Counseling & Therapy',
-  'Energy Healing',
+  'Spiritual Guidance',
   'Retreats',
+  'Medicine Integration Support',
+  'Cacao Meditation',
+  'Healing Across Distance',
+  'Shamanic Matrimony',
+  'Not sure yet',
 ];
 
 const SERVICES_DE = [
   'Beratung & Therapie',
-  'Energieheilung',
+  'Spirituelle Begleitung',
   'Retreats',
+  'Integrationsbegleitung',
+  'Cacao Meditation',
+  'Heilung über Distanz',
+  'Schamanische Trauung',
+  'Noch unsicher',
 ];
 
 export default function ContactPage() {

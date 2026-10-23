@@ -25,6 +25,7 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://soulshinesarah.vercel.app'),
   title: {
     default: 'Soulshine Sarah — Psycho-Spiritual Counseling & Healing',
     template: '%s | Soulshine Sarah',

@@ -177,7 +177,12 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        {/* Mobile: lang toggle (left side) */}
+        {/* Mobile: rainbow wordmark (left edge) */}
+        <Link href="/" className="navbar__mobile-wordmark navbar__wordmark-rainbow">
+          Soulshine
+        </Link>
+
+        {/* Mobile: lang toggle (beside hamburger) */}
         <div className="navbar__mobile-left">
           <LangPill locale={locale} setLocale={setLocale} />
         </div>

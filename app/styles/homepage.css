@@ -42,19 +42,20 @@
 
 .triptych__eyebrow {
   font-family: var(--font-display);
-  font-size: 1.55rem;
-  letter-spacing: 0.2em;
+  font-size: var(--type-label);
+  letter-spacing: 0.22em;
   color: var(--color-stone);
   text-transform: uppercase;
   line-height: 1.6;
   margin-bottom: .5rem;
+  font-weight: 400;
 }
 
 .triptych__headline {
   font-family: var(--font-display, 'Cormorant Garamond', serif);
-  font-weight: 500;
+  font-weight: 400;
   font-style: italic;
-  font-size: clamp(1.4rem, 2.8vw, 3rem);
+  font-size: var(--type-headline);
   color: var(--color-sand);
   line-height: 1.2;
 }
@@ -63,7 +64,7 @@
   font-weight: 300;
   display: inline-block;
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.88rem;
+  font-size: 1rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-sand);
@@ -81,14 +82,15 @@
 @media (max-width: 768px) {
   .triptych {
    grid-template-columns: 1fr;
-    /* image row: 520px → 350px (~33% shorter) */
-    grid-template-rows: auto 350px;
+    /* image row: near-full portrait on phones */
+    grid-template-rows: min(107vw, 460px) auto;
     height: auto;
     max-height: none;
   }
 
-  .triptych__panel-left { order: 1; }
-  .triptych__panel-center { order: 0; padding: 3.5rem 2rem;}
+  .triptych__panel-left { order: 0; }
+  .triptych__panel-left .triptych__image { object-position: center top; }
+  .triptych__panel-center { order: 1; padding: 3.5rem 2rem;}
   .triptych__panel-right { display: none; }
 
   .triptych__headline { font-size: 1.7rem; }
@@ -122,27 +124,27 @@
 
 .logo-section__tagline {
   font-family: var(--font-display);
-  font-size: 1rem;
-  letter-spacing: 0.22em;
-  color: var(--color-bark-light);
-  text-transform: uppercase;
+  font-size: clamp(1.45rem, 2.1vw, 1.85rem);
+  letter-spacing: 0.08em;
+  font-style: italic;
+  color: var(--color-amber);
 }
 
 .logo-section__headline {
   font-family: var(--font-display, 'Cormorant Garamond', serif);
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
-  font-size: var(--text-h2);
+  font-size: var(--type-headline);
   color: var(--color-bark);
   line-height: 1.45;
 }
 
 .logo-section__text {
   font-family: var(--font-body);
-  font-size: clamp(1rem, 1.77vw, 1.15rem);
+  font-size: var(--type-body);
   font-weight: 300;
   color: var(--color-bark-mid);
-  line-height: 1.9;
+  line-height: 1.6;
   max-width: 560px;
   margin: 0 auto;
 }
@@ -152,7 +154,7 @@
   display: inline-block;
   margin-top: 0.5rem;
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.88rem;
+  font-size: 1rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-bark);
@@ -193,23 +195,24 @@
 
 .prayer-section__label {
   font-family: var(--font-display);
-  font-size: 1.77rem;
+  font-size: var(--type-label);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-bark-light);
   margin-bottom: 2rem;
   padding-top: 1rem;
+  font-weight: 400;
 }
 
 .prayer-section__text {
   font-family: var(--font-display, 'Cormorant Garamond', serif);
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   font-size: var(--text-prayer);
   color: var(--color-bark-mid);
-  line-height: 2;
+  line-height: 1.85;
   border: none;
-  max-width: 560px;
+  max-width: 680px;
 }
 
 .prayer-section__text p {
@@ -221,10 +224,94 @@
     padding: 4rem 2rem;
   }
 
-  .prayer-section__text {
-    font-size: 1.05rem;
-    line-height: 2;
-  }
+
+}
+
+.closing-quote {
+  background-color: var(--color-sand-dark);
+  padding: 0 2rem 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.closing-quote__quote {
+  margin: 0;
+  max-width: 560px;
+}
+
+.closing-quote__quote p {
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-style: italic;
+  font-size: 1.6rem;
+  line-height: 1.45;
+  color: var(--color-bark);
+  margin: 0;
+}
+
+.closing-quote__sign {
+  margin-top: 0.5rem;
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-size: 1.25rem;
+  color: var(--color-amber);
+}
+
+.closing-quote__cta {
+  font-family: var(--font-nav, 'Lato', sans-serif);
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-sand);
+  background-color: var(--color-footer-bg);
+  border: 1px solid var(--color-footer-bg);
+  padding: 0.9rem 2.5rem;
+  text-decoration: none;
+  transition: background-color var(--transition);
+}
+
+.closing-quote__cta:hover {
+  background-color: var(--color-footer-bg-hover);
+}
+
+/* ─── Quote Section ─────────────────────────────────── */
+
+.quote-section {
+  background-color: var(--color-brown-secondary);
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.quote-section__text {
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--type-headline);
+  color: #FBEFDD;
+  line-height: 1.45;
+  max-width: 760px;
+  margin: 0;
+}
+
+.quote-section__link {
+  font-family: var(--font-nav, 'Lato', sans-serif);
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-stone);
+  text-decoration: none;
+  transition: color var(--transition);
+  font-weight: 300;
+}
+
+.quote-section__link:hover {
+  color: #FBEFDD;
 }
 
 /* ─── Ceremony Section ──────────────────────────────── */
@@ -261,17 +348,18 @@
 
 .ceremony-section__label {
   font-family: var(--font-display);
-  font-size: 1.55rem;
+  font-size: var(--type-label);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-amber);
+  font-weight: 400;
 }
 
 .ceremony-section__headline {
   font-family: var(--font-display, 'Cormorant Garamond', serif);
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
-  font-size: var(--text-h2);
+  font-size: var(--type-headline);
   color: var(--color-bark);
   line-height: 1.45;
 }
@@ -279,7 +367,7 @@
 /* Matches .logo-section__text, minus the centering (this column is left-aligned) */
 .ceremony-section__body {
   font-family: var(--font-body);
-  font-size: clamp(1rem, 1.77vw, 1.15rem);
+  font-size: var(--type-body);
   font-weight: 300;
   color: var(--color-bark-mid);
   line-height: 1.9;
@@ -291,7 +379,7 @@
   display: inline-block;
   align-self: flex-start;
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.88rem;
+  font-size: 1rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-sand);
@@ -303,8 +391,8 @@
 }
 
 .ceremony-section__cta:hover {
-  background-color: #3D3530;
-  border-color: #3D3530;
+  background-color: var(--color-footer-bg-hover);
+  border-color: var(--color-footer-bg-hover);
 }
 
 @media (max-width: 768px) {
@@ -336,41 +424,63 @@
 
 .services-section__eyebrow {
   font-family: var(--font-display);
-  font-size: 1.77rem;
+  font-size: var(--type-label);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-bark-light);
+  font-weight: 400;
 }
 
 .services-section__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  max-width: 1200px;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-.services-section__grid > *:nth-child(7) {
-  grid-column: 2;
+.services-section__grid > * {
+  grid-column: span 3;
+}
+
+.services-section__grid > *:nth-child(n + 5) {
+  grid-column: span 4;
 }
 
 .service-card {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-sand-dark);
+  background-color: #FBF7F0;
+  border-radius: 14px;
+  box-shadow: 0 2px 14px rgba(61, 53, 48, 0.08);
   text-decoration: none;
+  text-align: center;
   overflow: hidden;
-  transition: transform var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .service-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(61, 53, 48, 0.14);
 }
 
 .service-card__image-wrapper {
   position: relative;
-  height: 200px;
+  aspect-ratio: 4 / 3.4;
   overflow: hidden;
+}
+
+.services-section__grid > *:nth-child(n + 5) .service-card__image-wrapper {
+  aspect-ratio: 16 / 10;
+}
+
+.service-card__image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 45%;
+  background: linear-gradient(to bottom, rgba(251, 247, 240, 0) 0%, #FBF7F0 100%);
+  pointer-events: none;
 }
 
 .service-card__image {
@@ -384,72 +494,67 @@
 }
 
 .service-card__body {
-  padding: 1.25rem 1.25rem 1.5rem;
+  margin-top: -2.5rem;
+  padding: 0 1.25rem 1.75rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 0.6rem;
   flex: 1;
   position: relative;
+  z-index: 1;
 }
-
 
 .service-card__name {
   font-family: var(--font-display);
-  font-size: 1rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-amber);
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--color-amber-dark);
 }
 
 .service-card__desc {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: var(--type-body);
   font-weight: 300;
   color: var(--color-bark-mid);
-  line-height: 1.6;
+  line-height: 1.55;
+  max-width: 30ch;
   flex: 1;
 }
 
 .service-card__cta {
-  font-weight: 300;
-  font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.88rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-bark-mid);
-  margin-top: 0.5rem;
-  transition: color var(--transition);
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  color: var(--color-bark);
+  border: 1px solid var(--color-amber);
+  border-radius: 999px;
+  padding: 0.55rem 1.6rem;
+  margin-top: 0.75rem;
+  transition: background-color var(--transition), color var(--transition);
 }
 
 .service-card:hover .service-card__cta {
-  color: var(--color-amber);
+  background-color: var(--color-amber);
+  color: #FBF7F0;
 }
 
 @media (max-width: 1024px) {
-  .services-section__grid {
-    grid-template-columns: repeat(2, 1fr);
+  .services-section__grid > *,
+  .services-section__grid > *:nth-child(n + 5) {
+    grid-column: span 6;
   }
 
   .services-section__grid > *:nth-child(7) {
-    grid-column: 1 / -1;
-    max-width: 400px;
-    margin: 0 auto;
-    width: 100%;
+    grid-column: 4 / span 6;
   }
 }
 
 @media (max-width: 600px) {
-  .services-section__grid {
-    grid-template-columns: 1fr;
-  }
-
+  .services-section__grid > *,
+  .services-section__grid > *:nth-child(n + 5),
   .services-section__grid > *:nth-child(7) {
-    grid-column: 1;
-    max-width: none;
-  }
-
-  .service-card__image-wrapper {
-    height: 240px;
+    grid-column: 1 / -1;
   }
 }
 
@@ -526,7 +631,7 @@
 
 .footer__col-link {
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: var(--color-footer-link);
   transition: color var(--transition);
 }
@@ -544,7 +649,7 @@
 
 .footer__copy {
   font-family: var(--font-display);
-  font-size: 0.75rem;
+  font-size: 0.88rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-footer-meta);

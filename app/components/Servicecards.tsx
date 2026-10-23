@@ -39,7 +39,7 @@ export default function ServiceCards({ eyebrow, services }: ServiceCardsProps) {
             <div className="service-card__body">
               <p className="service-card__name">{service.label}</p>
               <p className="service-card__desc">{service.description}</p>
-              <span className="service-card__cta">{service.cta} →</span>
+              <span className="service-card__cta">{service.cta} &rarr;</span>
             </div>
           </Link>
         ))}

@@ -38,13 +38,13 @@ export default function ServiceLayout({ content, image }: ServiceLayoutProps) {
             </Link>
           )}
         </div>
-        <div className="service-hero__image-wrapper">
+        <div className="service-hero__image-wrapper reveal">
           <Image
             src={image}
             alt={content.imageAlt}
             fill
             priority
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 100vw, 34vw"
             className="service-hero__image"
           />
         </div>

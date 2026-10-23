@@ -22,7 +22,7 @@ export default function AboutPage() {
       {/* ── Sarah ── */}
       <section className="about-section about-section--split">
         <div className="about-split">
-          <div className="about-split__image-wrapper">
+          <div className="about-split__image-wrapper reveal">
             <Image
               src="/images/sarah-about.jpeg"
               alt="Sarah"
@@ -47,9 +47,9 @@ export default function AboutPage() {
       <section className="about-section about-section--alt">
         <div className="about-section__inner">
           <p className="about-section__label">{t.trainingLabel}</p>
-          <ul className="about-training">
+          <ul className="about-training reveal-group">
             {t.trainingItems.map((item, i) => (
-              <li key={i} className="about-training__item">{item}</li>
+              <li key={i} className="about-training__item reveal">{item}</li>
             ))}
           </ul>
         </div>
@@ -95,9 +95,9 @@ export default function AboutPage() {
         <div className="about-section__inner">
           <p className="about-section__label">{t.teamLabel}</p>
           <h2 className="about-section__headline">{t.teamHeadline}</h2>
-          <div className="about-team">
+          <div className="about-team reveal-group">
             {t.teamMembers.map((member, i) => (
-              <div key={i} className="about-team__member">
+              <div key={i} className="about-team__member reveal">
                 <div className="about-team__image-wrapper">
                   <Image
                     src={member.image}
@@ -121,7 +121,7 @@ export default function AboutPage() {
       <section className="about-section ">
         <div className="about-section__inner">
           <p className="about-section__label">{t.soulwayoLabel}</p>
-          <div className="about-section__image-wrapper">
+          <div className="about-section__image-wrapper reveal">
             <Image
               src="/images/soulwayo.jpeg"
               alt="Sarah and Johannes — Soulwayo"
