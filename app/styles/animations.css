@@ -95,3 +95,9 @@
     transform: none;
   }
 }
+.reveal-group .reveal:nth-child(8)  { animation-delay: 0.7s; }
+.reveal-group .reveal:nth-child(9)  { animation-delay: 0.8s; }
+.reveal-group .reveal:nth-child(10) { animation-delay: 0.9s; }
+.reveal-group .reveal:nth-child(11) { animation-delay: 1s; }
+.reveal-group .reveal:nth-child(12) { animation-delay: 1.1s; }
+.triptych__panel-right.reveal { animation-delay: 0.2s; }

@@ -35,13 +35,13 @@ export default function RetreatsPage() {
           <p className="service-hero__label">{content.label}</p>
           <h1 className="service-hero__headline reveal">{content.headline}</h1>
         </div>
-        <div className="service-hero__image-wrapper">
+        <div className="service-hero__image-wrapper reveal">
           <Image
-            src="/images/services/shamanic-ceremonies.png"
+            src="/images/services/retreats.jpeg"
             alt={content.imageAlt}
             fill
             priority
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 100vw, 34vw"
             className="service-hero__image"
           />
         </div>

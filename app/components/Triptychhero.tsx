@@ -14,7 +14,7 @@ export default function TriptychHero({
 }: TriptychHeroProps) {
   return (
     <section className="triptych" aria-label="Hero">
-      <div className="triptych__panel-left">
+      <div className="triptych__panel-left reveal">
         <Image
           src="/images/drum.JPG"
           alt="Sarah playing the drum"
@@ -33,9 +33,9 @@ export default function TriptychHero({
         </Link>
       </div>
 
-      <div className="triptych__panel-right">
+      <div className="triptych__panel-right reveal">
         <Image
-          src="/images/wolf.jpeg"
+          src="/images/sarah-drum.jpeg"
           alt="Spirit art"
           fill
           priority

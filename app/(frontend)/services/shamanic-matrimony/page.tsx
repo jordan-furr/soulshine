@@ -20,13 +20,13 @@ export default function ShamanicMatrimonyPage() {
             {t.common.startConversation}
           </Link>
         </div>
-        <div className="service-hero__image-wrapper">
+        <div className="service-hero__image-wrapper reveal">
           <Image
             src="/images/services/shamanic-matrimony.jpeg"
             alt={content.imageAlt}
             fill
             priority
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 100vw, 34vw"
             className="service-hero__image"
           />
         </div>

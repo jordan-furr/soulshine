@@ -14,7 +14,7 @@
 
 .about-header__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -114,7 +114,7 @@
 /* ── Typography ── */
 .about-section__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -132,7 +132,7 @@
 
 .about-section__body {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.12rem;
   color: var(--color-bark-mid);
   line-height: 1.85;
 }
@@ -151,14 +151,14 @@
 .about-section__quote p {
   font-family: var(--font-display, 'Cormorant Garamond', serif);
   font-style: italic;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   color: var(--color-bark);
   line-height: 1.7;
 }
 
 .about-section__link {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: 300;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -245,7 +245,7 @@
 
 .about-training__item {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1.08rem;
   color: var(--color-bark-mid);
   line-height: 1.7;
   padding-left: 1.25rem;
@@ -270,7 +270,7 @@
 .about-cta__btn {
   display: inline-block;
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: 300;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -284,8 +284,8 @@
 }
 
 .about-cta__btn:hover {
-  background-color: #3D3530;
-  border-color: #3D3530;
+  background-color: var(--color-footer-bg-hover);
+  border-color: var(--color-footer-bg-hover);
 }
 
 
@@ -305,7 +305,7 @@
 
 .publications-header__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -324,7 +324,7 @@
 
 .publications-header__intro {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.12rem;
   color: var(--color-sand);
   line-height: 1.8;
   max-width: 540px;
@@ -374,7 +374,7 @@
   top: 12px;
   left: 12px;
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.58rem;
+  font-size: 0.7rem;
   font-weight: 300;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -402,14 +402,14 @@
 .pub-card__subtitle {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: var(--color-bark-light);
   line-height: 1.6;
 }
 
 .pub-card__desc {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 1.02rem;
   color: var(--color-bark-mid);
   line-height: 1.75;
   flex: 1;
@@ -427,7 +427,7 @@
 
 .pub-card__price {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.75rem;
+  font-size: 0.88rem;
   font-weight: 300;
   color: var(--color-bark-light);
   letter-spacing: 0.05em;
@@ -441,7 +441,7 @@
 .pub-card__btn {
   display: inline-block;
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: 300;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -455,8 +455,8 @@
 }
 
 .pub-card__btn:hover {
-  background-color: #3D3530;
-  border-color: #3D3530;
+  background-color: var(--color-footer-bg-hover);
+  border-color: var(--color-footer-bg-hover);
 }
 
 .pub-card__btn--outline {
@@ -472,7 +472,7 @@
 
 .pub-card__coming-soon {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   font-weight: 300;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -497,7 +497,7 @@
 .pub-card__placeholder-text {
   font-family: var(--font-display, 'Cormorant Garamond', serif);
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--color-bark-light);
 }
 
@@ -531,7 +531,7 @@
 
 .testimonials-header__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -551,8 +551,9 @@
 /* ── Pull-quote card (interspersed in grid) ── */
 .testimonials-pullquote-card {
   grid-column: 1 / -1;
-  background-color: var(--color-dusk);
-  padding: 3rem 2.5rem;
+  background-color: var(--color-brown-secondary);
+  border-radius: 14px;
+  padding: 4rem 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -561,11 +562,11 @@
 .testimonials-pullquote-card__text {
   font-family: var(--font-display, 'Cormorant Garamond', serif);
   font-style: italic;
-  font-weight: 300;
-  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
-  color: #fff;
-  line-height: 1.6;
-  max-width: 600px;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  color: #FBEFDD;
+  line-height: 1.45;
+  max-width: 760px;
   text-align: center;
   margin: 0;
 }
@@ -586,8 +587,10 @@
 
 /* ── Card ── */
 .testimonial-card {
-  background-color: var(--color-sand-dark);
-  padding: 2.5rem 2rem 2rem;
+  background-color: #FBF3E6;
+  border-radius: 14px;
+  box-shadow: 0 2px 14px rgba(107, 68, 48, 0.08);
+  padding: 3rem 2.5rem 2.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -604,10 +607,10 @@
 
 .testimonial-card__quote-mark {
   font-family: var(--font-display, 'Cormorant Garamond', serif);
-  font-size: 4rem;
+  font-size: 5.5rem;
   line-height: 1;
-  color: var(--color-sage);
-  opacity: 0.4;
+  color: var(--color-amber-light);
+  opacity: 0.7;
   position: absolute;
   top: 0.75rem;
   left: 1.5rem;
@@ -615,11 +618,11 @@
 
 .testimonial-card__text {
   font-family: var(--font-body);
-  font-size: 1.05rem;
-  font-style: italic;
-  color: var(--color-bark-mid);
-  line-height: 1.7;
-  padding-top: 1.5rem;
+  font-size: 1.22rem;
+  font-weight: 400;
+  color: var(--color-bark);
+  line-height: 1.8;
+  padding-top: 2rem;
 }
 
 /* ── CTA ── */
@@ -644,7 +647,7 @@
 .testimonials-cta__btn {
   display: inline-block;
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: 300;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -658,8 +661,8 @@
 }
 
 .testimonials-cta__btn:hover {
-  background-color: #3D3530;
-  border-color: #3D3530;
+  background-color: var(--color-footer-bg-hover);
+  border-color: var(--color-footer-bg-hover);
 }
 
 /* ── Mobile ── */
@@ -690,7 +693,7 @@
 
 .contact-header__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -708,7 +711,7 @@
 
 .contact-header__sub {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.12rem;
   font-style: italic;
   color: var(--color-stone);
   line-height: 1.7;
@@ -745,7 +748,7 @@
 
 .contact-form__label {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.85rem;
+  font-size: 0.98rem;
   font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -754,7 +757,7 @@
 
 .contact-form__input {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.12rem;
   color: var(--color-sand);
   background: transparent;
   border: none;
@@ -794,7 +797,7 @@
 
 .contact-form__chip {
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 0.98rem;
   padding: 0.5rem 1rem;
   border-radius: 0;
   border: 1px solid rgba(245, 240, 232, 0.35);
@@ -816,7 +819,7 @@
 
 .contact-form__submit {
   font-family: var(--font-nav, 'Lato', sans-serif);
-  font-size: 0.9rem;
+  font-size: 1.02rem;
   font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -841,7 +844,7 @@
 
 .contact-form__error {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 1.02rem;
   color: #E8A090;
 }
 
@@ -862,6 +865,6 @@
 
 .contact-success__sub {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.12rem;
   color: var(--color-stone);
 }
